@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Reminder-->
         <scene sceneID="Mb5-0V-3hc">
             <objects>
-                <viewController id="yz1-Gu-JoL" sceneMemberID="viewController">
+                <viewController id="yz1-Gu-JoL" customClass="AddViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hLy-iy-eLz"/>
                         <viewControllerLayoutGuide type="bottom" id="3hI-O8-7lH"/>
@@ -102,6 +102,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Reminder" id="a0i-9N-eXY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nGC-eH-8dN">
+                            <connections>
+                                <action selector="cancelPressed:" destination="yz1-Gu-JoL" id="KG5-YB-TRE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7ab-Dc-I7f"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8G-4Q-oOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
