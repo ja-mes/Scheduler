@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DCF41DAD644500BDB488 /* AppDelegate.swift */; };
-		9B31DCF71DAD644500BDB488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DCF61DAD644500BDB488 /* ViewController.swift */; };
 		9B31DCFA1DAD644500BDB488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B31DCF81DAD644500BDB488 /* Main.storyboard */; };
 		9B31DCFD1DAD644500BDB488 /* Scheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DCFB1DAD644500BDB488 /* Scheduler.xcdatamodeld */; };
 		9B31DCFF1DAD644500BDB488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B31DCFE1DAD644500BDB488 /* Assets.xcassets */; };
 		9B31DD021DAD644500BDB488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B31DD001DAD644500BDB488 /* LaunchScreen.storyboard */; };
+		9B31DD0D1DAD694F00BDB488 /* RemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DD0C1DAD694F00BDB488 /* RemindersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B31DCF11DAD644500BDB488 /* Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B31DCF41DAD644500BDB488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B31DCF61DAD644500BDB488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B31DCF91DAD644500BDB488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B31DCFC1DAD644500BDB488 /* Scheduler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scheduler.xcdatamodel; sourceTree = "<group>"; };
 		9B31DCFE1DAD644500BDB488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B31DD011DAD644500BDB488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B31DD031DAD644500BDB488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B31DD0C1DAD694F00BDB488 /* RemindersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemindersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,10 @@
 		9B31DCF31DAD644500BDB488 /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				9B31DD091DAD68B200BDB488 /* Model */,
+				9B31DD0A1DAD68B700BDB488 /* View */,
+				9B31DD0B1DAD68BB00BDB488 /* Controller */,
 				9B31DCF41DAD644500BDB488 /* AppDelegate.swift */,
-				9B31DCF61DAD644500BDB488 /* ViewController.swift */,
 				9B31DCF81DAD644500BDB488 /* Main.storyboard */,
 				9B31DCFE1DAD644500BDB488 /* Assets.xcassets */,
 				9B31DD001DAD644500BDB488 /* LaunchScreen.storyboard */,
@@ -65,6 +67,28 @@
 				9B31DCFB1DAD644500BDB488 /* Scheduler.xcdatamodeld */,
 			);
 			path = Scheduler;
+			sourceTree = "<group>";
+		};
+		9B31DD091DAD68B200BDB488 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9B31DD0A1DAD68B700BDB488 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9B31DD0B1DAD68BB00BDB488 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B31DD0C1DAD694F00BDB488 /* RemindersViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B31DCF71DAD644500BDB488 /* ViewController.swift in Sources */,
+				9B31DD0D1DAD694F00BDB488 /* RemindersViewController.swift in Sources */,
 				9B31DCFD1DAD644500BDB488 /* Scheduler.xcdatamodeld in Sources */,
 				9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */,
 			);
