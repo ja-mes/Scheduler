@@ -89,29 +89,75 @@
             </objects>
             <point key="canvasLocation" x="659" y="137"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Reminder-->
         <scene sceneID="ob8-g0-pfq">
             <objects>
                 <tableViewController id="3UF-l1-ghK" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tWQ-zc-y1e">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="tWQ-zc-y1e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q2d-VL-Qku">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q2d-VL-Qku" id="0iX-5f-WhC">
-                                    <frame key="frameInset" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Ura-F4-ZpD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q2d-VL-Qku">
+                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q2d-VL-Qku" id="0iX-5f-WhC">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OII-SK-Qes">
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OII-SK-Qes" firstAttribute="top" secondItem="0iX-5f-WhC" secondAttribute="top" id="L6t-qt-mTL"/>
+                                                <constraint firstAttribute="bottom" secondItem="OII-SK-Qes" secondAttribute="bottom" id="WFp-GD-SrO"/>
+                                                <constraint firstAttribute="trailing" secondItem="OII-SK-Qes" secondAttribute="trailing" id="dFF-bR-X6f"/>
+                                                <constraint firstItem="OII-SK-Qes" firstAttribute="leading" secondItem="0iX-5f-WhC" secondAttribute="leading" constant="15" id="ePa-2x-aXP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="7AP-eJ-Hjo">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="th1-Vw-i5N">
+                                        <rect key="frame" x="0.0" y="179" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th1-Vw-i5N" id="c0y-az-Qbt">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zog-nJ-MK9">
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zog-nJ-MK9" secondAttribute="trailing" id="3Q9-dW-896"/>
+                                                <constraint firstAttribute="bottom" secondItem="zog-nJ-MK9" secondAttribute="bottom" id="82f-NV-Zor"/>
+                                                <constraint firstItem="zog-nJ-MK9" firstAttribute="leading" secondItem="c0y-az-Qbt" secondAttribute="leading" constant="15" id="8do-cS-Kgf"/>
+                                                <constraint firstItem="zog-nJ-MK9" firstAttribute="top" secondItem="c0y-az-Qbt" secondAttribute="top" id="XYa-yv-kdR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="3UF-l1-ghK" id="y9j-4S-EnI"/>
                             <outlet property="delegate" destination="3UF-l1-ghK" id="cfh-gU-NzY"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add Reminder" id="0Kh-Xi-F27">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cU8-Wp-0Pk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Uxk-Bh-iau"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
