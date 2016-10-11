@@ -195,7 +195,7 @@
         <!--Entry Date-->
         <scene sceneID="o5z-Of-zJt">
             <objects>
-                <viewController id="Aqp-al-Jim" sceneMemberID="viewController">
+                <viewController id="Aqp-al-Jim" customClass="EntryDateViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n3y-Uy-MgW"/>
                         <viewControllerLayoutGuide type="bottom" id="5u2-Md-j6r"/>
@@ -220,8 +220,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Entry Date" id="8bZ-wH-IMB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dua-Mk-RXL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dua-Mk-RXL">
+                            <connections>
+                                <action selector="donePressed:" destination="Aqp-al-Jim" id="8Xp-0n-MY9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="QXl-rQ-XGD" id="tS7-zP-97n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WuC-s7-hJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
