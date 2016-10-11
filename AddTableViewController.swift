@@ -26,14 +26,22 @@ class AddTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateEntryDate(notification:)), name: NSNotification.Name(rawValue: "entry_date"), object: nil)
     }
     
-    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        _ = navigationController?.popViewController(animated: true)
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.indexPath(for: entryDateCell) == indexPath {
             performSegue(withIdentifier: "EntryDateViewController", sender: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EntryDateViewController" {
+            if let destination = segue.destination as? EntryDateViewController {
+                destination.date = date
+            }
+        }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
     }
     
     func updateEntryDate(notification: Notification) {

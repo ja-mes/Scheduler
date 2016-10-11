@@ -11,12 +11,15 @@ import UIKit
 class EntryDateViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
+    var date = Date()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
+        
+        datePicker.date = date
     }
     
     @IBAction func donePressed(_ sender: AnyObject) {
