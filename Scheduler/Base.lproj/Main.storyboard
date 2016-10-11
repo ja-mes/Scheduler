@@ -146,11 +146,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="314" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="322" width="375" height="314"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
+                                        <rect key="frame" x="0.0" y="322" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
-                                            <frame key="frameInset" width="375" height="313"/>
+                                            <frame key="frameInset" width="375" height="279"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNL-5Y-8xJ">
