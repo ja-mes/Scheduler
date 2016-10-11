@@ -183,10 +183,49 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Uxk-Bh-iau"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="entryDateCell" destination="th1-Vw-i5N" id="6h2-YH-CMF"/>
+                        <segue destination="Aqp-al-Jim" kind="show" identifier="EntryDateViewController" id="REw-ao-RC1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781.5999999999999" y="135.38230884557723"/>
+        </scene>
+        <!--Entry Date-->
+        <scene sceneID="o5z-Of-zJt">
+            <objects>
+                <viewController id="Aqp-al-Jim" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n3y-Uy-MgW"/>
+                        <viewControllerLayoutGuide type="bottom" id="5u2-Md-j6r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5qb-vw-evW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QXl-rQ-XGD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="1Ow-ds-Fih"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="497916593.97604603">
+                                    <!--2016-10-11 22:09:53 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QXl-rQ-XGD" firstAttribute="centerX" secondItem="5qb-vw-evW" secondAttribute="centerX" id="HIA-sd-ZW5"/>
+                            <constraint firstItem="QXl-rQ-XGD" firstAttribute="centerY" secondItem="5qb-vw-evW" secondAttribute="centerY" id="Hnz-gx-sp1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Entry Date" id="8bZ-wH-IMB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dua-Mk-RXL"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WuC-s7-hJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2650.4000000000001" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OY6-AS-E1Z">
