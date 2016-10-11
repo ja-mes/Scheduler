@@ -1,5 +1,5 @@
 //
-//  AddViewController.swift
+//  AddTableViewController.swift
 //  Scheduler
 //
 //  Created by James Brown on 10/11/16.
@@ -8,16 +8,15 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
     }
     
-    
-    // MARK: IBActions
-    
-    @IBAction func cancelPressed(_ sender: AnyObject) {
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
 

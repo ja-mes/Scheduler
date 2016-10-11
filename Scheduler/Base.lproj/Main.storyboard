@@ -87,12 +87,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="137"/>
+            <point key="canvasLocation" x="857" y="135"/>
         </scene>
         <!--Add Reminder-->
         <scene sceneID="ob8-g0-pfq">
             <objects>
-                <tableViewController id="3UF-l1-ghK" sceneMemberID="viewController">
+                <tableViewController id="3UF-l1-ghK" customClass="AddTableViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="tWQ-zc-y1e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,13 +155,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Reminder" id="0Kh-Xi-F27">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cU8-Wp-0Pk"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cU8-Wp-0Pk">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="3UF-l1-ghK" id="53p-cG-v25"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Uxk-Bh-iau"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="137"/>
+            <point key="canvasLocation" x="1782" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OY6-AS-E1Z">
