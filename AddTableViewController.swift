@@ -11,6 +11,7 @@ import UIKit
 class AddTableViewController: UITableViewController {
 
     @IBOutlet weak var entryDateCell: UITableViewCell!
+    @IBOutlet weak var repeatCell: UITableViewCell!
     
     var date = Date()
     
@@ -27,6 +28,8 @@ class AddTableViewController: UITableViewController {
       override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.indexPath(for: entryDateCell) == indexPath {
             performSegue(withIdentifier: "EntryDateViewController", sender: nil)
+        } else if tableView.indexPath(for: repeatCell) == indexPath {
+            performSegue(withIdentifier: "RepeatViewController", sender: nil)
         }
     }
     

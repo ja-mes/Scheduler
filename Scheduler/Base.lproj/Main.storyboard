@@ -146,7 +146,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Repeat" id="7AP-eJ-Hjo">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="GN6-BY-Ruj" style="IBUITableViewCellStyleDefault" id="th1-Vw-i5N">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="GN6-BY-Ruj" style="IBUITableViewCellStyleDefault" id="th1-Vw-i5N" userLabel="Repeat Cell">
                                         <rect key="frame" x="0.0" y="322" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th1-Vw-i5N" id="c0y-az-Qbt">
@@ -205,9 +205,10 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Uxk-Bh-iau"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="entryDateCell" destination="th1-Vw-i5N" id="6h2-YH-CMF"/>
+                        <outlet property="entryDateCell" destination="VvA-lg-zaC" id="8fi-ni-Pfv"/>
+                        <outlet property="repeatCell" destination="th1-Vw-i5N" id="ivX-Oi-AcN"/>
                         <segue destination="Aqp-al-Jim" kind="show" identifier="EntryDateViewController" id="REw-ao-RC1"/>
-                        <segue destination="yLI-1F-nJ0" kind="show" id="SOc-Co-daO"/>
+                        <segue destination="yLI-1F-nJ0" kind="show" identifier="RepeatViewController" id="SOc-Co-daO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -217,7 +218,7 @@
         <!--Repeat-->
         <scene sceneID="RKm-B8-QRp">
             <objects>
-                <tableViewController id="yLI-1F-nJ0" sceneMemberID="viewController">
+                <tableViewController id="yLI-1F-nJ0" customClass="RepeatTableViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="FZI-WL-mlv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,7 +324,9 @@
                             <outlet property="delegate" destination="yLI-1F-nJ0" id="Z2g-e9-kWb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Repeat" id="TXI-Qo-2Hn"/>
+                    <navigationItem key="navigationItem" title="Repeat" id="TXI-Qo-2Hn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Yqh-Pf-tR9"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiY-g8-stL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
