@@ -16,6 +16,8 @@ class AddTableViewController: UITableViewController {
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
     
+    
+    // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,10 +51,13 @@ class AddTableViewController: UITableViewController {
         }
     }
     
+    // MARK: IBActions
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    
+    // MARK: func
     func updateEntryDate(notification: Notification) {
         if let date = notification.object as? Date {
             self.date = date
