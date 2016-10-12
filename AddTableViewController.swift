@@ -14,6 +14,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var repeatCell: UITableViewCell!
     
     var date = Date()
+    var repeatInterval: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,8 @@ class AddTableViewController: UITableViewController {
         displayDate()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateEntryDate(notification:)), name: NSNotification.Name(rawValue: "entry_date"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateRepeatInterval(notification:)), name: Notification.Name(rawValue: "repeat_interval"), object: nil)
     }
     
       override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,6 +52,12 @@ class AddTableViewController: UITableViewController {
         if let date = notification.object as? Date {
             self.date = date
             displayDate()
+        }
+    }
+    
+    func updateRepeatInterval(notification: Notification) {
+        if let text = notification.object as? String {
+            repeatCell.textLabel?.text = text
         }
     }
     
