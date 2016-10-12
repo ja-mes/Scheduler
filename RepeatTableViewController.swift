@@ -19,5 +19,10 @@ class RepeatTableViewController: UITableViewController {
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.accessoryType = .checkmark
+    }
 
 }
