@@ -101,7 +101,7 @@
                             <tableViewSection headerTitle="Description" id="Ura-F4-ZpD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="q2d-VL-Qku">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q2d-VL-Qku" id="0iX-5f-WhC">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -126,7 +126,7 @@
                             <tableViewSection headerTitle="Entry Date" id="Fp1-3J-OPP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="AYe-SN-a7s" style="IBUITableViewCellStyleDefault" id="VvA-lg-zaC">
-                                        <rect key="frame" x="0.0" y="221" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="219.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VvA-lg-zaC" id="aKr-oc-h7k">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -147,7 +147,7 @@
                             <tableViewSection headerTitle="Repeat" id="7AP-eJ-Hjo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="GN6-BY-Ruj" style="IBUITableViewCellStyleDefault" id="th1-Vw-i5N" userLabel="Repeat Cell">
-                                        <rect key="frame" x="0.0" y="322" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="319.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th1-Vw-i5N" id="c0y-az-Qbt">
                                             <frame key="frameInset" width="342" height="43"/>
@@ -168,7 +168,7 @@
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="423" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="419.5" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
                                             <frame key="frameInset" width="375" height="279"/>
@@ -325,7 +325,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Repeat" id="TXI-Qo-2Hn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Yqh-Pf-tR9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Yqh-Pf-tR9">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="yLI-1F-nJ0" id="A0f-sr-Icr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiY-g8-stL" userLabel="First Responder" sceneMemberID="firstResponder"/>

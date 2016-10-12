@@ -15,5 +15,9 @@ class RepeatTableViewController: UITableViewController {
         
         self.navigationItem.hidesBackButton = true
     }
+    
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        _ = navigationController?.popViewController(animated: true)
+    }
 
 }
