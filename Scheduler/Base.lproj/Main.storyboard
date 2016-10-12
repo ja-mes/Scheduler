@@ -62,6 +62,12 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="m93-oY-4sl" secondAttribute="bottom" constant="10" id="y7f-EO-eWw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLbl" destination="PeK-1d-HBB" id="EX2-Hf-Ilg"/>
+                                            <outlet property="icon" destination="sHH-dP-73r" id="sga-rC-Gw8"/>
+                                            <outlet property="nameLbl" destination="yY8-Th-vrm" id="p62-Rx-nCm"/>
+                                            <outlet property="recipientLbl" destination="LrS-bZ-XbM" id="1A5-5q-opA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
