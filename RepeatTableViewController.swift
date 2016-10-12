@@ -35,6 +35,28 @@ class RepeatTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "IntervalCell") {
+            cell.textLabel?.text = REPEAT_INTERVALS[indexPath.row]
+            
+            if indexPath == currentSelectedIndex {
+                cell.accessoryType = .checkmark
+            }
+            
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return REPEAT_INTERVALS.count
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
