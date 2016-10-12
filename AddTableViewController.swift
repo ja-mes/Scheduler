@@ -24,7 +24,6 @@ class AddTableViewController: UITableViewController {
         displayDate()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateEntryDate(notification:)), name: NSNotification.Name(rawValue: "entry_date"), object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(updateRepeatInterval(notification:)), name: Notification.Name(rawValue: "repeat_interval"), object: nil)
     }
     
