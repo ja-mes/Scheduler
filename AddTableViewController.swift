@@ -43,7 +43,9 @@ class AddTableViewController: UITableViewController {
             }
         } else if segue.identifier == "RepeatViewController" {
             if let destination = segue.destination as? RepeatTableViewController {
-                destination.repeatInterval = repeatInterval
+                if let selectedInt = REPEAT_INTERVALS.index(of: repeatInterval) {
+                    destination.currentSelectedIndex = IndexPath(row: selectedInt, section: 0)
+                }
             }
         }
     }
