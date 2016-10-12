@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
-class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+    
+    // MARK: vars
     @IBOutlet weak var tableView: UITableView!
-
+    
+    var controller: NSFetchedResultsController<Reminder>!
+    
+    // MARK: overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +24,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
     }
     
+    // MARK: Table View Methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell") {
             return cell
@@ -27,11 +34,21 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = controller.sections {
+            return sections.count
+        }
+        
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let sections = controller.sections {
+            return sections[section].numberOfObjects
+        }
+        
+        return 0
     }
+    
+    // MARK: Functions
 
  }
