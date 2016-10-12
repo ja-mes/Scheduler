@@ -26,9 +26,16 @@ class RepeatTableViewController: UITableViewController {
         }
         
         
+        
     }
     
-      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func viewDidAppear(_ animated: Bool) {
+        if let cell = tableView.cellForRow(at: currentSelectedIndex) {
+            cell.accessoryType = .checkmark
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
         
