@@ -16,6 +16,7 @@
 		9B31DD111DAD8CBD00BDB488 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DD101DAD8CBD00BDB488 /* AddTableViewController.swift */; };
 		9B31DD131DAD9D7700BDB488 /* EntryDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DD121DAD9D7700BDB488 /* EntryDateViewController.swift */; };
 		9B31DD171DADAFFE00BDB488 /* RepeatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DD161DADAFFE00BDB488 /* RepeatTableViewController.swift */; };
+		9B3D29BE1DAEE56D00CB7549 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D29BD1DAEE56D00CB7549 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9B31DD101DAD8CBD00BDB488 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTableViewController.swift; path = ../AddTableViewController.swift; sourceTree = "<group>"; };
 		9B31DD121DAD9D7700BDB488 /* EntryDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDateViewController.swift; sourceTree = "<group>"; };
 		9B31DD161DADAFFE00BDB488 /* RepeatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepeatTableViewController.swift; path = ../RepeatTableViewController.swift; sourceTree = "<group>"; };
+		9B3D29BD1DAEE56D00CB7549 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		9B31DCF31DAD644500BDB488 /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				9B3D29BB1DAEE55D00CB7549 /* Util */,
 				9B31DD091DAD68B200BDB488 /* Model */,
 				9B31DD0A1DAD68B700BDB488 /* View */,
 				9B31DD0B1DAD68BB00BDB488 /* Controller */,
@@ -106,6 +109,14 @@
 				9B31DD121DAD9D7700BDB488 /* EntryDateViewController.swift */,
 			);
 			name = "Add Table";
+			sourceTree = "<group>";
+		};
+		9B3D29BB1DAEE55D00CB7549 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9B3D29BD1DAEE56D00CB7549 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				9B31DD0D1DAD694F00BDB488 /* RemindersViewController.swift in Sources */,
 				9B31DCFD1DAD644500BDB488 /* Scheduler.xcdatamodeld in Sources */,
 				9B31DD131DAD9D7700BDB488 /* EntryDateViewController.swift in Sources */,
+				9B3D29BE1DAEE56D00CB7549 /* Constants.swift in Sources */,
 				9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */,
 				9B31DD111DAD8CBD00BDB488 /* AddTableViewController.swift in Sources */,
 			);
@@ -350,6 +362,7 @@
 				9B31DD081DAD644500BDB488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

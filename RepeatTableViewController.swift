@@ -10,6 +10,8 @@ import UIKit
 
 class RepeatTableViewController: UITableViewController {
     
+    
+    var repeatInterval = REPEAT_INTERVALS[0]
     var currentSelectedIndex = IndexPath(row: 0, section: 0)
 
     
@@ -18,6 +20,12 @@ class RepeatTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
+        
+        if let selectedInt = REPEAT_INTERVALS.index(of: repeatInterval) {
+            currentSelectedIndex = IndexPath(row: selectedInt, section: 0)
+        }
+        
+        
     }
     
       override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

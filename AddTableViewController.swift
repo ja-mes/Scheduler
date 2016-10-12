@@ -14,7 +14,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var repeatCell: UITableViewCell!
     
     var date = Date()
-    var repeatInterval: String!
+    var repeatInterval = REPEAT_INTERVALS[0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,10 @@ class AddTableViewController: UITableViewController {
             if let destination = segue.destination as? EntryDateViewController {
                 destination.date = date
             }
+        } else if segue.identifier == "RepeatViewController" {
+            if let destination = segue.destination as? RepeatTableViewController {
+                destination.repeatInterval = repeatInterval
+            }
         }
     }
     
@@ -57,6 +61,7 @@ class AddTableViewController: UITableViewController {
     
     func updateRepeatInterval(notification: Notification) {
         if let text = notification.object as? String {
+            self.repeatInterval = text
             repeatCell.textLabel?.text = text
         }
     }
