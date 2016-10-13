@@ -26,6 +26,16 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         fetchReminders()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ReminderDetail" {
+            if let destination = segue.destination as? AddTableViewController {
+                if let reminder = sender as? Reminder {
+                    destination.reminder = reminder
+                }
+            }
+        }
+    }
+    
     // MARK: Table View Methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell") as? ReminderCell {
@@ -53,8 +63,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let reminder = controller.object(at: indexPath)
-        
+        performSegue(withIdentifier: "ReminderDetail", sender: controller.object(at: indexPath))
     }
     
     

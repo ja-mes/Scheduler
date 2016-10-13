@@ -16,6 +16,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
     
+    var reminder: Reminder?
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
     
@@ -60,7 +61,13 @@ class AddTableViewController: UITableViewController {
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        let item = Reminder(context: context)
+        let item: Reminder!
+        
+        if reminder == nil {
+            item = Reminder(context: context)
+        } else {
+            item = reminder
+        }
         
         let validator = Validator()
 
