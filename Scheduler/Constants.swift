@@ -6,6 +6,7 @@
 //  Copyright © 2016 James Brown. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 let REPEAT_INTERVALS = ["Don't repeat", "Daily", "Weekly", "Monthly", "Yearly"]
+

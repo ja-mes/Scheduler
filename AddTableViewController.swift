@@ -62,12 +62,29 @@ class AddTableViewController: UITableViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item = Reminder(context: context)
         
-        item.entryDate = date
-        item.repeatInterval = repeatInterval
-        item.name = descriptionField.text
-        item.recipient = recipientField.text
-        item.message = messageField.text
-        
+        let validator = Validator()
+
+        if let text = descriptionField.text, text.isEmpty == false, let recipient = recipientField.text, text.isEmpty == false, let message = messageField.text, message.isEmpty == false {
+            if validator.validEmail(value: recipient) {
+                print("valid email")
+                item.type = "email"
+            } else {
+                item.type = "text"
+            }
+            
+            item.entryDate = date
+            item.repeatInterval = repeatInterval
+            item.name = descriptionField.text
+            item.recipient = recipientField.text
+            item.message = messageField.text
+        } else {
+            if item.objectID.isTemporaryID {
+                context.delete(item)
+            }
+            let alert = UIAlertController(title: "Oops!", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
         
         ad.saveContext()
         
@@ -77,28 +94,6 @@ class AddTableViewController: UITableViewController {
     
     
     // MARK: func
-    func isValidEmail(string :String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: string)
-    }
-    
-    func isValidEmail(testStr:String) -> Bool {
-        print("validate emilId: \(testStr)")
-        let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluate(with: testStr)
-        return result
-    }
-    
-    func validate(value: String) -> Bool {
-        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
-        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        let result =  phoneTest.evaluate(with: value)
-        return result
-    }
-    
     func updateEntryDate(notification: Notification) {
         if let date = notification.object as? Date {
             self.date = date
