@@ -81,7 +81,7 @@ class AddTableViewController: UITableViewController {
         
         let validator = Validator()
 
-        if let text = descriptionField.text, text.isEmpty == false, let recipient = recipientField.text, text.isEmpty == false, let message = messageField.text, message.isEmpty == false {
+        if let recipient = recipientField.text, recipient.isEmpty == false, let message = messageField.text, message.isEmpty == false {
             if validator.validEmail(value: recipient) {
                 print("valid email")
                 item.type = "email"
