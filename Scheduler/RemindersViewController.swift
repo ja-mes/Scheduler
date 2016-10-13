@@ -96,6 +96,11 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             break
         }
     }
+    
+    // MARK: IBActions
+    @IBAction func addTapped(_ sender: AnyObject) {
+        performSegue(withIdentifier: "ReminderDetail", sender: nil)
+    }
 
     
     // MARK: Functions

@@ -81,7 +81,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="APk-uF-2n8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYe-DC-ZBx"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYe-DC-ZBx">
+                            <connections>
+                                <action selector="addTapped:" destination="BYZ-38-t0r" id="Z1V-0K-psY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="z8U-hp-cmd" id="t5y-db-rR6"/>
@@ -90,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="135"/>
+            <point key="canvasLocation" x="890" y="135"/>
         </scene>
         <!--Add Reminder-->
         <scene sceneID="ob8-g0-pfq">
