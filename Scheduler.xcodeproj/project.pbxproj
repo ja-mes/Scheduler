@@ -133,8 +133,8 @@
 		9B3D29C11DAEF19600CB7549 /* Reminder Table */ = {
 			isa = PBXGroup;
 			children = (
-				9B3D29BF1DAEF18B00CB7549 /* ReminderCell.swift */,
 				9B31DD0C1DAD694F00BDB488 /* RemindersViewController.swift */,
+				9B3D29BF1DAEF18B00CB7549 /* ReminderCell.swift */,
 			);
 			name = "Reminder Table";
 			sourceTree = "<group>";

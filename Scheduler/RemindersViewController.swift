@@ -135,7 +135,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     func configureCell(cell: ReminderCell, indexPath: IndexPath) {
         let reminder = controller.object(at: indexPath)
-        cell.nameLbl.text = reminder.name
+        cell.nameLbl.text = reminder.recipient
         
         if reminder.type == "email" {
             // TODO add email icon
