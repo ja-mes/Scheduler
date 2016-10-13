@@ -129,7 +129,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         formatter.dateStyle = DateFormatter.Style.long
         formatter.timeStyle = .short
         
-        cell.dateLbl.text = formatter.string(from: reminder.entryDate as! Date)
+        cell.dateLbl.text = formatter.string(from: reminder.entryDate)
         
         cell.recipientLbl.text = reminder.recipient
     }

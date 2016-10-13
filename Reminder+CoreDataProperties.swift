@@ -17,7 +17,7 @@ extension Reminder {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var entryDate: NSDate?
+    @NSManaged public var entryDate: Date
     @NSManaged public var repeatInterval: String?
     @NSManaged public var message: String?
     @NSManaged public var recipient: String?
