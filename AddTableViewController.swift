@@ -77,7 +77,7 @@ class AddTableViewController: UITableViewController {
             item.name = descriptionField.text
             item.recipient = recipientField.text
             item.message = messageField.text
-g
+
             ad.saveContext()
         } else {
             if item.objectID.isTemporaryID {
