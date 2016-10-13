@@ -31,6 +31,16 @@ class AddTableViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateEntryDate(notification:)), name: NSNotification.Name(rawValue: "entry_date"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateRepeatInterval(notification:)), name: Notification.Name(rawValue: "repeat_interval"), object: nil)
+        
+        if let reminder = reminder {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "repeat_interval"), object: reminder.repeatInterval)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "entry_date"), object: reminder.entryDate)
+            
+            descriptionField.text = reminder.name
+            recipientField.text = reminder.recipient
+            messageField.text = reminder.message
+            
+        }
     }
     
       override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
