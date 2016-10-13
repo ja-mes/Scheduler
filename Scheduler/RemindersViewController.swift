@@ -52,6 +52,11 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         return 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let reminder = controller.object(at: indexPath)
+        
+    }
+    
     
     // MARK: fetched results controller
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
