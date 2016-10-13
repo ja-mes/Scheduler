@@ -60,7 +60,6 @@
                                         <connections>
                                             <outlet property="dateLbl" destination="PeK-1d-HBB" id="EX2-Hf-Ilg"/>
                                             <outlet property="icon" destination="sHH-dP-73r" id="sga-rC-Gw8"/>
-                                            <outlet property="nameLbl" destination="yY8-Th-vrm" id="p62-Rx-nCm"/>
                                             <outlet property="recipientLbl" destination="yY8-Th-vrm" id="WLc-bs-bzt"/>
                                         </connections>
                                     </tableViewCell>

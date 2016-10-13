@@ -16,7 +16,6 @@ extension Reminder {
         return NSFetchRequest<Reminder>(entityName: "Reminder");
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var entryDate: Date
     @NSManaged public var repeatInterval: String?
     @NSManaged public var message: String?

@@ -36,7 +36,6 @@ class AddTableViewController: UITableViewController {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "repeat_interval"), object: reminder.repeatInterval)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "entry_date"), object: reminder.entryDate)
             
-            descriptionField.text = reminder.name
             recipientField.text = reminder.recipient
             messageField.text = reminder.message
             
