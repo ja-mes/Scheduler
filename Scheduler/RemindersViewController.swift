@@ -24,6 +24,12 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         
         fetchReminders()
+        
+        if let count = controller.fetchedObjects?.count {
+            if count == 0 {
+                tableView.isHidden = true
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
