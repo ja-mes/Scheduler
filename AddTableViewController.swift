@@ -56,6 +56,9 @@ class AddTableViewController: UITableViewController {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func save(_ sender: UIBarButtonItem) {
+    }
+    
     
     // MARK: func
     func updateEntryDate(notification: Notification) {
