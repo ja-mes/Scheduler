@@ -117,8 +117,8 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
         
         // sort descriptors
-        let nameSort = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [nameSort]
+        let recipientSort = NSSortDescriptor(key: "recipient", ascending: true)
+        fetchRequest.sortDescriptors = [recipientSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         self.controller = controller

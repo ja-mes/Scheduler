@@ -91,7 +91,6 @@ class AddTableViewController: UITableViewController {
             
             item.entryDate = date
             item.repeatInterval = repeatInterval
-            item.name = descriptionField.text
             item.recipient = recipientField.text
             item.message = messageField.text
 
