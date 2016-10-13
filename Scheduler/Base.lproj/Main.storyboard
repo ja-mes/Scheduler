@@ -81,14 +81,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="APk-uF-2n8">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYe-DC-ZBx">
-                            <connections>
-                                <segue destination="3UF-l1-ghK" kind="show" id="N4U-0z-FIo"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYe-DC-ZBx"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="z8U-hp-cmd" id="t5y-db-rR6"/>
+                        <segue destination="3UF-l1-ghK" kind="show" identifier="ReminderDetail" id="3h0-fs-6Mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
