@@ -95,7 +95,20 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK: Functions
     func fetchReminders() {
+        let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
         
+        // sort descriptors
+        let nameSort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [nameSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = controller
+        
+        controller.delegate = self
+        
+        do {
+            try controller.performFetch()
+        }
     }
     
     func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
@@ -103,3 +116,18 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
