@@ -108,6 +108,9 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         
         do {
             try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print(error)
         }
     }
     
