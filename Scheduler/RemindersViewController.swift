@@ -28,7 +28,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK: Table View Methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell") {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell") as? ReminderCell {
             configureCell(cell: cell, indexPath: indexPath)
             return cell
         }
@@ -76,7 +76,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             break
         case.update:
             if let indexPath = indexPath {
-                if let cell = tableView.cellForRow(at: indexPath) {
+                if let cell = tableView.cellForRow(at: indexPath) as? ReminderCell {
                     configureCell(cell: cell, indexPath: indexPath)
                 }
             }
@@ -114,8 +114,9 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
-    func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
-        
+    func configureCell(cell: ReminderCell, indexPath: IndexPath) {
+        let reminder = controller.object(at: indexPath)
+        cell.nameLbl.text = reminder.name
     }
 
  }
