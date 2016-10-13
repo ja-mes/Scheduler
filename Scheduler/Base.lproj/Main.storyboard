@@ -240,7 +240,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionField" destination="OII-SK-Qes" id="wtA-dU-HsQ"/>
                         <outlet property="entryDateCell" destination="VvA-lg-zaC" id="8fi-ni-Pfv"/>
+                        <outlet property="messageField" destination="uNL-5Y-8xJ" id="sYQ-B2-Wx4"/>
+                        <outlet property="recipientField" destination="Lxo-zm-Ani" id="spk-nc-Lfe"/>
                         <outlet property="repeatCell" destination="th1-Vw-i5N" id="ivX-Oi-AcN"/>
                         <segue destination="Aqp-al-Jim" kind="show" identifier="EntryDateViewController" id="REw-ao-RC1"/>
                         <segue destination="yLI-1F-nJ0" kind="show" identifier="RepeatViewController" id="SOc-Co-daO"/>

@@ -12,6 +12,9 @@ class AddTableViewController: UITableViewController {
 
     @IBOutlet weak var entryDateCell: UITableViewCell!
     @IBOutlet weak var repeatCell: UITableViewCell!
+    @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var recipientField: UITextField!
+    @IBOutlet weak var messageField: UITextView!
     
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
@@ -57,6 +60,18 @@ class AddTableViewController: UITableViewController {
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
+        let item = Reminder(context: context)
+        
+        item.entryDate = date
+        item.repeatInterval = repeatInterval
+        item.name = descriptionField.text
+        item.recipient = recipientField.text
+        item.message = messageField.text
+        
+        ad.saveContext()
+        
+        _ = navigationController?.popViewController(animated: true)
+        
     }
     
     
