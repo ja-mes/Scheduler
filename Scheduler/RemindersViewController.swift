@@ -138,8 +138,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         cell.recipientLbl.text = reminder.recipient
         
         if reminder.type == "email" {
-            // TODO add email icon
-            cell.icon.image = nil
+            cell.icon.image = #imageLiteral(resourceName: "email_icon")
         } else {
             cell.icon.image = #imageLiteral(resourceName: "messages_chat")
         }
