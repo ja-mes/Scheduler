@@ -77,6 +77,8 @@ class AddTableViewController: UITableViewController {
             item.name = descriptionField.text
             item.recipient = recipientField.text
             item.message = messageField.text
+g
+            ad.saveContext()
         } else {
             if item.objectID.isTemporaryID {
                 context.delete(item)
@@ -85,8 +87,6 @@ class AddTableViewController: UITableViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
-        ad.saveContext()
         
         _ = navigationController?.popViewController(animated: true)
         
