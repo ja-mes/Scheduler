@@ -13,6 +13,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     // MARK: vars
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var intro: UIStackView!
     
     var controller: NSFetchedResultsController<Reminder>!
     
@@ -25,9 +26,18 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         
         fetchReminders()
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if let count = controller.fetchedObjects?.count {
             if count == 0 {
                 tableView.isHidden = true
+                intro.isHidden = false
+                view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+            } else {
+                tableView.isHidden = false
+                intro.isHidden = true
+                view.backgroundColor = UIColor.white
             }
         }
     }
