@@ -29,17 +29,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let count = controller.fetchedObjects?.count {
-            if count == 0 {
-                tableView.isHidden = true
-                intro.isHidden = false
-                view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-            } else {
-                tableView.isHidden = false
-                intro.isHidden = true
-                view.backgroundColor = UIColor.white
-            }
-        }
+        checkShowIntro()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,8 +39,22 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
                     destination.reminder = reminder
                 }
             }
+       }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            context.delete(controller.object(at: indexPath))
+            ad.saveContext()
+            checkShowIntro()
         }
     }
+    
+
     
     // MARK: Table View Methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -129,6 +133,20 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
 
     
     // MARK: Functions
+    func checkShowIntro() {
+        if let count = controller.fetchedObjects?.count {
+            if count == 0 {
+                tableView.isHidden = true
+                intro.isHidden = false
+                view.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+            } else {
+                tableView.isHidden = false
+                intro.isHidden = true
+                view.backgroundColor = UIColor.white
+            }
+        }
+    }
+    
     func fetchReminders() {
         let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
         
