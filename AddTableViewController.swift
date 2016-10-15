@@ -10,9 +10,6 @@ import UIKit
 
 class AddTableViewController: UITableViewController {
 
-    @IBOutlet weak var entryDateCell: UITableViewCell!
-    @IBOutlet weak var repeatCell: UITableViewCell!
-    @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
     
@@ -29,9 +26,6 @@ class AddTableViewController: UITableViewController {
         
         displayDate()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateEntryDate(notification:)), name: NSNotification.Name(rawValue: "entry_date"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateRepeatInterval(notification:)), name: Notification.Name(rawValue: "repeat_interval"), object: nil)
-        
         if let reminder = reminder {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "repeat_interval"), object: reminder.repeatInterval)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "entry_date"), object: reminder.entryDate)
@@ -42,29 +36,7 @@ class AddTableViewController: UITableViewController {
         }
     }
     
-      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.indexPath(for: entryDateCell) == indexPath {
-            performSegue(withIdentifier: "EntryDateViewController", sender: nil)
-        } else if tableView.indexPath(for: repeatCell) == indexPath {
-            performSegue(withIdentifier: "RepeatViewController", sender: nil)
-        }
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EntryDateViewController" {
-            if let destination = segue.destination as? EntryDateViewController {
-                destination.date = date
-            }
-        } else if segue.identifier == "RepeatViewController" {
-            if let destination = segue.destination as? RepeatTableViewController {
-                if let selectedInt = REPEAT_INTERVALS.index(of: repeatInterval) {
-                    destination.currentSelectedIndex = IndexPath(row: selectedInt, section: 0)
-                }
-            }
-        }
-    }
-    
-      
     // MARK: IBActions
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
@@ -110,26 +82,12 @@ class AddTableViewController: UITableViewController {
     
     
     // MARK: func
-    func updateEntryDate(notification: Notification) {
-        if let date = notification.object as? Date {
-            self.date = date
-            displayDate()
-        }
-    }
-    
-    func updateRepeatInterval(notification: Notification) {
-        if let text = notification.object as? String {
-            self.repeatInterval = text
-            repeatCell.textLabel?.text = text
-        }
-    }
-    
     func displayDate() {
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.long
         formatter.timeStyle = .short
         
-        entryDateCell.textLabel?.text = "\(formatter.string(from: date))"
+        //entryDateCell.textLabel?.text = "\(formatter.string(from: date))"
     }
 
 }
