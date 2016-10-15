@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTableViewController: UITableViewController {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
@@ -23,12 +23,8 @@ class AddTableViewController: UITableViewController {
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dateField.tintColor = UIColor.clear
         
         self.navigationItem.hidesBackButton = true
-        
-        displayDate()
         
         if let reminder = reminder {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "repeat_interval"), object: reminder.repeatInterval)
@@ -38,7 +34,40 @@ class AddTableViewController: UITableViewController {
             messageField.text = reminder.message
             
         }
+        
+        displayDate()
+        
+        dateField.tintColor = UIColor.clear
+        
+        let picker = UIPickerView()
+        picker.delegate = self
+        picker.dataSource = self
+        repeatField.inputView = picker
+        picker.reloadAllComponents()
+
     }
+    
+    // MARK: picker view
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 5
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return REPEAT_INTERVALS[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let interval = REPEAT_INTERVALS[row]
+        repeatField.text = interval
+        
+    }
+    
+    
 
     
     // MARK: IBActions
@@ -54,6 +83,8 @@ class AddTableViewController: UITableViewController {
         dateField.inputView = datePicker
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
     }
+    
+    
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item: Reminder!
