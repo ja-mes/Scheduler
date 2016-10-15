@@ -13,6 +13,7 @@ class AddTableViewController: UITableViewController {
     @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
     @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var repeatField: UITextField!
     
     var reminder: Reminder?
     var date = Date()
@@ -23,6 +24,8 @@ class AddTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dateField.tintColor = UIColor.clear
+        
         self.navigationItem.hidesBackButton = true
         
         displayDate()
@@ -36,7 +39,7 @@ class AddTableViewController: UITableViewController {
             
         }
     }
-    
+
     
     // MARK: IBActions
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -51,14 +54,6 @@ class AddTableViewController: UITableViewController {
         dateField.inputView = datePicker
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
     }
-    
-    func handleDatePicker(sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .short
-        dateField.text = dateFormatter.string(from: sender.date)
-    }
-
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item: Reminder!
@@ -107,5 +102,14 @@ class AddTableViewController: UITableViewController {
         
         //entryDateCell.textLabel?.text = "\(formatter.string(from: date))"
     }
+    
+    func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        dateField.text = dateFormatter.string(from: sender.date)
+    }
+    
+
 
 }
