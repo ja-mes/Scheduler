@@ -12,6 +12,7 @@ class AddTableViewController: UITableViewController {
 
     @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
+    @IBOutlet weak var dateField: UITextField!
     
     var reminder: Reminder?
     var date = Date()
@@ -41,6 +42,23 @@ class AddTableViewController: UITableViewController {
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func dateFieldPressed(_ sender: AnyObject) {
+        let datePicker = UIDatePicker()
+        
+        datePicker.datePickerMode = .dateAndTime
+        
+        dateField.inputView = datePicker
+        datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+    }
+    
+    func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        dateField.text = dateFormatter.string(from: sender.date)
+    }
+
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item: Reminder!

@@ -135,17 +135,21 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oct 14, 2016   7:15 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mf3-GT-AKP">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Oct 12, 2016  8:22 PM" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbR-pq-zMt">
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="dateFieldPressed:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="CRE-J8-sal"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="FnO-A7-eg0" firstAttribute="centerY" secondItem="Lyo-4m-RZb" secondAttribute="centerY" id="4em-Zf-N0O"/>
-                                                <constraint firstItem="mf3-GT-AKP" firstAttribute="top" secondItem="Lyo-4m-RZb" secondAttribute="top" id="C0k-oX-oz7"/>
-                                                <constraint firstAttribute="trailing" secondItem="mf3-GT-AKP" secondAttribute="trailing" constant="8" id="MWt-vG-20O"/>
-                                                <constraint firstAttribute="bottom" secondItem="mf3-GT-AKP" secondAttribute="bottom" id="Xvu-e1-DR9"/>
+                                                <constraint firstItem="LbR-pq-zMt" firstAttribute="leading" secondItem="FnO-A7-eg0" secondAttribute="trailing" constant="10" id="I5R-Q2-ya4"/>
+                                                <constraint firstItem="LbR-pq-zMt" firstAttribute="top" secondItem="Lyo-4m-RZb" secondAttribute="top" id="QKN-3A-GFa"/>
+                                                <constraint firstAttribute="bottom" secondItem="LbR-pq-zMt" secondAttribute="bottom" id="Yu5-aQ-6cK"/>
+                                                <constraint firstAttribute="trailing" secondItem="LbR-pq-zMt" secondAttribute="trailing" constant="15" id="eD4-nB-3KP"/>
                                                 <constraint firstItem="FnO-A7-eg0" firstAttribute="leading" secondItem="Lyo-4m-RZb" secondAttribute="leading" constant="15" id="mTr-ej-hY2"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -162,18 +166,19 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fec-nW-W6k">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Don't repeat" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qb1-Lx-JK9">
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="qb1-Lx-JK9" secondAttribute="trailing" constant="15" id="40A-eG-Ia7"/>
                                                 <constraint firstItem="kfE-0w-zH7" firstAttribute="leading" secondItem="87N-dh-saK" secondAttribute="leading" constant="15" id="5C4-GU-dPL"/>
-                                                <constraint firstAttribute="bottom" secondItem="fec-nW-W6k" secondAttribute="bottom" id="ENm-dw-QNS"/>
+                                                <constraint firstItem="qb1-Lx-JK9" firstAttribute="leading" secondItem="kfE-0w-zH7" secondAttribute="trailing" constant="10" id="CdU-rQ-a6d"/>
+                                                <constraint firstAttribute="bottom" secondItem="qb1-Lx-JK9" secondAttribute="bottom" id="E8x-yG-6eA"/>
                                                 <constraint firstItem="kfE-0w-zH7" firstAttribute="centerY" secondItem="87N-dh-saK" secondAttribute="centerY" id="XhE-1G-ICw"/>
-                                                <constraint firstItem="fec-nW-W6k" firstAttribute="top" secondItem="87N-dh-saK" secondAttribute="top" id="hKw-iu-gOZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="fec-nW-W6k" secondAttribute="trailing" constant="10" id="kFp-9M-YSD"/>
+                                                <constraint firstItem="qb1-Lx-JK9" firstAttribute="top" secondItem="87N-dh-saK" secondAttribute="top" id="kOC-Gl-hDL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -251,6 +256,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateField" destination="LbR-pq-zMt" id="Lbn-Nt-1Tn"/>
                         <outlet property="messageField" destination="uNL-5Y-8xJ" id="sYQ-B2-Wx4"/>
                         <outlet property="recipientField" destination="Lxo-zm-Ani" id="spk-nc-Lfe"/>
                     </connections>
