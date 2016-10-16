@@ -13,10 +13,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: properties
     @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
-    @IBOutlet weak var dateField: UITextField!
-    @IBOutlet weak var repeatField: UITextField!
+    
     @IBOutlet weak var dateCell: UITableViewCell!
+    @IBOutlet weak var dateField: UITextField!
+    
     @IBOutlet weak var repeatCell: UITableViewCell!
+    @IBOutlet weak var repeatField: UITextField!
     
     var reminder: Reminder?
     var date = Date()
@@ -76,6 +78,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        repeatField.isUserInteractionEnabled = false
+        dateField.isUserInteractionEnabled = false
         
         if tableView.indexPath(for: dateCell) == indexPath {
             dateField.isUserInteractionEnabled = true
@@ -87,6 +91,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
         dateField.isUserInteractionEnabled = false
         repeatField.isUserInteractionEnabled = false
     }
