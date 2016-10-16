@@ -139,9 +139,6 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <action selector="dateFieldPressed:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="CRE-J8-sal"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>

@@ -43,6 +43,14 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         picker.delegate = self
         picker.dataSource = self
         repeatField.inputView = picker
+        
+        let datePicker = UIDatePicker()
+        
+        datePicker.datePickerMode = .dateAndTime
+        
+        dateField.inputView = datePicker
+        datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+        
     }
     
     // MARK: table view
@@ -77,17 +85,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func dateFieldPressed(_ sender: AnyObject) {
-        let datePicker = UIDatePicker()
-        
-        datePicker.datePickerMode = .dateAndTime
-        
-        dateField.inputView = datePicker
-        datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-    }
-    
-    
     
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item: Reminder!
@@ -143,7 +140,5 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         dateFormatter.timeStyle = .short
         dateField.text = dateFormatter.string(from: sender.date)
     }
-    
-
 
 }
