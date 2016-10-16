@@ -47,6 +47,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
 
     }
     
+    // MARK: table view
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     // MARK: picker view
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
