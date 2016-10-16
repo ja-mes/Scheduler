@@ -157,6 +157,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     // MARK: func
     func handleDatePicker(sender: UIDatePicker) {
+        date = sender.date
         displayDate(date: sender.date)
     }
     
