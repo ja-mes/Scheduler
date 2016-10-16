@@ -26,10 +26,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         self.navigationItem.hidesBackButton = true
         
-        if let reminder = reminder {            
+        if let reminder = reminder {
             recipientField.text = reminder.recipient
             messageField.text = reminder.message
-            
         }
         
         

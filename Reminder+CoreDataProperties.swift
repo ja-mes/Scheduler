@@ -2,7 +2,7 @@
 //  Reminder+CoreDataProperties.swift
 //  Scheduler
 //
-//  Created by James Brown on 10/12/16.
+//  Created by James Brown on 10/16/16.
 //  Copyright © 2016 James Brown. All rights reserved.
 //
 
@@ -16,10 +16,10 @@ extension Reminder {
         return NSFetchRequest<Reminder>(entityName: "Reminder");
     }
 
-    @NSManaged public var entryDate: Date
-    @NSManaged public var repeatInterval: String?
+    @NSManaged public var entryDate: Date?
     @NSManaged public var message: String?
     @NSManaged public var recipient: String?
+    @NSManaged public var repeatInterval: String?
     @NSManaged public var type: String?
 
 }
