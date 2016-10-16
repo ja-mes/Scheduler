@@ -148,7 +148,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             if item.objectID.isTemporaryID {
                 context.delete(item)
             }
-            let alert = UIAlertController(title: "Oops!", message: "Please fill out recipient and message fields", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Oops!", message: "Please fill out recipient and message fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
