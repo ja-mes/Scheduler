@@ -126,14 +126,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     
     // MARK: func
-    func displayDate() {
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.long
-        formatter.timeStyle = .short
-        
-        //entryDateCell.textLabel?.text = "\(formatter.string(from: date))"
-    }
-    
     func handleDatePicker(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
