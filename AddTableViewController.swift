@@ -10,6 +10,7 @@ import UIKit
 
 class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    // MARK: properties
     @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
     @IBOutlet weak var dateField: UITextField!
@@ -19,6 +20,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
     
+    // pickers
+    var picker: UIPickerView!
+    var datePicker: UIDatePicker!
+    
     
     // MARK: override
     override func viewDidLoad() {
@@ -26,15 +31,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         self.navigationItem.hidesBackButton = true
         
-        if let reminder = reminder {
-            recipientField.text = reminder.recipient
-            messageField.text = reminder.message
-        }
-        
-        
         // Repeat field
-        let picker = UIPickerView()
-        picker.selectedRow(inComponent: REPEAT_INTERVALS.index(of: repeatInterval)!)
+        picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
         repeatField.inputView = picker
@@ -42,12 +40,32 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         
         // Date field
-        let datePicker = UIDatePicker()
+        datePicker = UIDatePicker()
         datePicker.datePickerMode = .dateAndTime
         dateField.inputView = datePicker
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         dateField.tintColor = UIColor.clear
         
+        
+        if let reminder = reminder {
+            recipientField.text = reminder.recipient
+            messageField.text = reminder.message
+            repeatField.text = reminder.repeatInterval
+            displayDate(date: date)
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let reminder = reminder {
+            if let interval = reminder.repeatInterval {
+                repeatInterval = interval
+                
+                if let index = REPEAT_INTERVALS.index(of: interval) {
+                    picker.selectRow(index, inComponent: 0, animated: true)
+                }
+            }
+        }
     }
     
     // MARK: table view
@@ -124,10 +142,14 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     // MARK: func
     func handleDatePicker(sender: UIDatePicker) {
+        displayDate(date: sender.date)
+    }
+    
+    func displayDate(date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
-        dateField.text = dateFormatter.string(from: sender.date)
+        dateField.text = dateFormatter.string(from: date)
     }
 
 }
