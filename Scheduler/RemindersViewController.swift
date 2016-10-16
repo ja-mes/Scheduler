@@ -177,11 +177,13 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             cell.icon.image = #imageLiteral(resourceName: "messages_chat")
         }
         
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.long
-        formatter.timeStyle = .short
-        
-        cell.dateLbl.text = formatter.string(from: reminder.entryDate)
+        if let date = reminder.entryDate {
+            let formatter = DateFormatter()
+            formatter.dateStyle = DateFormatter.Style.long
+            formatter.timeStyle = .short
+            
+            cell.dateLbl.text = formatter.string(from: date)
+        }
     }
 
  }
