@@ -135,7 +135,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Oct 12, 2016  8:22 PM" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbR-pq-zMt">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Oct 12, 2016  8:22 PM" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbR-pq-zMt">
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -163,7 +163,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Don't repeat" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qb1-Lx-JK9">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Don't repeat" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qb1-Lx-JK9">
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -253,9 +253,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateCell" destination="JIS-hS-ypV" id="D2S-hV-8bR"/>
                         <outlet property="dateField" destination="LbR-pq-zMt" id="Lbn-Nt-1Tn"/>
                         <outlet property="messageField" destination="uNL-5Y-8xJ" id="sYQ-B2-Wx4"/>
                         <outlet property="recipientField" destination="Lxo-zm-Ani" id="spk-nc-Lfe"/>
+                        <outlet property="repeatCell" destination="9IJ-rg-DJi" id="8Yo-ie-XUe"/>
                         <outlet property="repeatField" destination="qb1-Lx-JK9" id="wvs-Bp-LH8"/>
                     </connections>
                 </tableViewController>
