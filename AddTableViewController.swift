@@ -90,11 +90,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         }
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-        dateField.isUserInteractionEnabled = false
-        repeatField.isUserInteractionEnabled = false
-    }
     
     // MARK: picker view
     
