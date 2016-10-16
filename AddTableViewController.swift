@@ -26,10 +26,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         self.navigationItem.hidesBackButton = true
         
-        if let reminder = reminder {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "repeat_interval"), object: reminder.repeatInterval)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "entry_date"), object: reminder.entryDate)
-            
+        if let reminder = reminder {            
             recipientField.text = reminder.recipient
             messageField.text = reminder.message
             
@@ -38,6 +35,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         // Repeat field
         let picker = UIPickerView()
+        picker.selectedRow(inComponent: REPEAT_INTERVALS.index(of: repeatInterval)!)
         picker.delegate = self
         picker.dataSource = self
         repeatField.inputView = picker
@@ -75,7 +73,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let interval = REPEAT_INTERVALS[row]
         repeatField.text = interval
-        
+        repeatInterval = interval
     }
     
     
