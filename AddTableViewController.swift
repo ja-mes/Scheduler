@@ -55,32 +55,20 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 date = entryDate
                 
                 datePicker.setDate(date, animated: true)
-                
                 displayDate(date: date)
             }
             
             if let interval = reminder.repeatInterval {
                 repeatInterval = interval
                 repeatField.text = reminder.repeatInterval
-            }
-
-        }
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if let reminder = reminder {
-            if let interval = reminder.repeatInterval {
                 
                 if let index = REPEAT_INTERVALS.index(of: interval) {
                     picker.selectRow(index, inComponent: 0, animated: true)
                 }
             }
-            
-            if reminder.entryDate != nil {
-                datePicker.setDate(date, animated: true)
-            }
+
         }
+        
     }
     
     // MARK: table view
