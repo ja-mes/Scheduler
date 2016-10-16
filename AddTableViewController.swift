@@ -43,8 +43,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         picker.delegate = self
         picker.dataSource = self
         repeatField.inputView = picker
-        picker.reloadAllComponents()
-
     }
     
     // MARK: table view
