@@ -11,8 +11,11 @@ import UIKit
 class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     // MARK: properties
-    @IBOutlet weak var recipientField: UITextField!
     @IBOutlet weak var messageField: UITextView!
+
+    
+    @IBOutlet weak var recipientCell: UITableViewCell!
+    @IBOutlet weak var recipientField: UITextField!
     
     @IBOutlet weak var dateCell: UITableViewCell!
     @IBOutlet weak var dateField: UITextField!
@@ -75,6 +78,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        recipientField.becomeFirstResponder()
+    }
+    
     // MARK: table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -87,6 +94,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         } else if tableView.indexPath(for: repeatCell) == indexPath {
             repeatField.isUserInteractionEnabled = true
             repeatField.becomeFirstResponder()
+        } else if tableView.indexPath(for: recipientCell) == indexPath {
+            recipientField.becomeFirstResponder()
         }
     }
     

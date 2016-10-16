@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Eo-tb-Nbx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z1O-un-8cM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="888.79999999999995" y="134.48275862068968"/>
+            <point key="canvasLocation" x="1828" y="134.48275862068968"/>
         </scene>
         <!--Add Reminder-->
         <scene sceneID="ob8-g0-pfq">
@@ -256,6 +256,7 @@
                         <outlet property="dateCell" destination="JIS-hS-ypV" id="D2S-hV-8bR"/>
                         <outlet property="dateField" destination="LbR-pq-zMt" id="Lbn-Nt-1Tn"/>
                         <outlet property="messageField" destination="uNL-5Y-8xJ" id="sYQ-B2-Wx4"/>
+                        <outlet property="recipientCell" destination="WCm-K3-lDj" id="ukS-Ot-kj2"/>
                         <outlet property="recipientField" destination="Lxo-zm-Ani" id="spk-nc-Lfe"/>
                         <outlet property="repeatCell" destination="9IJ-rg-DJi" id="8Yo-ie-XUe"/>
                         <outlet property="repeatField" destination="qb1-Lx-JK9" id="wvs-Bp-LH8"/>
@@ -263,29 +264,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1781.5999999999999" y="135.38230884557723"/>
+            <point key="canvasLocation" x="2720.8000000000002" y="135.38230884557723"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="OY6-AS-E1Z">
+        <scene sceneID="n1F-Oz-Hds">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Eo-tb-Nbx" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z1O-un-8cM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9LF-zI-A5g">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a58-Z5-NLW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3uZ-Ls-HmJ"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KMO-eU-4l7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VGK-hA-E1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S0v-Yk-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="137"/>
+            <point key="canvasLocation" x="888.79999999999995" y="134.48275862068968"/>
         </scene>
     </scenes>
     <resources>
