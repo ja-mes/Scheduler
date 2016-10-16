@@ -35,21 +35,21 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
         }
         
-        displayDate()
         
-        dateField.tintColor = UIColor.clear
-        
+        // Repeat field
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
         repeatField.inputView = picker
+        repeatField.tintColor = UIColor.clear
         
+        
+        // Date field
         let datePicker = UIDatePicker()
-        
         datePicker.datePickerMode = .dateAndTime
-        
         dateField.inputView = datePicker
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+        dateField.tintColor = UIColor.clear
         
     }
     
