@@ -50,8 +50,17 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         if let reminder = reminder {
             recipientField.text = reminder.recipient
             messageField.text = reminder.message
-            repeatField.text = reminder.repeatInterval
-            displayDate(date: date)
+            
+            if let entryDate = reminder.entryDate {
+                date = entryDate
+                displayDate(date: date)
+            }
+            
+            if let interval = reminder.repeatInterval {
+                repeatInterval = interval
+                repeatField.text = reminder.repeatInterval
+            }
+
         }
         
     }
@@ -59,11 +68,14 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     override func viewDidAppear(_ animated: Bool) {
         if let reminder = reminder {
             if let interval = reminder.repeatInterval {
-                repeatInterval = interval
                 
                 if let index = REPEAT_INTERVALS.index(of: interval) {
                     picker.selectRow(index, inComponent: 0, animated: true)
                 }
+            }
+            
+            if reminder.entryDate != nil {
+                datePicker.setDate(date, animated: true)
             }
         }
     }
