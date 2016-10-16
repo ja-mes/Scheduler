@@ -74,6 +74,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 }
             }
 
+        } else {
+            displayDate(date: date)
         }
         
     }
@@ -85,15 +87,19 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        repeatField.isUserInteractionEnabled = false
-        dateField.isUserInteractionEnabled = false
+        
+        resetFields()
         
         if tableView.indexPath(for: dateCell) == indexPath {
             dateField.isUserInteractionEnabled = true
             dateField.becomeFirstResponder()
+            
+            dateField.textColor = navigationController?.navigationBar.tintColor
         } else if tableView.indexPath(for: repeatCell) == indexPath {
             repeatField.isUserInteractionEnabled = true
             repeatField.becomeFirstResponder()
+            
+            repeatField.textColor = navigationController?.navigationBar.tintColor
         } else if tableView.indexPath(for: recipientCell) == indexPath {
             recipientField.becomeFirstResponder()
         }
@@ -178,6 +184,14 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         dateField.text = dateFormatter.string(from: date)
+    }
+    
+    func resetFields() {
+        repeatField.isUserInteractionEnabled = false
+        dateField.isUserInteractionEnabled = false
+        
+        repeatField.textColor = UIColor.black
+        dateField.textColor = UIColor.black
     }
 
 }
