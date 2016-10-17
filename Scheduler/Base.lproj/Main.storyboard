@@ -195,6 +195,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <connections>
+                                                        <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="c0i-E4-Feq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -220,6 +223,9 @@
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNL-5Y-8xJ">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="250" id="Pu9-tx-m4I"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -228,7 +234,6 @@
                                                 <constraint firstItem="uNL-5Y-8xJ" firstAttribute="leading" secondItem="zUU-XU-7GG" secondAttribute="leading" constant="15" id="1EZ-35-rjo"/>
                                                 <constraint firstAttribute="trailing" secondItem="uNL-5Y-8xJ" secondAttribute="trailing" constant="8" id="ETA-OB-oYF"/>
                                                 <constraint firstItem="uNL-5Y-8xJ" firstAttribute="top" secondItem="zUU-XU-7GG" secondAttribute="top" constant="8" id="Y7h-Np-NwF"/>
-                                                <constraint firstAttribute="bottom" secondItem="uNL-5Y-8xJ" secondAttribute="bottom" constant="8" id="fpO-bz-g1j"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

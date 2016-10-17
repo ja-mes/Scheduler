@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
 
     // MARK: properties
     @IBOutlet weak var messageField: UITextView!
@@ -37,6 +37,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
+        
+        // Message field
+        messageField.delegate = self
         
         // Repeat field
         picker = UIPickerView()
@@ -107,7 +110,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     
     // MARK: picker view
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -127,9 +129,19 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     
-
+    // MARK: text view
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        resetFields()
+    }
+    
+    
     
     // MARK: IBActions
+    @IBAction func editingBegan(_ sender: AnyObject) {
+        resetFields()
+    }
+    
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
