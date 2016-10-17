@@ -12,8 +12,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
 
     // MARK: properties
     @IBOutlet weak var messageField: UITextView!
+    @IBOutlet weak var subjectField: UITextField!
 
-    
     @IBOutlet weak var recipientCell: UITableViewCell!
     @IBOutlet weak var recipientField: UITextField!
     

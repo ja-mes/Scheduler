@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD131D5D091675DC68BBA10 /* Pods_Scheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450663CE2331422B53B2166C /* Pods_Scheduler.framework */; };
 		9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DCF41DAD644500BDB488 /* AppDelegate.swift */; };
 		9B31DCFA1DAD644500BDB488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B31DCF81DAD644500BDB488 /* Main.storyboard */; };
 		9B31DCFD1DAD644500BDB488 /* Scheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DCFB1DAD644500BDB488 /* Scheduler.xcdatamodeld */; };
@@ -22,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05E956612466516983F5CE15 /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
+		10C7256EF116B8A5A6BBC2D8 /* Pods-Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.release.xcconfig"; sourceTree = "<group>"; };
+		450663CE2331422B53B2166C /* Pods_Scheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B31DCF11DAD644500BDB488 /* Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B31DCF41DAD644500BDB488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B31DCF91DAD644500BDB488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD131D5D091675DC68BBA10 /* Pods_Scheduler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16311AEFF74906DD2B7BA30E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				450663CE2331422B53B2166C /* Pods_Scheduler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B31DCE81DAD644500BDB488 = {
 			isa = PBXGroup;
 			children = (
 				9B31DCF31DAD644500BDB488 /* Scheduler */,
 				9B31DCF21DAD644500BDB488 /* Products */,
+				A9D58FBC6DBE707A3A674F70 /* Pods */,
+				16311AEFF74906DD2B7BA30E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +132,15 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		A9D58FBC6DBE707A3A674F70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05E956612466516983F5CE15 /* Pods-Scheduler.debug.xcconfig */,
+				10C7256EF116B8A5A6BBC2D8 /* Pods-Scheduler.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B31DD061DAD644500BDB488 /* Build configuration list for PBXNativeTarget "Scheduler" */;
 			buildPhases = (
+				0F0BC6FA751005649D719802 /* [CP] Check Pods Manifest.lock */,
 				9B31DCED1DAD644500BDB488 /* Sources */,
 				9B31DCEE1DAD644500BDB488 /* Frameworks */,
 				9B31DCEF1DAD644500BDB488 /* Resources */,
+				1B5D3469D6C7A206F36BCFBD /* [CP] Embed Pods Frameworks */,
+				3260BBFB30A6979B5F2BC886 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +211,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F0BC6FA751005649D719802 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1B5D3469D6C7A206F36BCFBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3260BBFB30A6979B5F2BC886 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B31DCED1DAD644500BDB488 /* Sources */ = {
@@ -319,6 +394,7 @@
 		};
 		9B31DD071DAD644500BDB488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05E956612466516983F5CE15 /* Pods-Scheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5ZLSFF34EF;
@@ -332,6 +408,7 @@
 		};
 		9B31DD081DAD644500BDB488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10C7256EF116B8A5A6BBC2D8 /* Pods-Scheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5ZLSFF34EF;
