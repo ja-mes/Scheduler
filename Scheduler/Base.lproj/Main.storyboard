@@ -215,7 +215,7 @@
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="287" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
                                             <frame key="frameInset" width="375" height="279"/>
@@ -234,6 +234,41 @@
                                                 <constraint firstItem="uNL-5Y-8xJ" firstAttribute="leading" secondItem="zUU-XU-7GG" secondAttribute="leading" constant="15" id="1EZ-35-rjo"/>
                                                 <constraint firstAttribute="trailing" secondItem="uNL-5Y-8xJ" secondAttribute="trailing" constant="8" id="ETA-OB-oYF"/>
                                                 <constraint firstItem="uNL-5Y-8xJ" firstAttribute="top" secondItem="zUU-XU-7GG" secondAttribute="top" constant="8" id="Y7h-Np-NwF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Subject (email only)" id="d3U-Ve-i0f">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WlZ-eZ-cmY">
+                                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WlZ-eZ-cmY" id="CfK-7V-nUq">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDE-eY-q1k">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-di-grF">
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    <connections>
+                                                        <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="WDu-Zb-XjR"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hfh-di-grF" secondAttribute="trailing" constant="15" id="Rbt-uA-7He"/>
+                                                <constraint firstAttribute="bottom" secondItem="hfh-di-grF" secondAttribute="bottom" id="Vyc-dw-AM1"/>
+                                                <constraint firstItem="hfh-di-grF" firstAttribute="top" secondItem="CfK-7V-nUq" secondAttribute="top" id="Y90-wp-FHO"/>
+                                                <constraint firstItem="IDE-eY-q1k" firstAttribute="centerY" secondItem="CfK-7V-nUq" secondAttribute="centerY" id="eZE-0Z-Lld"/>
+                                                <constraint firstItem="IDE-eY-q1k" firstAttribute="leading" secondItem="CfK-7V-nUq" secondAttribute="leading" constant="15" id="uH7-tz-UZT"/>
+                                                <constraint firstItem="hfh-di-grF" firstAttribute="leading" secondItem="IDE-eY-q1k" secondAttribute="trailing" constant="10" id="xeX-Wp-BGg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
