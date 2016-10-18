@@ -166,7 +166,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             }
             
             isValidEmail = true
-        } else if isValidEmail {
+        } else if sender.text?.contains("@") == false {
             isValidEmail = false
             tableView.beginUpdates()
             tableView.endUpdates()
