@@ -65,8 +65,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             subjectField.text = reminder.subject
             messageField.text = reminder.message
             
-            if let subject = reminder.subject, reminder.type == "email" {
-                subjectField.text = subject
+            if reminder.type == "email" {
+                subjectField.text = reminder.subject
                 isValidEmail = true
             }
 
