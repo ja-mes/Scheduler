@@ -163,7 +163,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             if let lastChar = text.characters.last {
                 last = "\(lastChar)"
             }
-                        
+            
             if validator.validEmail(value: text) {
                 if !isValidEmail {
                     isValidEmail = true
@@ -210,6 +210,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             item.repeatInterval = repeatInterval
             item.recipient = recipientField.text
             item.message = messageField.text
+            item.subject = subjectField.text
 
             ad.saveContext()
         } else {
