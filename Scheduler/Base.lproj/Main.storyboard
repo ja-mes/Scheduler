@@ -294,6 +294,7 @@
                         <outlet property="recipientField" destination="Lxo-zm-Ani" id="spk-nc-Lfe"/>
                         <outlet property="repeatCell" destination="9IJ-rg-DJi" id="8Yo-ie-XUe"/>
                         <outlet property="repeatField" destination="qb1-Lx-JK9" id="wvs-Bp-LH8"/>
+                        <outlet property="saveButton" destination="Uxk-Bh-iau" id="7Gs-mb-qLa"/>
                         <outlet property="subjectField" destination="kVg-ow-G4d" id="lDs-IQ-c5d"/>
                     </connections>
                 </tableViewController>

@@ -11,8 +11,11 @@ import UIKit
 class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
 
     // MARK: properties
-    @IBOutlet weak var messageField: UITextView!
     
+    // outlets
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    @IBOutlet weak var messageField: UITextView!
     @IBOutlet weak var subjectField: UITextField!
 
     @IBOutlet weak var recipientCell: UITableViewCell!
@@ -24,10 +27,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var repeatCell: UITableViewCell!
     @IBOutlet weak var repeatField: UITextField!
     
+    // global vars
     var reminder: Reminder?
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
     var isValidEmail = false
+    var canSave = false
     
     // pickers
     var picker: UIPickerView!
@@ -39,6 +44,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
+        
+        saveButton.isEnabled = false
         
         // Message field
         messageField.delegate = self
