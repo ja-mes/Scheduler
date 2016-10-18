@@ -62,7 +62,14 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         // Inital data
         if let reminder = reminder {
             recipientField.text = reminder.recipient
+            subjectField.text = reminder.subject
             messageField.text = reminder.message
+            
+            if let subject = reminder.subject, reminder.type == "email" {
+                subjectField.text = subject
+                isValidEmail = true
+            }
+
             
             if let entryDate = reminder.entryDate {
                 date = entryDate
@@ -200,8 +207,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
 
         if let recipient = recipientField.text, recipient.isEmpty == false, let message = messageField.text, message.isEmpty == false {
             if validator.validEmail(value: recipient) {
-                print("valid email")
                 item.type = "email"
+                
+                if subjectField.text?.isEmpty == false {
+                    item.subject = subjectField.text
+                }
             } else {
                 item.type = "text"
             }
@@ -210,8 +220,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             item.repeatInterval = repeatInterval
             item.recipient = recipientField.text
             item.message = messageField.text
-            item.subject = subjectField.text
-
+            
+            
             ad.saveContext()
         } else {
             if item.objectID.isTemporaryID {
