@@ -13,7 +13,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: properties
     @IBOutlet weak var messageField: UITextView!
     
-    @IBOutlet weak var subjectCell: UITableViewCell!
     @IBOutlet weak var subjectField: UITextField!
 
     @IBOutlet weak var recipientCell: UITableViewCell!
@@ -28,6 +27,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     var reminder: Reminder?
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
+    var isValidEmail = false
     
     // pickers
     var picker: UIPickerView!
@@ -58,7 +58,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         dateField.tintColor = UIColor.clear
         
+        // Subject field
+//        subjectCell.isHidden = true
+//        tableView.reloadData()
         
+        
+        // Inital data
         if let reminder = reminder {
             recipientField.text = reminder.recipient
             messageField.text = reminder.message
@@ -110,6 +115,16 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath == IndexPath(row: 2, section: 0) && !isValidEmail {
+            return 0.0
+        } else if indexPath == IndexPath(row: 0, section: 1) {
+            return 280.0
+        }
+        
+        return 44.0
+    }
+  
     
     // MARK: picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
