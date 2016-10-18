@@ -45,8 +45,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         self.navigationItem.hidesBackButton = true
         
-        saveButton.isEnabled = false
-        
         // Message field
         messageField.delegate = self
         
@@ -68,6 +66,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         // Inital data
         if let reminder = reminder {
+            saveButton.isEnabled = true
+            
             recipientField.text = reminder.recipient
             subjectField.text = reminder.subject
             messageField.text = reminder.message
@@ -161,6 +161,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         resetFields()
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        shouldEnableSave()
+    }
     
     
     // MARK: IBActions
@@ -169,6 +172,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func editingChanged(_ sender: UITextField) {
+        shouldEnableSave()
+        
         let validator = Validator()
         
         if let text = sender.text {
@@ -245,6 +250,14 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     
     // MARK: func
+    func shouldEnableSave() {
+        if recipientField.text?.isEmpty != true, messageField.text.isEmpty != true {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
+    }
+    
     func handleDatePicker(sender: UIDatePicker) {
         date = sender.date
         displayDate(date: sender.date)
