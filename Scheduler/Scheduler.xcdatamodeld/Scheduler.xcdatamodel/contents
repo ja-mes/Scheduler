@@ -5,9 +5,10 @@
         <attribute name="message" attributeType="String" syncable="YES"/>
         <attribute name="recipient" attributeType="String" syncable="YES"/>
         <attribute name="repeatInterval" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Reminder" positionX="-65" positionY="261" width="128" height="120"/>
+        <element name="Reminder" positionX="-65" positionY="261" width="128" height="135"/>
     </elements>
 </model>
