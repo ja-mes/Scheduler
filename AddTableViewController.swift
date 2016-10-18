@@ -160,17 +160,17 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         if let text = sender.text, validator.validEmail(value: text) {
             if !isValidEmail {
                 isValidEmail = true
-                tableView.reloadData()
+                tableView.beginUpdates()
+                tableView.endUpdates()
                 recipientField.becomeFirstResponder()
             }
             
             isValidEmail = true
-        } else {
-            if isValidEmail {
-                tableView.reloadData()
-                recipientField.becomeFirstResponder()
-            }
+        } else if isValidEmail {
             isValidEmail = false
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            recipientField.becomeFirstResponder()
         }
     }
     
