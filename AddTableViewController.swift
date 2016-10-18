@@ -126,6 +126,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath == IndexPath(row: 0, section: 0) {
+            return 44.0
+        }
         if indexPath == IndexPath(row: 2, section: 1) && !isValidEmail {
             return 0.0
         } else if indexPath == IndexPath(row: 0, section: 2) {
@@ -134,7 +137,27 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         return 44.0
     }
-  
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 0
+        }
+        else if section == 1 {
+            return 4
+        }
+        
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.1
+        } else if section == 2 {
+            return 44
+        }
+    
+        return 0
+    }
     
     // MARK: picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
