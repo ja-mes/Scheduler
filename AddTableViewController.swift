@@ -154,6 +154,25 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         resetFields()
     }
     
+    @IBAction func editingChanged(_ sender: UITextField) {
+        let validator = Validator()
+        
+        if let text = sender.text, validator.validEmail(value: text) {
+            if !isValidEmail {
+                isValidEmail = true
+                tableView.reloadData()
+                recipientField.becomeFirstResponder()
+            }
+            
+            isValidEmail = true
+        } else {
+            if isValidEmail {
+                tableView.reloadData()
+                recipientField.becomeFirstResponder()
+            }
+            isValidEmail = false
+        }
+    }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)

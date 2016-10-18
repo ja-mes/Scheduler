@@ -225,6 +225,7 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="c0i-E4-Feq"/>
+                                                        <action selector="editingChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="fqy-uH-Zdf"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
