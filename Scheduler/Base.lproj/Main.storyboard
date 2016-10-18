@@ -293,6 +293,8 @@
                         <outlet property="recipientField" destination="Lxo-zm-Ani" id="spk-nc-Lfe"/>
                         <outlet property="repeatCell" destination="9IJ-rg-DJi" id="8Yo-ie-XUe"/>
                         <outlet property="repeatField" destination="qb1-Lx-JK9" id="wvs-Bp-LH8"/>
+                        <outlet property="subjectCell" destination="pSp-bg-6Ui" id="DfS-99-r3b"/>
+                        <outlet property="subjectField" destination="kVg-ow-G4d" id="lDs-IQ-c5d"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
