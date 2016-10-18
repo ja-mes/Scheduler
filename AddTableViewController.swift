@@ -58,10 +58,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         dateField.tintColor = UIColor.clear
         
-        // Subject field
-//        subjectCell.isHidden = true
-//        tableView.reloadData()
-        
         
         // Inital data
         if let reminder = reminder {
