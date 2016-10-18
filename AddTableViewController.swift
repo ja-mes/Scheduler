@@ -157,20 +157,29 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBAction func editingChanged(_ sender: UITextField) {
         let validator = Validator()
         
-        if let text = sender.text, validator.validEmail(value: text) {
-            if !isValidEmail {
+        if let text = sender.text {
+            var last = ""
+            
+            if let lastChar = text.characters.last {
+                last = "\(lastChar)"
+            }
+                        
+            if validator.validEmail(value: text) {
+                if !isValidEmail {
+                    isValidEmail = true
+                    tableView.beginUpdates()
+                    tableView.endUpdates()
+                    recipientField.becomeFirstResponder()
+                }
+                
                 isValidEmail = true
+            } else if last != "." {
+                isValidEmail = false
                 tableView.beginUpdates()
                 tableView.endUpdates()
                 recipientField.becomeFirstResponder()
             }
             
-            isValidEmail = true
-        } else if sender.text?.contains("@") == false {
-            isValidEmail = false
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            recipientField.becomeFirstResponder()
         }
     }
     
