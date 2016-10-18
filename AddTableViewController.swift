@@ -126,9 +126,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath == IndexPath(row: 2, section: 0) && !isValidEmail {
+        if indexPath == IndexPath(row: 2, section: 1) && !isValidEmail {
             return 0.0
-        } else if indexPath == IndexPath(row: 0, section: 1) {
+        } else if indexPath == IndexPath(row: 0, section: 2) {
             return 280.0
         }
         
