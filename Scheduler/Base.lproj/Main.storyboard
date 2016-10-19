@@ -133,6 +133,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEb-ph-gyn">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Send Now"/>
+                                                    <connections>
+                                                        <action selector="sendNowPressed:" destination="3UF-l1-ghK" eventType="touchUpInside" id="FYV-9B-sec"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

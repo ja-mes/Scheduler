@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import MessageUI
 
 class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
 
@@ -232,6 +233,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func sendNowPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
