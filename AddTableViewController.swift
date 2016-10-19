@@ -237,7 +237,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item: Reminder!
         
-        if let reminder = reminder, let id = reminder.id {
+        if let reminder = reminder {
             item = reminder
         } else {
             item = Reminder(context: context)
