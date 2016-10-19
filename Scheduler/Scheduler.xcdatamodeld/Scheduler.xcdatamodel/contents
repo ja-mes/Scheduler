@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Reminder" representedClassName=".Reminder" syncable="YES">
         <attribute name="entryDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="message" attributeType="String" syncable="YES"/>
         <attribute name="recipient" attributeType="String" syncable="YES"/>
         <attribute name="repeatInterval" attributeType="String" syncable="YES"/>
@@ -9,6 +10,6 @@
         <attribute name="type" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Reminder" positionX="-65" positionY="261" width="128" height="135"/>
+        <element name="Reminder" positionX="-65" positionY="261" width="128" height="150"/>
     </elements>
 </model>

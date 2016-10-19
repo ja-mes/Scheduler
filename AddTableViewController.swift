@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
 
@@ -256,6 +257,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
             
             ad.saveContext()
+            
+            
+            scheduleNotification(reminder: item)
         } else {
             if item.objectID.isTemporaryID {
                 context.delete(item)
@@ -271,6 +275,32 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     
     // MARK: func
+    func scheduleNotification(reminder: Reminder) {
+        let content = UNMutableNotificationContent()
+        
+        if let entryDate = reminder.entryDate, let type = reminder.type {
+            content.title = "\(type) due!"
+            content.body = "Send your \(type) to \(reminder.recipient)"
+            content.categoryIdentifier = "message"
+            content.sound = UNNotificationSound.default()
+            
+            let calendar = Calendar(identifier: .gregorian)
+            let components = calendar.dateComponents(in: .current, from: entryDate)
+            let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+            
+            let request = UNNotificationRequest(identifier: reminder.objectID.uriRepresentation().absoluteString, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+                if error != nil {
+                    print("Error scheduling notification: \(error)")
+                }
+            })
+            
+        }
+    }
+    
     func shouldEnableSave() {
         if recipientField.text?.isEmpty != true, messageField.text.isEmpty != true {
             saveButton.isEnabled = true
