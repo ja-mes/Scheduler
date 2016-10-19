@@ -233,6 +233,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         if reminder == nil {
             item = Reminder(context: context)
+            item.id = NSUUID().uuidString
         } else {
             item = reminder
         }
@@ -258,7 +259,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
             ad.saveContext()
             
-            
+
             scheduleNotification(reminder: item)
         } else {
             if item.objectID.isTemporaryID {
