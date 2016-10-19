@@ -46,6 +46,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         self.navigationItem.hidesBackButton = true
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+        }
+        
+        
         // Message field
         messageField.delegate = self
         
@@ -231,11 +235,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item: Reminder!
         
-        if reminder == nil {
+        if let reminder = reminder, let id = reminder.id {
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+            item = reminder
+        } else {
             item = Reminder(context: context)
             item.id = NSUUID().uuidString
-        } else {
-            item = reminder
         }
         
         let validator = Validator()
@@ -279,9 +284,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     func scheduleNotification(reminder: Reminder) {
         let content = UNMutableNotificationContent()
         
-        if let entryDate = reminder.entryDate, let type = reminder.type {
-            content.title = "\(type) due!"
-            content.body = "Send your \(type) to \(reminder.recipient)"
+        if let entryDate = reminder.entryDate, let type = reminder.type, let id = reminder.id, let recipient = reminder.recipient {
+            content.title = "\(type.capitalized) due"
+            content.body = "Send your \(type) to \(recipient)"
             content.categoryIdentifier = "message"
             content.sound = UNNotificationSound.default()
             
@@ -291,7 +296,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
             let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
             
-            let request = UNNotificationRequest(identifier: reminder.objectID.uriRepresentation().absoluteString, content: content, trigger: trigger)
+            let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
                 if error != nil {
