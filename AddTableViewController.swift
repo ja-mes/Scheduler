@@ -236,7 +236,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         let item: Reminder!
         
         if let reminder = reminder, let id = reminder.id {
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
             item = reminder
         } else {
             item = Reminder(context: context)
