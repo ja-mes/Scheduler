@@ -106,7 +106,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        recipientField.becomeFirstResponder()
+        if reminder == nil {
+            recipientField.becomeFirstResponder()
+        }
     }
     
     // MARK: table view
