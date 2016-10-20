@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
-class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
+class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, MFMessageComposeViewControllerDelegate {
     
     // MARK: vars
     @IBOutlet weak var tableView: UITableView!
@@ -87,6 +88,11 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         performSegue(withIdentifier: "ReminderDetail", sender: controller.object(at: indexPath))
     }
     
+    // MARK: message compose view controller
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     // MARK: fetched results controller
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -133,20 +139,38 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     
+//    if MFMessageComposeViewController.canSendText(), let message = reminder?.message, let recipient = reminder?.recipient {
+//        let messageController = MFMessageComposeViewController()
+//        messageController.body = message
+//        messageController.recipients = [recipient]
+//        messageController.messageComposeDelegate = self
+//        present(messageController, animated: true, completion: nil)
+//    }
+
+    
     // MARK: Functions
     func checkMessages() {
         // query all messages that are due
-        let fetch: NSFetchRequest<Reminder> = Reminder.fetchRequest()
-        fetch.predicate = NSPredicate(format: "entryDate <= %@", Date() as CVarArg)
-        
-        do {
-            let results = try context.fetch(fetch)
+        if MFMessageComposeViewController.canSendText() {
+            let fetch: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+            fetch.predicate = NSPredicate(format: "entryDate <= %@", Date() as CVarArg)
             
-            for var i in results {
-                print(i)
+            do {
+                print("JAMES: \(try context.count(for: fetch))")
+                let results = try context.fetch(fetch)
+                for reminder in results {
+                    if let message = reminder.message, let recipient = reminder.recipient {
+                        let messageController = MFMessageComposeViewController()
+                        messageController.messageComposeDelegate = self
+                        messageController.body = message
+                        messageController.recipients = [recipient]
+                        
+                        present(messageController, animated: false, completion: nil)
+                    }
+                }
+            } catch {
+                print(error)
             }
-        } catch {
-           print(error)
         }
     }
     
