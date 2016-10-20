@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import MessageUI
+import UserNotifications
 
 class RemindersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, MFMessageComposeViewControllerDelegate {
     
@@ -80,8 +81,15 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            context.delete(controller.object(at: indexPath))
+            let object  = controller.object(at: indexPath)
+            
+            if let id = object.id {
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])
+            }
+            
+            context.delete(object)
             ad.saveContext()
+            
             checkShowIntro()
         }
     }
