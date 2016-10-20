@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZKH-T9-AdZ" id="BHk-Ov-Hl3">
-                                            <frame key="frameInset" width="342" height="93.5"/>
+                                            <frame key="frameInset" width="342" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-5e-la4">
@@ -48,12 +48,24 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bjP-Ae-dEA">
+                                                    <subviews>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="past_due" translatesAutoresizingMaskIntoConstraints="NO" id="ZKD-V0-kJD"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAST DUE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-YB-frA">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="bjP-Ae-dEA" firstAttribute="centerY" secondItem="BHk-Ov-Hl3" secondAttribute="centerY" id="C6m-Nd-B2W"/>
                                                 <constraint firstItem="m93-oY-4sl" firstAttribute="leading" secondItem="BHk-Ov-Hl3" secondAttribute="leadingMargin" constant="43" id="Jx5-86-yHZ"/>
                                                 <constraint firstItem="NGM-5e-la4" firstAttribute="top" secondItem="BHk-Ov-Hl3" secondAttribute="topMargin" constant="12" id="juv-iQ-XNz"/>
                                                 <constraint firstItem="yY8-Th-vrm" firstAttribute="leading" secondItem="PeK-1d-HBB" secondAttribute="leading" id="k2n-aT-bqz"/>
                                                 <constraint firstItem="NGM-5e-la4" firstAttribute="leading" secondItem="BHk-Ov-Hl3" secondAttribute="leadingMargin" constant="7" id="mK3-Ni-jxx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bjP-Ae-dEA" secondAttribute="trailing" constant="10" id="xhR-ab-GRx"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="m93-oY-4sl" secondAttribute="bottom" constant="10" id="y7f-EO-eWw"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -350,5 +362,6 @@
     </scenes>
     <resources>
         <image name="messages_chat" width="20" height="20"/>
+        <image name="past_due" width="21" height="27"/>
     </resources>
 </document>
