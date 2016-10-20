@@ -26,8 +26,6 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         
         fetchReminders()
-        
-        checkMessages()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -139,41 +137,8 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
 
     
-//    if MFMessageComposeViewController.canSendText(), let message = reminder?.message, let recipient = reminder?.recipient {
-//        let messageController = MFMessageComposeViewController()
-//        messageController.body = message
-//        messageController.recipients = [recipient]
-//        messageController.messageComposeDelegate = self
-//        present(messageController, animated: true, completion: nil)
-//    }
-
     
     // MARK: Functions
-    func checkMessages() {
-        // query all messages that are due
-        if MFMessageComposeViewController.canSendText() {
-            let fetch: NSFetchRequest<Reminder> = Reminder.fetchRequest()
-            fetch.predicate = NSPredicate(format: "entryDate <= %@", Date() as CVarArg)
-            
-            do {
-                print("JAMES: \(try context.count(for: fetch))")
-                let results = try context.fetch(fetch)
-                for reminder in results {
-                    if let message = reminder.message, let recipient = reminder.recipient {
-                        let messageController = MFMessageComposeViewController()
-                        messageController.messageComposeDelegate = self
-                        messageController.body = message
-                        messageController.recipients = [recipient]
-                        
-                        present(messageController, animated: false, completion: nil)
-                    }
-                }
-            } catch {
-                print(error)
-            }
-        }
-    }
-    
     func checkShowIntro() {
         if let count = controller.fetchedObjects?.count {
             if count == 0 {
