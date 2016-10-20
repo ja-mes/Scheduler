@@ -26,6 +26,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         
         fetchReminders()
         
+        checkMessages()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -133,6 +134,22 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
 
     
     // MARK: Functions
+    func checkMessages() {
+        // query all messages that are due
+        let fetch: NSFetchRequest<Reminder> = Reminder.fetchRequest()
+        fetch.predicate = NSPredicate(format: "entryDate <= %@", Date() as CVarArg)
+        
+        do {
+            let results = try context.fetch(fetch)
+            
+            for var i in results {
+                print(i)
+            }
+        } catch {
+           print(error)
+        }
+    }
+    
     func checkShowIntro() {
         if let count = controller.fetchedObjects?.count {
             if count == 0 {
