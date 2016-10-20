@@ -41,19 +41,6 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             }
        }
     }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            context.delete(controller.object(at: indexPath))
-            ad.saveContext()
-            checkShowIntro()
-        }
-    }
-    
 
     
     // MARK: Table View Methods
@@ -85,6 +72,20 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ReminderDetail", sender: controller.object(at: indexPath))
     }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            context.delete(controller.object(at: indexPath))
+            ad.saveContext()
+            checkShowIntro()
+        }
+    }
+
     
     // MARK: message compose view controller
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
