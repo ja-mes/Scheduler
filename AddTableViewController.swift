@@ -200,6 +200,15 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     // MARK: messages
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        if result == .sent {
+            if let reminder = reminder {
+                
+            }
+        } else if result == .cancelled {
+            print("cancelled")
+        } else if result == .failed {
+            print("failed")
+        }
         dismiss(animated: true, completion: nil)
     }
     
