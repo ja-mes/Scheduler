@@ -175,7 +175,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     func configureCell(cell: ReminderCell, indexPath: IndexPath) {
         let reminder = controller.object(at: indexPath)
-        cell.recipientLbl.text = reminder.recipient
+        cell.recipientLbl.text = "awesomeandwonderfulverylongemailaddresspleaserecheck@gmail.com"
         
         if reminder.type == "email" {
             cell.icon.image = #imageLiteral(resourceName: "email_icon")
@@ -185,7 +185,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         
         if let date = reminder.entryDate {
             let formatter = DateFormatter()
-            formatter.dateStyle = DateFormatter.Style.long
+            formatter.dateStyle = DateFormatter.Style.short
             formatter.timeStyle = .short
             
             cell.dateLbl.text = formatter.string(from: date)

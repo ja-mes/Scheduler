@@ -65,7 +65,7 @@
                                                 <constraint firstItem="NGM-5e-la4" firstAttribute="top" secondItem="BHk-Ov-Hl3" secondAttribute="topMargin" constant="12" id="juv-iQ-XNz"/>
                                                 <constraint firstItem="yY8-Th-vrm" firstAttribute="leading" secondItem="PeK-1d-HBB" secondAttribute="leading" id="k2n-aT-bqz"/>
                                                 <constraint firstItem="NGM-5e-la4" firstAttribute="leading" secondItem="BHk-Ov-Hl3" secondAttribute="leadingMargin" constant="7" id="mK3-Ni-jxx"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bjP-Ae-dEA" secondAttribute="trailing" constant="10" id="xhR-ab-GRx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bjP-Ae-dEA" secondAttribute="trailing" constant="15" id="xhR-ab-GRx"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="m93-oY-4sl" secondAttribute="bottom" constant="10" id="y7f-EO-eWw"/>
                                             </constraints>
                                         </tableViewCellContentView>
