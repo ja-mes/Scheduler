@@ -361,8 +361,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     func handleDatePicker(sender: UIDatePicker) {
-        date = sender.date
-        displayDate(date: sender.date)
+        if let incomingDate = NSCalendar.current.date(byAdding: .second, value: -44, to: sender.date) {
+            date = incomingDate
+            displayDate(date: date)
+            
+        }
     }
     
     func displayDate(date: Date) {
