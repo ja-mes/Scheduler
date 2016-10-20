@@ -175,8 +175,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     func configureCell(cell: ReminderCell, indexPath: IndexPath) {
         let reminder = controller.object(at: indexPath)
-        cell.recipientLbl.text = "awesomeandwonderfulverylongemailaddresspleaserecheck@gmail.com"
-        
+        cell.recipientLbl.text = "awesomeandwonderfulverylongemailaddresspleaserecheck@gmail.com"        
         if reminder.type == "email" {
             cell.icon.image = #imageLiteral(resourceName: "email_icon")
         } else {

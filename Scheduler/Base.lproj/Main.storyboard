@@ -52,6 +52,9 @@
                                                     <subviews>
                                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="past_due" translatesAutoresizingMaskIntoConstraints="NO" id="ZKD-V0-kJD"/>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAST DUE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-YB-frA">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="jv9-cS-iBa"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -62,6 +65,7 @@
                                             <constraints>
                                                 <constraint firstItem="bjP-Ae-dEA" firstAttribute="centerY" secondItem="BHk-Ov-Hl3" secondAttribute="centerY" id="C6m-Nd-B2W"/>
                                                 <constraint firstItem="m93-oY-4sl" firstAttribute="leading" secondItem="BHk-Ov-Hl3" secondAttribute="leadingMargin" constant="43" id="Jx5-86-yHZ"/>
+                                                <constraint firstItem="bjP-Ae-dEA" firstAttribute="leading" secondItem="yY8-Th-vrm" secondAttribute="trailing" constant="8" id="hAI-PN-mf1"/>
                                                 <constraint firstItem="NGM-5e-la4" firstAttribute="top" secondItem="BHk-Ov-Hl3" secondAttribute="topMargin" constant="12" id="juv-iQ-XNz"/>
                                                 <constraint firstItem="yY8-Th-vrm" firstAttribute="leading" secondItem="PeK-1d-HBB" secondAttribute="leading" id="k2n-aT-bqz"/>
                                                 <constraint firstItem="NGM-5e-la4" firstAttribute="leading" secondItem="BHk-Ov-Hl3" secondAttribute="leadingMargin" constant="7" id="mK3-Ni-jxx"/>
