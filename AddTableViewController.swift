@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import MessageUI
 
-class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
 
     // MARK: properties
     
@@ -198,8 +198,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         shouldEnableSave()
     }
     
-    // MARK: message view
+    // MARK: messages
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true, completion: nil)
     }
     
@@ -245,13 +249,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func sendNowPressed(_ sender: UIButton) {
-        if MFMessageComposeViewController.canSendText(), let message = reminder?.message, let recipient = reminder?.recipient {
-            let messageController = MFMessageComposeViewController()
-            messageController.body = message
-            messageController.recipients = [recipient]
-            messageController.messageComposeDelegate = self
-            present(messageController, animated: true, completion: nil)
-        }
+       sendMessage()
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
@@ -325,6 +323,32 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 }
             })
             
+        }
+    }
+    
+    func sendMessage() {
+        if let reminder = reminder {
+            if let message = reminder.message, let recipient = reminder.recipient {
+                if reminder.type == "text", MFMessageComposeViewController.canSendText() {
+                    let messageController = MFMessageComposeViewController()
+                    messageController.body = message
+                    messageController.recipients = [recipient]
+                    messageController.messageComposeDelegate = self
+                    present(messageController, animated: true, completion: nil)
+                } else if reminder.type == "email", MFMailComposeViewController.canSendMail() {
+                    let mailController = MFMailComposeViewController()
+                    mailController.mailComposeDelegate = self
+                    
+                    mailController.setToRecipients([recipient])
+                    mailController.setMessageBody(message, isHTML: false)
+                    
+                    if let subject = reminder.subject {
+                        mailController.setSubject(subject)
+                    }
+                    
+                    present(mailController, animated: true, completion: nil)
+                }
+            }
         }
     }
     
