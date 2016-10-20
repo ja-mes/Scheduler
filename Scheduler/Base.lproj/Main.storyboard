@@ -48,7 +48,7 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bjP-Ae-dEA">
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bjP-Ae-dEA">
                                                     <subviews>
                                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="past_due" translatesAutoresizingMaskIntoConstraints="NO" id="ZKD-V0-kJD"/>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAST DUE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-YB-frA">
@@ -76,6 +76,7 @@
                                         <connections>
                                             <outlet property="dateLbl" destination="PeK-1d-HBB" id="EX2-Hf-Ilg"/>
                                             <outlet property="icon" destination="sHH-dP-73r" id="sga-rC-Gw8"/>
+                                            <outlet property="pastDue" destination="bjP-Ae-dEA" id="8vo-XQ-fKN"/>
                                             <outlet property="recipientLbl" destination="yY8-Th-vrm" id="WLc-bs-bzt"/>
                                         </connections>
                                     </tableViewCell>

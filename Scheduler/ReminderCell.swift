@@ -13,6 +13,7 @@ class ReminderCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var recipientLbl: UILabel!
+    @IBOutlet weak var pastDue: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
