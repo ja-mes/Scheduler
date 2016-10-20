@@ -107,7 +107,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if reminder == nil {
+        if let reminder = reminder {
+            if let entryDate = reminder.entryDate {
+                setDateTextColor(date: entryDate)
+            }
+        } else {
             recipientField.becomeFirstResponder()
         }
     }
@@ -342,8 +346,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short
         dateField.text = dateFormatter.string(from: date)
-        
-        setDateTextColor(date: date)
     }
     
     func resetFields() {
@@ -359,12 +361,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     func setDateTextColor(date: Date) {
-        
         if Date().compare(date) == ComparisonResult.orderedDescending {
             dateField.textColor = UIColor.red
         } else {
             dateField.textColor = UIColor.black
         }
+        
     }
-
+    
 }
