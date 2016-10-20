@@ -196,7 +196,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     // MARK: message view
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        print("finish")
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -243,10 +243,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBAction func sendNowPressed(_ sender: UIButton) {
         if MFMessageComposeViewController.canSendText(), let message = reminder?.message, let recipient = reminder?.recipient {
             let messageController = MFMessageComposeViewController()
-            messageController.body = reminder?.message
+            messageController.body = message
             messageController.recipients = [recipient]
             messageController.messageComposeDelegate = self
-            
+            present(messageController, animated: true, completion: nil)
         }
     }
     
