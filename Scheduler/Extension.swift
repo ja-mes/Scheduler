@@ -25,3 +25,10 @@ extension String {
         }
     }
 }
+
+extension Date {
+    func truncateSeconds() -> Date {
+        let roundedTime = floor(self.timeIntervalSinceReferenceDate / 60) * 60
+        return Date(timeIntervalSinceReferenceDate: roundedTime)
+    }
+}
