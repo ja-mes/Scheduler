@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import MessageUI
 
-class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate {
 
     // MARK: properties
     
@@ -194,6 +194,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         shouldEnableSave()
     }
     
+    // MARK: message view
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        print("finish")
+    }
+    
     
     // MARK: IBActions
     @IBAction func editingBegan(_ sender: AnyObject) {
@@ -236,7 +241,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func sendNowPressed(_ sender: UIButton) {
-        
+        if MFMessageComposeViewController.canSendText(), let message = reminder?.message, let recipient = reminder?.recipient {
+            let messageController = MFMessageComposeViewController()
+            messageController.body = reminder?.message
+            messageController.recipients = [recipient]
+            messageController.messageComposeDelegate = self
+            
+        }
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
