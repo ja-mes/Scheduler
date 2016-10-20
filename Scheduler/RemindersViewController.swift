@@ -31,6 +31,8 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidAppear(_ animated: Bool) {
         checkShowIntro()
+        
+        checkPastDues()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -158,6 +160,18 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
                 tableView.isHidden = false
                 intro.isHidden = true
                 view.backgroundColor = UIColor.white
+            }
+        }
+    }
+    
+    func checkPastDues() {
+        if let objects = controller.fetchedObjects {
+            let currentDate = Date()
+            
+            for i in objects {
+                if let entryDate = i.entryDate, currentDate.compare(entryDate) == ComparisonResult.orderedDescending {
+                    tableView.reloadData()
+                }
             }
         }
     }
