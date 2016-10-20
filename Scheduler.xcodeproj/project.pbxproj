@@ -20,6 +20,7 @@
 		9B3D29C71DB0048B00CB7549 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D29C61DB0048B00CB7549 /* Validator.swift */; };
 		9B832C111DB8226700265F72 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C0F1DB8226700265F72 /* Reminder+CoreDataClass.swift */; };
 		9B832C121DB8226700265F72 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C101DB8226700265F72 /* Reminder+CoreDataProperties.swift */; };
+		9B832C371DB93C9400265F72 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C361DB93C9400265F72 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9B3D29C61DB0048B00CB7549 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		9B832C0F1DB8226700265F72 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B832C101DB8226700265F72 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9B832C361DB93C9400265F72 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			children = (
 				9B3D29BD1DAEE56D00CB7549 /* Constants.swift */,
 				9B3D29C61DB0048B00CB7549 /* Validator.swift */,
+				9B832C361DB93C9400265F72 /* Extension.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				9B31DCFD1DAD644500BDB488 /* Scheduler.xcdatamodeld in Sources */,
 				9B3D29C01DAEF18B00CB7549 /* ReminderCell.swift in Sources */,
 				9B3D29C71DB0048B00CB7549 /* Validator.swift in Sources */,
+				9B832C371DB93C9400265F72 /* Extension.swift in Sources */,
 				9B3D29BE1DAEE56D00CB7549 /* Constants.swift in Sources */,
 				9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */,
 				9B31DD111DAD8CBD00BDB488 /* AddTableViewController.swift in Sources */,
