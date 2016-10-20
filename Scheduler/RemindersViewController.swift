@@ -189,6 +189,12 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             formatter.timeStyle = .short
             
             cell.dateLbl.text = formatter.string(from: date)
+            
+            if Date().compare(date) == ComparisonResult.orderedDescending {
+                cell.pastDue.isHidden = false
+            } else {
+                cell.pastDue.isHidden = true
+            }
         }
     }
 
