@@ -10,7 +10,7 @@
         <!--Reminders-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RemindersViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="RemindersViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,11 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z8U-hp-cmd">
+                            <tableView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z8U-hp-cmd">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="94" id="ZKH-T9-AdZ" customClass="ReminderCell" customModule="Scheduler" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="94"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZKH-T9-AdZ" id="BHk-Ov-Hl3">
                                             <frame key="frameInset" width="342" height="93"/>
@@ -110,7 +110,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="z8U-hp-cmd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="45" id="1cx-yT-FbA"/>
                             <constraint firstAttribute="trailing" secondItem="z8U-hp-cmd" secondAttribute="trailing" id="546-2l-Zvc"/>
                             <constraint firstItem="z8U-hp-cmd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="579-xT-E46"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="z8U-hp-cmd" secondAttribute="bottom" id="9id-aS-5ou"/>
@@ -118,6 +117,7 @@
                             <constraint firstItem="xBg-fk-hvz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="KWa-Rj-Csl"/>
                             <constraint firstItem="xBg-fk-hvz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="MeC-jQ-58e"/>
                             <constraint firstItem="xBg-fk-hvz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XWw-6e-4VF"/>
+                            <constraint firstItem="z8U-hp-cmd" firstAttribute="top" secondItem="xBg-fk-hvz" secondAttribute="bottom" constant="10" id="aeI-6G-5uF"/>
                             <constraint firstItem="rw1-1m-niy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jmC-Ad-CWe"/>
                         </constraints>
                     </view>
