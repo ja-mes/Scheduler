@@ -211,6 +211,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 reminder.sent = true
                 ad.saveContext()
                 
+                
+                
+                
                 dismiss(animated: true, completion: nil)
                 _ = navigationController?.popViewController(animated: true)
             }
@@ -281,10 +284,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func reschedulePressed(_ sender: UIButton) {
-        let reminderInstance = reminder
-        reminder = nil
-        save(saveButton)
-        reminder = reminderInstance
+        copyReminder()
         
         _ = navigationController?.popViewController(animated: true)
     }
@@ -387,6 +387,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 }
             }
         }
+    }
+    
+    func copyReminder() {
+        let reminderInstance = reminder
+        reminder = nil
+        save(saveButton)
+        reminder = reminderInstance
     }
     
     func shouldEnableSave() {
