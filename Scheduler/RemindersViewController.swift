@@ -185,6 +185,14 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     func fetchReminders() {
         let fetchRequest: NSFetchRequest<Reminder> = Reminder.fetchRequest()
         
+        var displaySent = false
+        
+        if segment.selectedSegmentIndex == 1 {
+            displaySent = true
+        }
+        
+        fetchRequest.predicate = NSPredicate(format: "sent == %@", displaySent as CVarArg)
+        
         // sort descriptors
         let recipientSort = NSSortDescriptor(key: "recipient", ascending: true)
         fetchRequest.sortDescriptors = [recipientSort]
