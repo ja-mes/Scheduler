@@ -151,6 +151,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         if section == 0 && reminder == nil {
             return 0
         }
+        else if section == 0 && reminder?.sent == true {
+            return 2
+        }
+        else if section == 0 {
+            return 1
+        }
         else if section == 1 {
             return 4
         }

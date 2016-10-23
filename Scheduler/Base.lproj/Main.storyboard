@@ -153,8 +153,31 @@
                         <sections>
                             <tableViewSection id="3Tg-tf-Bds">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oCI-Db-Bw4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lY1-0k-ro0">
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lY1-0k-ro0" id="S5n-9H-bgn">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RR-2o-xpk">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Send Now"/>
+                                                    <connections>
+                                                        <action selector="sendNowPressed:" destination="3UF-l1-ghK" eventType="touchUpInside" id="rxQ-bn-QuG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="4RR-2o-xpk" secondAttribute="trailing" id="OKb-8N-HAV"/>
+                                                <constraint firstItem="4RR-2o-xpk" firstAttribute="leading" secondItem="S5n-9H-bgn" secondAttribute="leading" constant="15" id="W1U-fV-kIt"/>
+                                                <constraint firstAttribute="bottom" secondItem="4RR-2o-xpk" secondAttribute="bottom" id="af7-Qy-hpV"/>
+                                                <constraint firstItem="4RR-2o-xpk" firstAttribute="top" secondItem="S5n-9H-bgn" secondAttribute="top" id="sfv-vh-DUy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oCI-Db-Bw4">
+                                        <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCI-Db-Bw4" id="bOu-uR-Wgk">
                                             <frame key="frameInset" width="375" height="43"/>
@@ -175,29 +198,6 @@
                                                 <constraint firstAttribute="bottom" secondItem="LEb-ph-gyn" secondAttribute="bottom" id="Nsk-sF-dnd"/>
                                                 <constraint firstItem="LEb-ph-gyn" firstAttribute="leading" secondItem="bOu-uR-Wgk" secondAttribute="leading" constant="15" id="Tvy-0z-J1G"/>
                                                 <constraint firstAttribute="trailing" secondItem="LEb-ph-gyn" secondAttribute="trailing" id="u08-Yg-5Of"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lY1-0k-ro0">
-                                        <rect key="frame" x="0.0" y="143" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lY1-0k-ro0" id="S5n-9H-bgn">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RR-2o-xpk">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Send Now"/>
-                                                    <connections>
-                                                        <action selector="sendNowPressed:" destination="3UF-l1-ghK" eventType="touchUpInside" id="rxQ-bn-QuG"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="4RR-2o-xpk" secondAttribute="trailing" id="OKb-8N-HAV"/>
-                                                <constraint firstItem="4RR-2o-xpk" firstAttribute="leading" secondItem="S5n-9H-bgn" secondAttribute="leading" constant="15" id="W1U-fV-kIt"/>
-                                                <constraint firstAttribute="bottom" secondItem="4RR-2o-xpk" secondAttribute="bottom" id="af7-Qy-hpV"/>
-                                                <constraint firstItem="4RR-2o-xpk" firstAttribute="top" secondItem="S5n-9H-bgn" secondAttribute="top" id="sfv-vh-DUy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
