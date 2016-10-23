@@ -285,6 +285,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         reminder = nil
         save(saveButton)
         reminder = reminderInstance
+        
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
