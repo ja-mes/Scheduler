@@ -213,25 +213,31 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 
                 var newEntryDate: Date!
                 
-                if let interval = reminder.repeatInterval {
+                if let interval = reminder.repeatInterval, let date = reminder.entryDate {
                     switch interval {
                     case REPEAT_INTERVALS[1]: // Daily
-                        newEntryDate = NSCalendar.current.date(byAdding: .day, value: 1, to: newEntryDate)
+                        newEntryDate = NSCalendar.current.date(byAdding: .day, value: 1, to: date)
                         break
                     case REPEAT_INTERVALS[2]: // Weekly
-                        newEntryDate = NSCalendar.current.date(byAdding: .day, value: 7, to: newEntryDate)
+                        newEntryDate = NSCalendar.current.date(byAdding: .day, value: 7, to: date)
                         break
                     case REPEAT_INTERVALS[3]: // Monthly
-                        newEntryDate = NSCalendar.current.date(byAdding: .month, value: 1, to: newEntryDate)
+                        newEntryDate = NSCalendar.current.date(byAdding: .month, value: 1, to: date)
                         break
                     case REPEAT_INTERVALS[4]: // Yearly
-                        newEntryDate = NSCalendar.current.date(byAdding: .year, value: 1, to: newEntryDate)
+                        newEntryDate = NSCalendar.current.date(byAdding: .year, value: 1, to: date)
                         break
                     default:
+                        newEntryDate = date
                         break
                     }
                 }
                 
+//                let currentEntryDate = reminder.entryDate
+//                
+//                reminder.entryDate = newEntryDate
+//                copyReminder()
+//                reminder.entryDate = currentEntryDate
                 
                 dismiss(animated: true, completion: nil)
                 _ = navigationController?.popViewController(animated: true)
@@ -303,12 +309,19 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func reschedulePressed(_ sender: UIButton) {
-        copyReminder()
+        save(reminder: nil)
         
         _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
+        save(reminder: reminder)
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    
+    // MARK: func
+    func save(reminder: Reminder?) {
         let item: Reminder!
         
         if let reminder = reminder {
@@ -319,7 +332,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         }
         
         let validator = Validator()
-
+        
         if let recipient = recipientField.text, recipient.isEmpty == false, let message = messageField.text, message.isEmpty == false {
             if validator.validEmail(value: recipient) {
                 item.type = "email"
@@ -339,7 +352,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
             ad.saveContext()
             
-
+            
             scheduleNotification(reminder: item)
         } else {
             if item.objectID.isTemporaryID {
@@ -349,13 +362,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
-        _ = navigationController?.popViewController(animated: true)
-        
     }
     
-    
-    // MARK: func
     func scheduleNotification(reminder: Reminder) {
         let content = UNMutableNotificationContent()
         
@@ -406,13 +414,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 }
             }
         }
-    }
-    
-    func copyReminder() {
-        let reminderInstance = reminder
-        reminder = nil
-        save(saveButton)
-        reminder = reminderInstance
     }
     
     func shouldEnableSave() {
