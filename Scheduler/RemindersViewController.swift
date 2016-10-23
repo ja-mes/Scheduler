@@ -31,7 +31,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        checkShowIntro()
+        //checkShowIntro()
         
         checkPastDues()
     }

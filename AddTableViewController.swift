@@ -202,17 +202,30 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         if result == .sent {
             if let reminder = reminder {
+                reminder.sent = true
+                ad.saveContext()
                 
+                dismiss(animated: true, completion: nil)
+                _ = navigationController?.popViewController(animated: true)
             }
-        } else if result == .cancelled {
-            print("cancelled")
-        } else if result == .failed {
-            print("failed")
+        } else {
+            dismiss(animated: true, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if result == .sent {
+            if let reminder = reminder {
+                reminder.sent = true
+                ad.saveContext()
+                
+                dismiss(animated: true, completion: nil)
+                _ = navigationController?.popViewController(animated: true)
+            }
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
