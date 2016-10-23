@@ -149,6 +149,8 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func segmentChanged(_ sender: AnyObject) {
+        fetchReminders()
+        tableView.reloadData()
     }
 
     
