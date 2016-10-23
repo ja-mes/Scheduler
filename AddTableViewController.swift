@@ -11,7 +11,7 @@ import UserNotifications
 import MessageUI
 
 class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
-
+    
     // MARK: properties
     
     // outlets
@@ -19,7 +19,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var messageField: UITextView!
     @IBOutlet weak var subjectField: UITextField!
-
+    
     @IBOutlet weak var recipientCell: UITableViewCell!
     @IBOutlet weak var recipientField: UITextField!
     
@@ -82,7 +82,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 subjectField.text = reminder.subject
                 isValidEmail = true
             }
-
+            
             
             if let entryDate = reminder.entryDate {
                 date = entryDate
@@ -99,7 +99,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                     picker.selectRow(index, inComponent: 0, animated: true)
                 }
             }
-
+            
         } else {
             displayDate(date: date)
         }
@@ -170,7 +170,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         } else if section == 2 {
             return 44
         }
-    
+        
         return 0
     }
     
@@ -211,8 +211,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 reminder.sent = true
                 ad.saveContext()
                 
-                
-                
+                if let interval = reminder.repeatInterval {
+                    for i in REPEAT_INTERVALS {
+                        if i == interval {
+                            
+                        }
+                    }
+                }
                 
                 dismiss(animated: true, completion: nil)
                 _ = navigationController?.popViewController(animated: true)
