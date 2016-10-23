@@ -407,7 +407,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     func setDateTextColor(date: Date) {
-        if Date().compare(date) == ComparisonResult.orderedDescending {
+        if Date().compare(date) == ComparisonResult.orderedDescending && reminder?.sent == false {
             dateField.textColor = UIColor.red
         } else {
             dateField.textColor = UIColor.black
