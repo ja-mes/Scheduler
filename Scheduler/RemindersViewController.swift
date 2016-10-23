@@ -16,6 +16,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: vars
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var intro: UIStackView!
+    @IBOutlet weak var segment: UISegmentedControl!
     
     var controller: NSFetchedResultsController<Reminder>!
     
@@ -145,6 +146,9 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
     // MARK: IBActions
     @IBAction func addTapped(_ sender: AnyObject) {
         performSegue(withIdentifier: "ReminderDetail", sender: nil)
+    }
+    
+    @IBAction func segmentChanged(_ sender: AnyObject) {
     }
 
     

@@ -106,6 +106,9 @@
                                     <segment title="Upcomming"/>
                                     <segment title="Sent"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="g2T-kS-opa"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,6 +133,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="intro" destination="rw1-1m-niy" id="UrQ-kO-1Qk"/>
+                        <outlet property="segment" destination="xBg-fk-hvz" id="Cac-BG-OAv"/>
                         <outlet property="tableView" destination="z8U-hp-cmd" id="t5y-db-rR6"/>
                         <segue destination="3UF-l1-ghK" kind="show" identifier="ReminderDetail" id="3h0-fs-6Mp"/>
                     </connections>
