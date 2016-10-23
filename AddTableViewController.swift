@@ -280,6 +280,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
        sendMessage()
     }
     
+    @IBAction func reschedulePressed(_ sender: UIButton) {
+        let reminderInstance = reminder
+        reminder = nil
+        save(saveButton)
+        reminder = reminderInstance
+    }
+    
     @IBAction func save(_ sender: UIBarButtonItem) {
         let item: Reminder!
         

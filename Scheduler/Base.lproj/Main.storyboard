@@ -189,7 +189,7 @@
                                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="sendNowPressed:" destination="3UF-l1-ghK" eventType="touchUpInside" id="FYV-9B-sec"/>
+                                                        <action selector="reschedulePressed:" destination="3UF-l1-ghK" eventType="touchUpInside" id="Iht-DQ-iTZ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
