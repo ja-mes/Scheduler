@@ -1,9 +1,9 @@
 //
 //  Reminder+CoreDataProperties.swift
-//  
+//  Scheduler
 //
-//  Created by James Brown on 10/19/16.
-//
+//  Created by James Brown on 10/23/16.
+//  Copyright © 2016 James Brown. All rights reserved.
 //
 
 import Foundation
@@ -23,5 +23,6 @@ extension Reminder {
     @NSManaged public var type: String?
     @NSManaged public var subject: String?
     @NSManaged public var id: String?
+    @NSManaged public var sent: Bool
 
 }

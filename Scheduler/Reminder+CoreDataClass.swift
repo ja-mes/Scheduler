@@ -1,9 +1,9 @@
 //
 //  Reminder+CoreDataClass.swift
-//  
+//  Scheduler
 //
-//  Created by James Brown on 10/19/16.
-//
+//  Created by James Brown on 10/23/16.
+//  Copyright © 2016 James Brown. All rights reserved.
 //
 
 import Foundation
