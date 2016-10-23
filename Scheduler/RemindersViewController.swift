@@ -227,7 +227,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             
             cell.dateLbl.text = formatter.string(from: date)
             
-            if Date().compare(date) == ComparisonResult.orderedDescending {
+            if Date().compare(date) == ComparisonResult.orderedDescending && segment.selectedSegmentIndex == 0 {
                 cell.pastDue.isHidden = false
             } else {
                 cell.pastDue.isHidden = true
