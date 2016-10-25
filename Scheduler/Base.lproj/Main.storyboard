@@ -293,7 +293,7 @@
                                         <rect key="frame" x="0.0" y="355" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCm-K3-lDj" id="acD-gO-nqh">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2Z-MB-5NQ">
@@ -301,7 +301,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxo-zm-Ani">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxo-zm-Ani">
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
@@ -310,13 +310,22 @@
                                                         <action selector="editingChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="fqy-uH-Zdf"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-xv-o3u">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="rsd-PC-Rzi"/>
+                                                    </constraints>
+                                                    <state key="normal" image="plus_circle"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="v2Z-MB-5NQ" firstAttribute="centerY" secondItem="acD-gO-nqh" secondAttribute="centerY" id="1wV-vj-KJw"/>
+                                                <constraint firstItem="sFi-xv-o3u" firstAttribute="leading" secondItem="Lxo-zm-Ani" secondAttribute="trailing" id="3B6-uF-ke0"/>
+                                                <constraint firstAttribute="trailing" secondItem="sFi-xv-o3u" secondAttribute="trailing" id="3ae-wS-0zO"/>
                                                 <constraint firstItem="Lxo-zm-Ani" firstAttribute="leading" secondItem="v2Z-MB-5NQ" secondAttribute="trailing" constant="10" id="PEe-dE-JBN"/>
+                                                <constraint firstAttribute="bottom" secondItem="sFi-xv-o3u" secondAttribute="bottom" id="RXd-ne-UKe"/>
+                                                <constraint firstItem="sFi-xv-o3u" firstAttribute="top" secondItem="acD-gO-nqh" secondAttribute="top" id="ad0-m7-KOe"/>
                                                 <constraint firstItem="Lxo-zm-Ani" firstAttribute="top" secondItem="acD-gO-nqh" secondAttribute="top" id="hIx-l0-9sz"/>
                                                 <constraint firstItem="v2Z-MB-5NQ" firstAttribute="leading" secondItem="acD-gO-nqh" secondAttribute="leading" constant="15" id="rhR-Wr-S2a"/>
-                                                <constraint firstAttribute="trailing" secondItem="Lxo-zm-Ani" secondAttribute="trailing" constant="15" id="wQ7-mj-whY"/>
                                                 <constraint firstAttribute="bottom" secondItem="Lxo-zm-Ani" secondAttribute="bottom" id="xJm-ot-udP"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -326,7 +335,7 @@
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="455" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="456" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
                                             <frame key="frameInset" width="375" height="279.5"/>
@@ -406,5 +415,6 @@
     <resources>
         <image name="messages_chat" width="20" height="20"/>
         <image name="past_due" width="21" height="27"/>
+        <image name="plus_circle" width="20" height="20"/>
     </resources>
 </document>
