@@ -234,6 +234,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
         if contactProperty.key == "phoneNumbers", let value = contactProperty.value as? CNPhoneNumber {
            recipientField.text = value.stringValue
+            
+            isValidEmail = false
+            tableView.beginUpdates()
+            tableView.endUpdates()
         } else if contactProperty.key == "emailAddresses", let value = contactProperty.value as? String {
             recipientField.text = value
             
