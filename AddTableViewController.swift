@@ -285,6 +285,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         _ = navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func addContactPressed(_ sender: UIButton) {
+        
+    }
+    
     
     // MARK: func
     func save(reminder: Reminder?) {

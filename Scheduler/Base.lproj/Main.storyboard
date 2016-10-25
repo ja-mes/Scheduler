@@ -315,6 +315,9 @@
                                                         <constraint firstAttribute="width" constant="42" id="rsd-PC-Rzi"/>
                                                     </constraints>
                                                     <state key="normal" image="plus_circle"/>
+                                                    <connections>
+                                                        <action selector="addContactPressed:" destination="3UF-l1-ghK" eventType="touchUpInside" id="lYF-jS-AbK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -335,7 +338,7 @@
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="456" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="455" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
                                             <frame key="frameInset" width="375" height="279.5"/>
