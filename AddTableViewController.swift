@@ -9,9 +9,9 @@
 import UIKit
 import UserNotifications
 import MessageUI
-import Contacts
+import ContactsUI
 
-class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, CNContactPickerDelegate {
 
     // MARK: properties
     
@@ -229,6 +229,17 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: contact picker
+//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+//        
+//    }
+//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+//        
+//    }
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
+        
+    }
+    
     
     // MARK: IBAction
     @IBAction func editingBegan(_ sender: AnyObject) {
@@ -287,6 +298,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     @IBAction func addContactPressed(_ sender: UIButton) {
         accessContacts()
+        
+        let contactsPicker = CNContactPickerViewController()
+        
+        contactsPicker.delegate = self
+        //contactsPicker.displayedPropertyKeys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactEmailAddressesKey, CNContactBirthdayKey, CNContactImageDataKey]
+        
+        present(contactsPicker, animated: true, completion: nil)
     }
     
     
@@ -422,7 +440,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     func accessContacts() {
-        var contactStore = CNContactStore()
+        let contactStore = CNContactStore()
         
         contactStore.requestAccess(for: .contacts) { (access, error) in
             if access {
