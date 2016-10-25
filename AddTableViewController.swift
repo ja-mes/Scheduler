@@ -229,9 +229,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                         date = entryDate
                         break
                     }
+                    
+                    if interval != REPEAT_INTERVALS[0] {
+                        save(reminder: nil)
+                    }
                 }
-                
-                save(reminder: nil)
                 
                 dismiss(animated: true, completion: nil)
                 _ = navigationController?.popViewController(animated: true)
@@ -386,12 +388,15 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     func sendMessage() {
         if let reminder = reminder {
+            save(reminder: reminder)
+            
             if let message = reminder.message, let recipient = reminder.recipient {
                 if reminder.type == "text", MFMessageComposeViewController.canSendText() {
                     let messageController = MFMessageComposeViewController()
                     messageController.body = message
                     messageController.recipients = [recipient]
                     messageController.messageComposeDelegate = self
+                    
                     present(messageController, animated: true, completion: nil)
                 } else if reminder.type == "email", MFMailComposeViewController.canSendMail() {
                     let mailController = MFMailComposeViewController()
