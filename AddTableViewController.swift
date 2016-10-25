@@ -9,6 +9,7 @@
 import UIKit
 import UserNotifications
 import MessageUI
+import Contacts
 
 class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
 
@@ -50,6 +51,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
         }
         
+        accessContacts()
         
         // Message field
         messageField.delegate = self
@@ -418,6 +420,18 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 }
             }
             
+        }
+    }
+    
+    func accessContacts() {
+        var contactStore = CNContactStore()
+        
+        contactStore.requestAccess(for: .contacts) { (access, error) in
+            if access {
+                // access has been granted
+            } else {
+                
+            }
         }
     }
     
