@@ -51,8 +51,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
         }
         
-        accessContacts()
-        
         // Message field
         messageField.delegate = self
         
@@ -288,7 +286,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func addContactPressed(_ sender: UIButton) {
-        
+        accessContacts()
     }
     
     
