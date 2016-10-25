@@ -236,6 +236,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
            recipientField.text = value.stringValue
         } else if contactProperty.key == "emailAddresses", let value = contactProperty.value as? String {
             recipientField.text = value
+            
+            isValidEmail = true
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }
     }
     
@@ -302,7 +306,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         contactsPicker.delegate = self
         contactsPicker.displayedPropertyKeys = [CNContactPhoneNumbersKey, CNContactEmailAddressesKey]
-        //contactsPicker.displayedPropertyKeys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactEmailAddressesKey, CNContactBirthdayKey, CNContactImageDataKey]
         
         present(contactsPicker, animated: true, completion: nil)
     }
