@@ -237,10 +237,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         } else if contactProperty.key == "emailAddresses", let value = contactProperty.value as? String {
             recipientField.text = value
             
+            
             isValidEmail = true
             tableView.beginUpdates()
             tableView.endUpdates()
         }
+        
+        shouldEnableSave()
     }
     
     
