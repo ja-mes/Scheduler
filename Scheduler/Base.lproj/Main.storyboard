@@ -304,7 +304,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxo-zm-Ani">
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="c0i-E4-Feq"/>
                                                         <action selector="editingChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="fqy-uH-Zdf"/>
