@@ -207,37 +207,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: messages
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         if result == .sent {
-            if let reminder = reminder {
-                reminder.sent = true
-                ad.saveContext()
-                
-                if let interval = reminder.repeatInterval, let entryDate = reminder.entryDate {
-                    switch interval {
-                    case REPEAT_INTERVALS[1]: // Daily
-                        date = NSCalendar.current.date(byAdding: .day, value: 1, to: entryDate)!
-                        break
-                    case REPEAT_INTERVALS[2]: // Weekly
-                        date = NSCalendar.current.date(byAdding: .day, value: 7, to: entryDate)!
-                        break
-                    case REPEAT_INTERVALS[3]: // Monthly
-                        date = NSCalendar.current.date(byAdding: .month, value: 1, to: entryDate)!
-                        break
-                    case REPEAT_INTERVALS[4]: // Yearly
-                        date = NSCalendar.current.date(byAdding: .year, value: 1, to: entryDate)!
-                        break
-                    default:
-                        date = entryDate
-                        break
-                    }
-                    
-                    if interval != REPEAT_INTERVALS[0] {
-                        save(reminder: nil)
-                    }
-                }
-                
-                dismiss(animated: true, completion: nil)
-                _ = navigationController?.popViewController(animated: true)
-            }
+            rescheduleMessage()
+            
+            dismiss(animated: true, completion: nil)
+            _ = navigationController?.popViewController(animated: true)
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -245,13 +218,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if result == .sent {
-            if let reminder = reminder {
-                reminder.sent = true
-                ad.saveContext()
-                
-                dismiss(animated: true, completion: nil)
-                _ = navigationController?.popViewController(animated: true)
-            }
+            rescheduleMessage()
+            
+            dismiss(animated: true, completion: nil)
+            _ = navigationController?.popViewController(animated: true)
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -412,6 +382,38 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                     present(mailController, animated: true, completion: nil)
                 }
             }
+        }
+    }
+    
+    func rescheduleMessage() {
+        if let reminder = reminder {
+            reminder.sent = true
+            ad.saveContext()
+            
+            if let interval = reminder.repeatInterval, let entryDate = reminder.entryDate {
+                switch interval {
+                case REPEAT_INTERVALS[1]: // Daily
+                    date = NSCalendar.current.date(byAdding: .day, value: 1, to: entryDate)!
+                    break
+                case REPEAT_INTERVALS[2]: // Weekly
+                    date = NSCalendar.current.date(byAdding: .day, value: 7, to: entryDate)!
+                    break
+                case REPEAT_INTERVALS[3]: // Monthly
+                    date = NSCalendar.current.date(byAdding: .month, value: 1, to: entryDate)!
+                    break
+                case REPEAT_INTERVALS[4]: // Yearly
+                    date = NSCalendar.current.date(byAdding: .year, value: 1, to: entryDate)!
+                    break
+                default:
+                    date = entryDate
+                    break
+                }
+                
+                if interval != REPEAT_INTERVALS[0] {
+                    save(reminder: nil)
+                }
+            }
+            
         }
     }
     
