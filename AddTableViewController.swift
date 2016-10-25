@@ -211,33 +211,27 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 reminder.sent = true
                 ad.saveContext()
                 
-                var newEntryDate: Date!
-                
-                if let interval = reminder.repeatInterval, let date = reminder.entryDate {
+                if let interval = reminder.repeatInterval, let entryDate = reminder.entryDate {
                     switch interval {
                     case REPEAT_INTERVALS[1]: // Daily
-                        newEntryDate = NSCalendar.current.date(byAdding: .day, value: 1, to: date)
+                        date = NSCalendar.current.date(byAdding: .day, value: 1, to: entryDate)!
                         break
                     case REPEAT_INTERVALS[2]: // Weekly
-                        newEntryDate = NSCalendar.current.date(byAdding: .day, value: 7, to: date)
+                        date = NSCalendar.current.date(byAdding: .day, value: 7, to: entryDate)!
                         break
                     case REPEAT_INTERVALS[3]: // Monthly
-                        newEntryDate = NSCalendar.current.date(byAdding: .month, value: 1, to: date)
+                        date = NSCalendar.current.date(byAdding: .month, value: 1, to: entryDate)!
                         break
                     case REPEAT_INTERVALS[4]: // Yearly
-                        newEntryDate = NSCalendar.current.date(byAdding: .year, value: 1, to: date)
+                        date = NSCalendar.current.date(byAdding: .year, value: 1, to: entryDate)!
                         break
                     default:
-                        newEntryDate = date
+                        date = entryDate
                         break
                     }
                 }
                 
-//                let currentEntryDate = reminder.entryDate
-//                
-//                reminder.entryDate = newEntryDate
-//                copyReminder()
-//                reminder.entryDate = currentEntryDate
+                save(reminder: nil)
                 
                 dismiss(animated: true, completion: nil)
                 _ = navigationController?.popViewController(animated: true)
@@ -264,7 +258,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     
-    // MARK: IBActions
+    // MARK: IBAction
     @IBAction func editingBegan(_ sender: AnyObject) {
         resetFields()
     }
