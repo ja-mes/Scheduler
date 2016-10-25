@@ -230,14 +230,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     // MARK: contact picker
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-//        
-//    }
-//    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-//        
-//    }
+
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
-        
+        if contactProperty.key == "phoneNumbers", let value = contactProperty.value as? CNPhoneNumber {
+           recipientField.text = value.stringValue
+        } else if contactProperty.key == "emailAddresses", let value = contactProperty.value as? String {
+            recipientField.text = value
+        }
     }
     
     
@@ -302,6 +301,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         let contactsPicker = CNContactPickerViewController()
         
         contactsPicker.delegate = self
+        contactsPicker.displayedPropertyKeys = [CNContactPhoneNumbersKey, CNContactEmailAddressesKey]
         //contactsPicker.displayedPropertyKeys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactEmailAddressesKey, CNContactBirthdayKey, CNContactImageDataKey]
         
         present(contactsPicker, animated: true, completion: nil)
