@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1DD131D5D091675DC68BBA10 /* Pods_Scheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450663CE2331422B53B2166C /* Pods_Scheduler.framework */; };
-		9B17D5471DC14D29008CC640 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B17D5461DC14D29008CC640 /* Manager.swift */; };
 		9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DCF41DAD644500BDB488 /* AppDelegate.swift */; };
 		9B31DCFA1DAD644500BDB488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B31DCF81DAD644500BDB488 /* Main.storyboard */; };
 		9B31DCFD1DAD644500BDB488 /* Scheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B31DCFB1DAD644500BDB488 /* Scheduler.xcdatamodeld */; };
@@ -28,7 +27,6 @@
 		05E956612466516983F5CE15 /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		10C7256EF116B8A5A6BBC2D8 /* Pods-Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.release.xcconfig"; sourceTree = "<group>"; };
 		450663CE2331422B53B2166C /* Pods_Scheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Scheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B17D5461DC14D29008CC640 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		9B31DCF11DAD644500BDB488 /* Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B31DCF41DAD644500BDB488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B31DCF91DAD644500BDB488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 			children = (
 				9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */,
 				9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */,
-				9B17D5461DC14D29008CC640 /* Manager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,7 +276,6 @@
 				9B832C371DB93C9400265F72 /* Extension.swift in Sources */,
 				9B3D29BE1DAEE56D00CB7549 /* Constants.swift in Sources */,
 				9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */,
-				9B17D5471DC14D29008CC640 /* Manager.swift in Sources */,
 				9B31DD111DAD8CBD00BDB488 /* AddTableViewController.swift in Sources */,
 				9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */,
 			);
