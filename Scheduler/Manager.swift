@@ -67,4 +67,5 @@ class Manager {
         
         return false
     }
+    
 }

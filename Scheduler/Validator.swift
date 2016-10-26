@@ -23,4 +23,12 @@ class Validator {
         let result =  phoneTest.evaluate(with: value)
         return result
     }
+    
+    func messageType(message: String) -> String {
+        if validEmail(value: message) {
+            return "email"
+        } else {
+            return "text"
+        }
+    }
 }
