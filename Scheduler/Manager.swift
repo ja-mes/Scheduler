@@ -9,5 +9,53 @@
 import Foundation
 
 class Manager {
+    var _reminder: Reminder?
     
+    var reminder: Reminder? {
+        return _reminder
+    }
+    
+    init(reminder: Reminder?) {
+        _reminder = reminder
+    }
+    
+    func save() {
+        let item: Reminder!
+        
+        if let reminder = reminder {
+            item = reminder
+        } else {
+            item = Reminder(context: context)
+            item.id = NSUUID().uuidString
+        }
+        
+        let validator = Validator()
+        
+        if let recipient = recipientField.text, recipient.isEmpty == false, let message = messageField.text, message.isEmpty == false {
+            if validator.validEmail(value: recipient) {
+                item.type = "email"
+                
+                if subjectField.text?.isEmpty == false {
+                    item.subject = subjectField.text
+                }
+            } else {
+                item.type = "text"
+            }
+            
+            item.entryDate = date
+            item.repeatInterval = repeatInterval
+            item.recipient = recipientField.text
+            item.message = messageField.text
+            
+            
+            ad.saveContext()
+            
+            
+            scheduleNotification(reminder: item)
+        } else {
+            if item.objectID.isTemporaryID {
+                context.delete(item)
+            }
+        }
+    }
 }
