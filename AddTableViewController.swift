@@ -332,41 +332,16 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             item = Reminder(context: context)
         }
         
-        let result = item.save(self)
+        item.entryDate = date
+        item.repeatInterval = repeatInterval
+        item.recipient = recipientField.text
+        item.message = messageField.text
+        
+        item.save(self)
         
         
         
-        let validator = Validator()
-        
-        if let recipient = recipientField.text, recipient.isEmpty == false, let message = messageField.text, message.isEmpty == false {
-            if validator.validEmail(value: recipient) {
-                item.type = "email"
-                
-                if subjectField.text?.isEmpty == false {
-                    item.subject = subjectField.text
-                }
-            } else {
-                item.type = "text"
-            }
-            
-            item.entryDate = date
-            item.repeatInterval = repeatInterval
-            item.recipient = recipientField.text
-            item.message = messageField.text
-            
-            
-            ad.saveContext()
-            
-            
-            scheduleNotification(reminder: item)
-        } else {
-            if item.objectID.isTemporaryID {
-                context.delete(item)
-            }
-            let alert = UIAlertController(title: "Oops!", message: "Please fill out recipient and message fields.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
+        // scheduleNotification(reminder: item)
     }
     
     func scheduleNotification(reminder: Reminder) {
