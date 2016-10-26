@@ -48,7 +48,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        manager = Manager()
+        manager = Manager(reminder: reminder)
         
         self.navigationItem.hidesBackButton = true
         

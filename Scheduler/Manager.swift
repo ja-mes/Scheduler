@@ -31,7 +31,7 @@ class Manager {
         
         let validator = Validator()
         
-        if let recipient = recipientField.text, recipient.isEmpty == false, let message = messageField.text, message.isEmpty == false {
+        if isReminderValid() {
             if validator.validEmail(value: recipient) {
                 item.type = "email"
                 
@@ -57,5 +57,14 @@ class Manager {
                 context.delete(item)
             }
         }
+    }
+    
+    func isReminderValid() -> Bool {
+        if  let recipient = reminder?.recipient, recipient.isEmpty == false,
+            let message = reminder?.message, message.isEmpty == false {
+            return true
+        }
+        
+        return false
     }
 }
