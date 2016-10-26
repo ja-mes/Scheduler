@@ -29,8 +29,6 @@ public class Reminder: NSManagedObject {
             displayIncompleteAlert(viewController: viewController)
         }
         
-
-        
     }
     
     
@@ -49,4 +47,5 @@ public class Reminder: NSManagedObject {
         
         return false
     }
+    
 }
