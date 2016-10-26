@@ -31,8 +31,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var repeatField: UITextField!
     
     // global vars
-    var manager: Manager!
-    
     var reminder: Reminder?
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
@@ -47,9 +45,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        manager = Manager(reminder: reminder)
-        
+                
         self.navigationItem.hidesBackButton = true
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
