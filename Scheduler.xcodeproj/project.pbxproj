@@ -104,6 +104,7 @@
 		9B31DD091DAD68B200BDB488 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B3D29C61DB0048B00CB7549 /* Validator.swift */,
 				9BE8BCB31DC16172009DFC9A /* UserNotification.swift */,
 				9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */,
 				9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */,
@@ -132,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				9B3D29BD1DAEE56D00CB7549 /* Constants.swift */,
-				9B3D29C61DB0048B00CB7549 /* Validator.swift */,
 				9B832C361DB93C9400265F72 /* Extension.swift */,
 			);
 			name = Util;
