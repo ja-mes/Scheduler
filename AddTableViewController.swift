@@ -330,8 +330,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             item = reminder
         } else {
             item = Reminder(context: context)
-            item.id = NSUUID().uuidString
         }
+        
+        item.save()
         
         let validator = Validator()
         
