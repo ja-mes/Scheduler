@@ -13,7 +13,7 @@ import CoreData
 public class Reminder: NSManagedObject {
     
     func save() {
-        if let type = Validator.messageType(message: recipient)
+        type = Validator().messageType(message: recipient)
         
         ad.saveContext()
     }

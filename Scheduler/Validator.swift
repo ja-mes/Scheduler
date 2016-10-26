@@ -24,7 +24,7 @@ class Validator {
         return result
     }
     
-    func messageType(message: String?) -> String? {
+    func messageType(message: String?) -> String {
         if let message = message {
             if validEmail(value: message) {
                 return "email"
@@ -33,6 +33,6 @@ class Validator {
             }
         }
         
-        return nil
+        return "text"
     }
 }
