@@ -19,10 +19,7 @@ public class Reminder: NSManagedObject {
         
         type = Validator().messageType(message: recipient)
         
-        
-        let alert = UIAlertController(title: "Oops!", message: "Please fill out recipient and message fields.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        viewController.present(alert, animated: true, completion: nil)
+
 
         
         ad.saveContext()
@@ -31,4 +28,9 @@ public class Reminder: NSManagedObject {
     }
     
     
+    func displayIncompleteAlert(viewController: UIViewController) {
+        let alert = UIAlertController(title: "Oops!", message: "Please fill out recipient and message fields.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }
