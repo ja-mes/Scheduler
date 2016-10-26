@@ -33,7 +33,13 @@ class Manager {
         
         if isReminderValid() {
             if let messageType = Validator().messageType(message: _reminder?.recipient) {
-                    
+                if messageType == "email" {
+                    item.type = "email"
+                } else {
+                    item.type = "text"
+                }
+            } else {
+                // TODO: invalid message type
             }
             
             if validator.validEmail(value: recipient) {
