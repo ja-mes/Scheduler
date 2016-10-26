@@ -21,6 +21,8 @@ public class Reminder: NSManagedObject {
         
         if isValid() {
             ad.saveContext()
+            
+            UserNotification().schedule(self)
         } else {
             if objectID.isTemporaryID {
                 context.delete(self)

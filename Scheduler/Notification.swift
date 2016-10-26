@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 class UserNotification {
-    func schedule(reminder: Reminder) {
+    func schedule(_ reminder: Reminder) {
         let content = UNMutableNotificationContent()
         
         if let entryDate = reminder.entryDate, let type = reminder.type, let id = reminder.id, let recipient = reminder.recipient {
