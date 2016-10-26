@@ -32,6 +32,10 @@ class Manager {
         let validator = Validator()
         
         if isReminderValid() {
+            if let messageType = Validator().messageType(message: _reminder?.recipient) {
+                    
+            }
+            
             if validator.validEmail(value: recipient) {
                 item.type = "email"
                 

@@ -24,11 +24,15 @@ class Validator {
         return result
     }
     
-    func messageType(message: String) -> String {
-        if validEmail(value: message) {
-            return "email"
-        } else {
-            return "text"
+    func messageType(message: String?) -> String? {
+        if let message = message {
+            if validEmail(value: message) {
+                return "email"
+            } else {
+                return "text"
+            }
         }
+        
+        return nil
     }
 }
