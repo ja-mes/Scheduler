@@ -332,7 +332,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             item = Reminder(context: context)
         }
         
-        item.save()
+        let result = item.save(self)
+        
+        
         
         let validator = Validator()
         
