@@ -21,7 +21,7 @@
 		9B832C371DB93C9400265F72 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C361DB93C9400265F72 /* Extension.swift */; };
 		9B832C3A1DBD1B3100265F72 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */; };
 		9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */; };
-		9BE8BCB41DC16172009DFC9A /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB31DC16172009DFC9A /* Notification.swift */; };
+		9BE8BCB41DC16172009DFC9A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB31DC16172009DFC9A /* UserNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 		9B832C361DB93C9400265F72 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9BE8BCB31DC16172009DFC9A /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		9BE8BCB31DC16172009DFC9A /* UserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		9B31DD091DAD68B200BDB488 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9BE8BCB31DC16172009DFC9A /* Notification.swift */,
+				9BE8BCB31DC16172009DFC9A /* UserNotification.swift */,
 				9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */,
 				9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */,
 			);
@@ -279,7 +279,7 @@
 				9B832C371DB93C9400265F72 /* Extension.swift in Sources */,
 				9B3D29BE1DAEE56D00CB7549 /* Constants.swift in Sources */,
 				9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */,
-				9BE8BCB41DC16172009DFC9A /* Notification.swift in Sources */,
+				9BE8BCB41DC16172009DFC9A /* UserNotification.swift in Sources */,
 				9B31DD111DAD8CBD00BDB488 /* AddTableViewController.swift in Sources */,
 				9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */,
 			);
