@@ -10,7 +10,8 @@ import UIKit
 import PhoneNumberKit
 
 enum ValidationError: Error {
-    case Invalid
+    case InvalidPhone
+    case InvalidEmail
 }
 
 class Validator {

@@ -17,6 +17,29 @@ public class Reminder: NSManagedObject {
             id = NSUUID().uuidString
         }
         
+        if let recipient = recipient {
+            if type == "text" {
+                do {
+                    try Validator().validPhone(value: recipient)
+                } catch ValidationError.InvalidPhone {
+                    
+                }
+                catch {
+                    fatalError("Phone validation failed")
+                }
+            } else if type == "email" {
+                do {
+                    try Validator().validEmail(value: recipient)
+                } catch ValidationError.InvalidEmail {
+                    
+                } catch {
+                    fatalError("Email validation failed")
+                }
+            } else {
+                fatalError("Message assigned invalid type")
+            }
+        }
+        
         do {
             type = try Validator().messageType(message: recipient)
         } catch ValidationError.Invalid {
