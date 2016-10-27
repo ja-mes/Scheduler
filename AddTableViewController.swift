@@ -385,7 +385,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     func shouldEnableSave() {
-        
         if messageField.text.isEmpty != true && (emailField.text?.isEmpty != true || textMsgField.text?.isEmpty != true) {
             saveButton.isEnabled = true
         } else {
