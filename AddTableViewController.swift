@@ -23,7 +23,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var subjectField: UITextField!
 
     @IBOutlet weak var recipientCell: UITableViewCell!
-    @IBOutlet weak var recipientField: UITextField!
+    @IBOutlet weak var textMsgField: PhoneNumberTextField!
+    @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var dateCell: UITableViewCell!
     @IBOutlet weak var dateField: UITextField!

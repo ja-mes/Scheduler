@@ -442,7 +442,7 @@ ECAgICAgA
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="456" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="455" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
                                             <frame key="frameInset" width="375" height="279"/>
@@ -487,13 +487,14 @@ ECAgICAgA
                     <connections>
                         <outlet property="dateCell" destination="JIS-hS-ypV" id="D2S-hV-8bR"/>
                         <outlet property="dateField" destination="LbR-pq-zMt" id="Lbn-Nt-1Tn"/>
+                        <outlet property="emailField" destination="UGx-mG-Bd3" id="jb9-L8-a6Y"/>
                         <outlet property="messageField" destination="uNL-5Y-8xJ" id="sYQ-B2-Wx4"/>
                         <outlet property="recipientCell" destination="WCm-K3-lDj" id="ukS-Ot-kj2"/>
-                        <outlet property="recipientField" destination="Lxo-zm-Ani" id="spk-nc-Lfe"/>
                         <outlet property="repeatCell" destination="9IJ-rg-DJi" id="8Yo-ie-XUe"/>
                         <outlet property="repeatField" destination="qb1-Lx-JK9" id="wvs-Bp-LH8"/>
                         <outlet property="saveButton" destination="Uxk-Bh-iau" id="7Gs-mb-qLa"/>
                         <outlet property="subjectField" destination="kVg-ow-G4d" id="lDs-IQ-c5d"/>
+                        <outlet property="textMsgField" destination="Lxo-zm-Ani" id="RZy-4h-OIb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
