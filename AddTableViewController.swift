@@ -251,17 +251,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     // MARK: contact picker
-
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
-        if contactProperty.key == "phoneNumbers", let value = contactProperty.value as? CNPhoneNumber {
-            textMsgField.text = value.stringValue
-        } else if contactProperty.key == "emailAddresses", let value = contactProperty.value as? String {
-            emailField.text = value
-        }
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         
-        shouldEnableSave()
     }
-    
+
     
     // MARK: IBAction
     @IBAction func editingBegan(_ sender: AnyObject) {
