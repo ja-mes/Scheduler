@@ -19,10 +19,19 @@ class Validator {
 
     
     func validPhone(value: String) -> Bool {
-        let phoneRegEx = "^\\d{3}-\\d{3}-\\d{4}$"
-        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegEx)
-        let result =  phoneTest.evaluate(with: value)
-        return result
+        let phoneNumberKit = PhoneNumberKit()
+        
+        do {
+            let phoneNumber = try phoneNumberKit.parse(value)
+            
+            print(phoneNumberKit.format(phoneNumber, toType: .international))
+            
+            return true
+        } catch {
+            print("parse error")
+            
+            return false
+        }
     }
     
     func messageType(message: String?) -> String {

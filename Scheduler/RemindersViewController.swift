@@ -27,6 +27,8 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.delegate = self
         tableView.dataSource = self
         
+        Validator().validPhone(value: "20 7031 3000")
+        
         fetchReminders()
     }
     
