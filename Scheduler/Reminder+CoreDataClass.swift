@@ -19,8 +19,10 @@ public class Reminder: NSManagedObject {
         
         do {
             type = try Validator().messageType(message: recipient)
+        } catch ValidationError.Invalid {
+            
         } catch {
-            print(error.localizedDescription)
+            fatalError("Validation failed")
         }
         
         
