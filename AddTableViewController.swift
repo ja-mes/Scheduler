@@ -32,6 +32,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     // global vars
     var reminder: Reminder?
+    var isEmail = false
+    
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
     var isValidEmail = false
