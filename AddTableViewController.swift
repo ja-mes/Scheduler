@@ -307,7 +307,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         _ = navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addContactPressed(_ sender: UIButton) {        
+    @IBAction func addContactPressed(_ sender: UIButton) {
         let contactsPicker = CNContactPickerViewController()
         
         contactsPicker.delegate = self
@@ -334,9 +334,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         item.save(self)
         
-        
-        
-        // scheduleNotification(reminder: item)
     }
     
     func sendMessage() {
