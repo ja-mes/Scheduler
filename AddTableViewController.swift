@@ -332,8 +332,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         if isEmail {
             item.recipient = emailField.text
+            item.type = "email"
         } else {
             item.recipient = textMsgField.text
+            item.type = "text"
         }
         
         item.message = messageField.text
