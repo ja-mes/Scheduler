@@ -291,7 +291,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         let contactsPicker = CNContactPickerViewController()
         
         contactsPicker.delegate = self
-        contactsPicker.displayedPropertyKeys = [CNContactPhoneNumbersKey, CNContactEmailAddressesKey]
         
         present(contactsPicker, animated: true, completion: nil)
     }
