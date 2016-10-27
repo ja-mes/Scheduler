@@ -125,6 +125,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="APk-uF-2n8">
+                        <barButtonItem key="backBarButtonItem" id="P6e-4O-UQ3">
+                            <string key="title" base64-UTF8="YES">
+ECAgICAgA
+</string>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYe-DC-ZBx">
                             <connections>
                                 <action selector="addTapped:" destination="BYZ-38-t0r" id="Z1V-0K-psY"/>
@@ -143,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="1828" y="134.48275862068968"/>
         </scene>
-        <!--Select Table View Controller-->
+        <!--Create Reminder-->
         <scene sceneID="j4m-IQ-i9q">
             <objects>
                 <tableViewController id="Mp3-zE-9hR" customClass="SelectTableViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
@@ -221,6 +226,7 @@
                             <outlet property="delegate" destination="Mp3-zE-9hR" id="c2n-C1-wh5"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Create Reminder" id="z3J-3r-inO"/>
                     <connections>
                         <outlet property="emailCell" destination="Ugx-RG-wmG" id="nba-ux-3UK"/>
                         <outlet property="textMsgCell" destination="M1v-Qa-DU5" id="jFk-h9-D4Z"/>
