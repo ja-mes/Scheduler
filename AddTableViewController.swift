@@ -90,10 +90,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             subjectField.text = reminder.subject
             messageField.text = reminder.message
             
-            if reminder.type == "email" {
-                subjectField.text = reminder.subject
-            }
-
             
             if let entryDate = reminder.entryDate {
                 date = entryDate
