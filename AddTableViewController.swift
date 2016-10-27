@@ -86,7 +86,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         if let reminder = reminder {
             saveButton.isEnabled = true
             
-            recipientField.text = reminder.recipient
+            if isEmail {
+                emailField.text = reminder.recipient
+                subjectField.text = reminder.subject
+            } else {
+                textMsgField.text = reminder.recipient
+            }
+            
             subjectField.text = reminder.subject
             messageField.text = reminder.message
             
@@ -119,7 +125,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 setDateTextColor(date: entryDate)
             }
         } else {
-            recipientField.becomeFirstResponder()
+            if isEmail {
+                emailField.becomeFirstResponder()
+            } else {
+                textMsgField.becomeFirstResponder()
+            }
         }
     }
     
@@ -140,7 +150,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
             repeatField.textColor = navigationController?.navigationBar.tintColor
         } else if tableView.indexPath(for: recipientCell) == indexPath {
-            recipientField.becomeFirstResponder()
+            if isEmail {
+                emailField.becomeFirstResponder()
+            } else {
+                textMsgField.becomeFirstResponder()
+            }
         }
     }
     
@@ -240,11 +254,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
 
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
         if contactProperty.key == "phoneNumbers", let value = contactProperty.value as? CNPhoneNumber {
-           recipientField.text = value.stringValue
-            
+            textMsgField.text = value.stringValue
         } else if contactProperty.key == "emailAddresses", let value = contactProperty.value as? String {
-            recipientField.text = value
-            
+            emailField.text = value
         }
         
         shouldEnableSave()
@@ -297,7 +309,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         item.entryDate = date
         item.repeatInterval = repeatInterval
-        item.recipient = recipientField.text
+        
+        if isEmail {
+            item.recipient = emailField.text
+        } else {
+            item.recipient = textMsgField.text
+        }
+        
         item.message = messageField.text
         
         item.save(self)
@@ -347,8 +365,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     func shouldEnableSave() {
-        if recipientField.text?.isEmpty != true, messageField.text.isEmpty != true {
-            saveButton.isEnabled = true
+        if messageField.text.isEmpty != true {
+            if isEmail && emailField.text?.isEmpty != true {
+                
+            } else if !isEmail && textMsgField.text?.isEmpty != true {
+                saveButton.isEnabled = true
+            }
         } else {
             saveButton.isEnabled = false
         }
