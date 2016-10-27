@@ -41,6 +41,12 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             if let destination = segue.destination as? AddTableViewController {
                 if let reminder = sender as? Reminder {
                     destination.reminder = reminder
+                    
+                    if reminder.type == "email" {
+                        destination.isEmail = true
+                    } else {
+                        destination.isEmail = false
+                    }
                 }
             }
        }
