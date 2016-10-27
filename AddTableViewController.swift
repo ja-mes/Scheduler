@@ -307,9 +307,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         _ = navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func addContactPressed(_ sender: UIButton) {
-        accessContacts()
-        
+    @IBAction func addContactPressed(_ sender: UIButton) {        
         let contactsPicker = CNContactPickerViewController()
         
         contactsPicker.delegate = self
@@ -399,18 +397,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 }
             }
             
-        }
-    }
-    
-    func accessContacts() {
-        let contactStore = CNContactStore()
-        
-        contactStore.requestAccess(for: .contacts) { (access, error) in
-            if access {
-                // access has been granted
-            } else {
-                
-            }
         }
     }
     
