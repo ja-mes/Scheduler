@@ -50,7 +50,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
-        saveButton.isEnabled = false
+        //saveButton.isEnabled = false
         
         if isEmail {
             emailField.isHidden = false

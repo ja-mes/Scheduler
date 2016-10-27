@@ -17,9 +17,7 @@ public class Reminder: NSManagedObject {
             id = NSUUID().uuidString
         }
         
-        validateRecipient(viewController: viewController)
-        
-        if validateContentExists() {
+        if validateContentExists() && validateRecipient(viewController: viewController) {
             ad.saveContext()
             
             UserNotification().schedule(self)
@@ -49,13 +47,14 @@ public class Reminder: NSManagedObject {
         }
     }
     
-    func validateRecipient(viewController: UIViewController) {
+    func validateRecipient(viewController: UIViewController) -> Bool {
         if let recipient = recipient {
             if type == "text" {
                 do {
                     try Validator().validPhone(value: recipient)
                 } catch ValidationError.InvalidPhone {
                     displayAlert(viewController: viewController, title: "Invalid Phone Number", message: "Please enter a valid phone number")
+                    return false
                 }
                 catch {
                     fatalError("Phone validation failed")
@@ -65,6 +64,7 @@ public class Reminder: NSManagedObject {
                     try Validator().validEmail(value: recipient)
                 } catch ValidationError.InvalidEmail {
                     displayAlert(viewController: viewController, title: "Invalid Email Address", message: "Please enter a valid email address")
+                    return false
                 } catch {
                     fatalError("Email validation failed")
                 }
@@ -72,6 +72,8 @@ public class Reminder: NSManagedObject {
                 fatalError("Reminder assigned invalid type")
             }
         }
+        
+        return true
     }
     
     func nextEntryDate() -> Date? {
