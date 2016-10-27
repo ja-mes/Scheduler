@@ -51,7 +51,13 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         self.navigationItem.hidesBackButton = true
         
-        
+        if isEmail {
+            emailField.isHidden = false
+            textMsgField.isHidden = true
+        } else {
+            textMsgField.isHidden = false
+            emailField.isHidden = true
+        }
         
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
