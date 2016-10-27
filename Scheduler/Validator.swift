@@ -29,15 +29,13 @@ class Validator {
         }
     }
     
-    func messageType(message: String?) -> String {
+    func messageType(message: String?) throws -> String {
         if let message = message {
             if validEmail(value: message) {
                 return "email"
-            } else {
+            } else if validPhone(value: message) {
                 return "text"
             }
         }
-        
-        return "text"
     }
 }

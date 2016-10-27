@@ -17,7 +17,12 @@ public class Reminder: NSManagedObject {
             id = NSUUID().uuidString
         }
         
-        type = Validator().messageType(message: recipient)
+        do {
+            type = try Validator().messageType(message: recipient)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         
         do {
             try validateForInsert()
