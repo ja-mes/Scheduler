@@ -397,9 +397,17 @@ ECAgICAgA
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lxo-zm-Ani" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="phonePad"/>
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="c0i-E4-Feq"/>
+                                                    </connections>
+                                                </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGx-mG-Bd3">
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                    <connections>
+                                                        <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="qzE-Du-cwh"/>
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-xv-o3u">
@@ -416,11 +424,15 @@ ECAgICAgA
                                                 <constraint firstItem="v2Z-MB-5NQ" firstAttribute="centerY" secondItem="acD-gO-nqh" secondAttribute="centerY" id="1wV-vj-KJw"/>
                                                 <constraint firstItem="sFi-xv-o3u" firstAttribute="leading" secondItem="Lxo-zm-Ani" secondAttribute="trailing" id="3B6-uF-ke0"/>
                                                 <constraint firstAttribute="trailing" secondItem="sFi-xv-o3u" secondAttribute="trailing" id="3ae-wS-0zO"/>
+                                                <constraint firstItem="UGx-mG-Bd3" firstAttribute="leading" secondItem="v2Z-MB-5NQ" secondAttribute="trailing" constant="10" id="Ao1-fx-tDO"/>
                                                 <constraint firstItem="Lxo-zm-Ani" firstAttribute="leading" secondItem="v2Z-MB-5NQ" secondAttribute="trailing" constant="10" id="PEe-dE-JBN"/>
                                                 <constraint firstAttribute="bottom" secondItem="sFi-xv-o3u" secondAttribute="bottom" id="RXd-ne-UKe"/>
                                                 <constraint firstItem="sFi-xv-o3u" firstAttribute="top" secondItem="acD-gO-nqh" secondAttribute="top" id="ad0-m7-KOe"/>
                                                 <constraint firstItem="Lxo-zm-Ani" firstAttribute="top" secondItem="acD-gO-nqh" secondAttribute="top" id="hIx-l0-9sz"/>
+                                                <constraint firstItem="sFi-xv-o3u" firstAttribute="leading" secondItem="UGx-mG-Bd3" secondAttribute="trailing" id="jxQ-xM-VZL"/>
+                                                <constraint firstItem="UGx-mG-Bd3" firstAttribute="top" secondItem="acD-gO-nqh" secondAttribute="top" id="qzH-EE-EDH"/>
                                                 <constraint firstItem="v2Z-MB-5NQ" firstAttribute="leading" secondItem="acD-gO-nqh" secondAttribute="leading" constant="15" id="rhR-Wr-S2a"/>
+                                                <constraint firstAttribute="bottom" secondItem="UGx-mG-Bd3" secondAttribute="bottom" id="vPa-QE-z92"/>
                                                 <constraint firstAttribute="bottom" secondItem="Lxo-zm-Ani" secondAttribute="bottom" id="xJm-ot-udP"/>
                                             </constraints>
                                         </tableViewCellContentView>
