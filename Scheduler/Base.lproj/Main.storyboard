@@ -400,7 +400,6 @@ ECAgICAgA
                                                     <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="c0i-E4-Feq"/>
-                                                        <action selector="editingChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="fqy-uH-Zdf"/>
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-xv-o3u">
@@ -515,6 +514,6 @@ ECAgICAgA
         <image name="plus_circle" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q75-cp-Ub4"/>
+        <segue reference="Z8z-KQ-Mpu"/>
     </inferredMetricsTieBreakers>
 </document>
