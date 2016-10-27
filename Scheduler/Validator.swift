@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PhoneNumberKit
 
 class Validator {
     func validEmail(value: String) -> Bool {
