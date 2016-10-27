@@ -19,11 +19,19 @@ public class Reminder: NSManagedObject {
         
         type = Validator().messageType(message: recipient)
         
-        if isValid() {
+        do {
+            try validateForInsert()
+        } catch {
+            print(error)
+        }
+        
+        let validationResult = validate()
+        
+        if validationResult == "success" {
             ad.saveContext()
             
             UserNotification().schedule(self)
-        } else {
+        } else if validationResult == "incomplete" {
             if objectID.isTemporaryID {
                 context.delete(self)
             }
@@ -40,14 +48,14 @@ public class Reminder: NSManagedObject {
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    func isValid() -> Bool {
+    func validate() -> String {
         if
             let message = message, message.isEmpty == false,
             let recipient = recipient, recipient.isEmpty == false {
-            return true
+            return "success"
+        } else {
+            return "incomplete"
         }
-        
-        return false
     }
     
     func nextEntryDate() -> Date? {
