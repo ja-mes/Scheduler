@@ -50,6 +50,37 @@ public class Reminder: NSManagedObject {
         return false
     }
     
-    
-    
+    func nextEntryDate() -> Date? {
+        var nextEntryDate: Date?
+        
+        if let interval = repeatInterval, let entryDate = entryDate {
+            switch interval {
+            case REPEAT_INTERVALS[1]: // Daily
+                nextEntryDate = NSCalendar.current.date(byAdding: .day, value: 1, to: entryDate)!
+                break
+            case REPEAT_INTERVALS[2]: // Weekly
+                nextEntryDate = NSCalendar.current.date(byAdding: .day, value: 7, to: entryDate)!
+                break
+            case REPEAT_INTERVALS[3]: // Monthly
+                nextEntryDate = NSCalendar.current.date(byAdding: .month, value: 1, to: entryDate)!
+                break
+            case REPEAT_INTERVALS[4]: // Yearly
+                nextEntryDate = NSCalendar.current.date(byAdding: .year, value: 1, to: entryDate)!
+                break
+            default:
+                nextEntryDate = nil
+                break
+            }
+            
+        }
+        
+        return nextEntryDate
+    }
 }
+
+
+
+
+
+
+

@@ -370,28 +370,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             reminder.sent = true
             ad.saveContext()
             
-            if let interval = reminder.repeatInterval, let entryDate = reminder.entryDate {
-                switch interval {
-                case REPEAT_INTERVALS[1]: // Daily
-                    date = NSCalendar.current.date(byAdding: .day, value: 1, to: entryDate)!
-                    break
-                case REPEAT_INTERVALS[2]: // Weekly
-                    date = NSCalendar.current.date(byAdding: .day, value: 7, to: entryDate)!
-                    break
-                case REPEAT_INTERVALS[3]: // Monthly
-                    date = NSCalendar.current.date(byAdding: .month, value: 1, to: entryDate)!
-                    break
-                case REPEAT_INTERVALS[4]: // Yearly
-                    date = NSCalendar.current.date(byAdding: .year, value: 1, to: entryDate)!
-                    break
-                default:
-                    date = entryDate
-                    break
-                }
-                
-                if interval != REPEAT_INTERVALS[0] {
-                    save(reminder: nil)
-                }
+            if let nextEntryDate = reminder.nextEntryDate() {
+                date = nextEntryDate
+                save(reminder: nil)
             }
             
         }
