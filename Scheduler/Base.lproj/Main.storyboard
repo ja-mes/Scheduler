@@ -400,6 +400,7 @@ ECAgICAgA
                                                     <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="phonePad"/>
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="c0i-E4-Feq"/>
+                                                        <action selector="recipientChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="H6W-Hd-lRT"/>
                                                     </connections>
                                                 </textField>
                                                 <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGx-mG-Bd3">
@@ -408,6 +409,7 @@ ECAgICAgA
                                                     <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="qzE-Du-cwh"/>
+                                                        <action selector="recipientChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="L8b-4p-yjF"/>
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-xv-o3u">
@@ -442,7 +444,7 @@ ECAgICAgA
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="455" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="456" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
                                             <frame key="frameInset" width="375" height="279"/>

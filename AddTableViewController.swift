@@ -50,6 +50,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
+        saveButton.isEnabled = false
         
         if isEmail {
             emailField.isHidden = false
@@ -283,6 +284,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         resetFields()
     }
     
+    @IBAction func recipientChanged(_ sender: UITextField) {
+        shouldEnableSave()
+    }
+    
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -379,12 +385,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     func shouldEnableSave() {
-        if messageField.text.isEmpty != true {
-            if isEmail && emailField.text?.isEmpty != true {
-                
-            } else if !isEmail && textMsgField.text?.isEmpty != true {
-                saveButton.isEnabled = true
-            }
+        
+        if messageField.text.isEmpty != true && (emailField.text?.isEmpty != true || textMsgField.text?.isEmpty != true) {
+            saveButton.isEnabled = true
         } else {
             saveButton.isEnabled = false
         }
