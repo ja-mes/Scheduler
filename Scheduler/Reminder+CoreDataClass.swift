@@ -17,29 +17,7 @@ public class Reminder: NSManagedObject {
             id = NSUUID().uuidString
         }
         
-        if let recipient = recipient {
-            if type == "text" {
-                do {
-                    try Validator().validPhone(value: recipient)
-                } catch ValidationError.InvalidPhone {
-                    displayAlert(viewController: viewController, title: "Invalid Phone Number", message: "Please enter a valid phone number")
-                }
-                catch {
-                    fatalError("Phone validation failed")
-                }
-            } else if type == "email" {
-                do {
-                    try Validator().validEmail(value: recipient)
-                } catch ValidationError.InvalidEmail {
-                    displayAlert(viewController: viewController, title: "Invalid Email Address", message: "Please enter a valid email address")
-                } catch {
-                    fatalError("Email validation failed")
-                }
-            } else {
-                fatalError("Message assigned invalid type")
-            }
-        }
-        
+        validateRecipient(viewController: viewController)
         
         if validateContentExists() {
             ad.saveContext()
@@ -68,6 +46,31 @@ public class Reminder: NSManagedObject {
             return true
         } else {
             return false
+        }
+    }
+    
+    func validateRecipient(viewController: UIViewController) {
+        if let recipient = recipient {
+            if type == "text" {
+                do {
+                    try Validator().validPhone(value: recipient)
+                } catch ValidationError.InvalidPhone {
+                    displayAlert(viewController: viewController, title: "Invalid Phone Number", message: "Please enter a valid phone number")
+                }
+                catch {
+                    fatalError("Phone validation failed")
+                }
+            } else if type == "email" {
+                do {
+                    try Validator().validEmail(value: recipient)
+                } catch ValidationError.InvalidEmail {
+                    displayAlert(viewController: viewController, title: "Invalid Email Address", message: "Please enter a valid email address")
+                } catch {
+                    fatalError("Email validation failed")
+                }
+            } else {
+                fatalError("Reminder assigned invalid type")
+            }
         }
     }
     
