@@ -22,6 +22,7 @@
 		9B832C3A1DBD1B3100265F72 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */; };
 		9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */; };
 		9BE8BCB41DC16172009DFC9A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB31DC16172009DFC9A /* UserNotification.swift */; };
+		9BE8BCB61DC26D90009DFC9A /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BE8BCB31DC16172009DFC9A /* UserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
+		9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		9B31DD0B1DAD68BB00BDB488 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */,
 				9B31DD0C1DAD694F00BDB488 /* RemindersViewController.swift */,
 				9B3D29BF1DAEF18B00CB7549 /* ReminderCell.swift */,
 				9B31DD101DAD8CBD00BDB488 /* AddTableViewController.swift */,
@@ -276,6 +279,7 @@
 				9B3D29C01DAEF18B00CB7549 /* ReminderCell.swift in Sources */,
 				9B832C3A1DBD1B3100265F72 /* Reminder+CoreDataClass.swift in Sources */,
 				9B3D29C71DB0048B00CB7549 /* Validator.swift in Sources */,
+				9BE8BCB61DC26D90009DFC9A /* SelectTableViewController.swift in Sources */,
 				9B832C371DB93C9400265F72 /* Extension.swift in Sources */,
 				9B3D29BE1DAEE56D00CB7549 /* Constants.swift in Sources */,
 				9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */,
