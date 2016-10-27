@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="1828" y="134.48275862068968"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Select Table View Controller-->
         <scene sceneID="j4m-IQ-i9q">
             <objects>
-                <tableViewController id="Mp3-zE-9hR" sceneMemberID="viewController">
+                <tableViewController id="Mp3-zE-9hR" customClass="SelectTableViewController" customModule="Scheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="uTR-UN-8mN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,6 +221,10 @@
                             <outlet property="delegate" destination="Mp3-zE-9hR" id="c2n-C1-wh5"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="emailCell" destination="Ugx-RG-wmG" id="nba-ux-3UK"/>
+                        <outlet property="textMsgCell" destination="M1v-Qa-DU5" id="jFk-h9-D4Z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pqc-eL-eV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
