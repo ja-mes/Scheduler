@@ -22,7 +22,7 @@ public class Reminder: NSManagedObject {
         } catch ValidationError.Invalid {
             
         } catch {
-            fatalError(error)
+            fatalError("Validation failed")
         }
         
         
