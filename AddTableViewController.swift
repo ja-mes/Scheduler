@@ -52,6 +52,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         self.navigationItem.hidesBackButton = true
         
         
+        
+        
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
         }
         
