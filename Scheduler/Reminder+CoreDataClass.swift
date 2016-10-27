@@ -22,7 +22,7 @@ public class Reminder: NSManagedObject {
                 do {
                     try Validator().validPhone(value: recipient)
                 } catch ValidationError.InvalidPhone {
-                    
+                    displayAlert(viewController: viewController, title: "Invalid Phone Number", message: "Please enter a valid phone number")
                 }
                 catch {
                     fatalError("Phone validation failed")
@@ -31,28 +31,13 @@ public class Reminder: NSManagedObject {
                 do {
                     try Validator().validEmail(value: recipient)
                 } catch ValidationError.InvalidEmail {
-                    
+                    displayAlert(viewController: viewController, title: "Invalid Email Address", message: "Please enter a valid email address")
                 } catch {
                     fatalError("Email validation failed")
                 }
             } else {
                 fatalError("Message assigned invalid type")
             }
-        }
-        
-        do {
-            type = try Validator().messageType(message: recipient)
-        } catch ValidationError.Invalid {
-            displayAlert(viewController: viewController, title: "Invalid Recipient", message: "You must enter a valid recipient")
-        } catch {
-            fatalError("Validation failed")
-        }
-        
-        
-        do {
-            try validateForInsert()
-        } catch {
-            print(error)
         }
         
         let validationResult = validate()

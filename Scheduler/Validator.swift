@@ -15,34 +15,25 @@ enum ValidationError: Error {
 }
 
 class Validator {
-    func validEmail(value: String) -> Bool {
+    func validEmail(value: String) throws {
         let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         let result = emailTest.evaluate(with: value)
-        return result
+        
+        if result == false {
+            throw ValidationError.InvalidEmail
+        }
     }
 
     
-    func validPhone(value: String) -> Bool {
+    func validPhone(value: String) throws {
         let phoneNumberKit = PhoneNumberKit()
         
         do {
             let _ = try phoneNumberKit.parse(value)
-            return true
         } catch {            
-            return false
+            throw ValidationError.InvalidPhone
         }
     }
     
-    func messageType(message: String?) throws -> String {
-        if let message = message {
-            if validEmail(value: message) {
-                return "email"
-            } else if validPhone(value: message) {
-                return "text"
-            }
-        }
-        
-        throw ValidationError.Invalid
-    }
 }
