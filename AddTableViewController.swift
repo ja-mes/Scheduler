@@ -36,7 +36,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     var date = Date()
     var repeatInterval = REPEAT_INTERVALS[0]
-    var isValidEmail = false
     var canSave = false
     
     // pickers
@@ -48,7 +47,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(isEmail)
         self.navigationItem.hidesBackButton = true
         
         
@@ -84,7 +82,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
             if reminder.type == "email" {
                 subjectField.text = reminder.subject
-                isValidEmail = true
             }
 
             
@@ -142,7 +139,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath == IndexPath(row: 2, section: 1) && !isValidEmail {
+        if indexPath == IndexPath(row: 2, section: 1) && !isEmail {
             return 0.0
         } else if indexPath == IndexPath(row: 0, section: 2) {
             return 280.0
@@ -239,16 +236,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         if contactProperty.key == "phoneNumbers", let value = contactProperty.value as? CNPhoneNumber {
            recipientField.text = value.stringValue
             
-            isValidEmail = false
-            tableView.beginUpdates()
-            tableView.endUpdates()
         } else if contactProperty.key == "emailAddresses", let value = contactProperty.value as? String {
             recipientField.text = value
             
-            
-            isValidEmail = true
-            tableView.beginUpdates()
-            tableView.endUpdates()
         }
         
         shouldEnableSave()
