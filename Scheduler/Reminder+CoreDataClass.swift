@@ -20,7 +20,7 @@ public class Reminder: NSManagedObject {
         do {
             type = try Validator().messageType(message: recipient)
         } catch ValidationError.Invalid {
-            
+            displayAlert(viewController: viewController, title: "Invalid Recipient", message: "You must enter a valid recipient")
         } catch {
             fatalError("Validation failed")
         }
@@ -43,14 +43,13 @@ public class Reminder: NSManagedObject {
                 context.delete(self)
             }
             
-            displayIncompleteAlert(viewController: viewController)
+            displayAlert(viewController: viewController, title: "Oops", message: "Please fill out recipient and message fields")
         }
         
     }
     
-    
-    func displayIncompleteAlert(viewController: UIViewController) {
-        let alert = UIAlertController(title: "Oops!", message: "Please fill out recipient and message fields.", preferredStyle: UIAlertControllerStyle.alert)
+    func displayAlert(viewController: UIViewController, title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
