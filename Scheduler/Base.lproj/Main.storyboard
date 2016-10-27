@@ -132,8 +132,7 @@ ECAgICAgA
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYe-DC-ZBx">
                             <connections>
-                                <action selector="addTapped:" destination="BYZ-38-t0r" id="Z1V-0K-psY"/>
-                                <segue destination="Mp3-zE-9hR" kind="show" identifier="AddReminder" id="tBw-IF-Fn8"/>
+                                <segue destination="Mp3-zE-9hR" kind="show" identifier="" id="tBw-IF-Fn8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -166,8 +165,7 @@ ECAgICAgA
                                             <frame key="frameInset" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="messages_chat" translatesAutoresizingMaskIntoConstraints="NO" id="DKj-z3-HRP">
-                                                    <frame key="frameInset" minX="15" minY="11.5" width="25" height="25"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="messages_chat" translatesAutoresizingMaskIntoConstraints="NO" id="DKj-z3-HRP">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="Nlj-rI-i9A"/>
                                                         <constraint firstAttribute="height" constant="25" id="y96-0O-G68"/>
@@ -230,6 +228,7 @@ ECAgICAgA
                     <connections>
                         <outlet property="emailCell" destination="Ugx-RG-wmG" id="nba-ux-3UK"/>
                         <outlet property="textMsgCell" destination="M1v-Qa-DU5" id="jFk-h9-D4Z"/>
+                        <segue destination="3UF-l1-ghK" kind="show" identifier="CreateReminder" id="Z8z-KQ-Mpu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pqc-eL-eV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,4 +514,7 @@ ECAgICAgA
         <image name="past_due" width="21" height="27"/>
         <image name="plus_circle" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q75-cp-Ub4"/>
+    </inferredMetricsTieBreakers>
 </document>

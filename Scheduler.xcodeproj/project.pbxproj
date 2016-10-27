@@ -95,8 +95,8 @@
 				9B31DD0B1DAD68BB00BDB488 /* Controller */,
 				9B31DCF41DAD644500BDB488 /* AppDelegate.swift */,
 				9B31DCF81DAD644500BDB488 /* Main.storyboard */,
-				9B31DCFE1DAD644500BDB488 /* Assets.xcassets */,
 				9B31DD001DAD644500BDB488 /* LaunchScreen.storyboard */,
+				9B31DCFE1DAD644500BDB488 /* Assets.xcassets */,
 				9B31DD031DAD644500BDB488 /* Info.plist */,
 				9B31DCFB1DAD644500BDB488 /* Scheduler.xcdatamodeld */,
 			);
