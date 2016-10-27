@@ -22,14 +22,9 @@ class Validator {
         let phoneNumberKit = PhoneNumberKit()
         
         do {
-            let phoneNumber = try phoneNumberKit.parse(value)
-            
-            print(phoneNumberKit.format(phoneNumber, toType: .international))
-            
+            let _ = try phoneNumberKit.parse(value)
             return true
-        } catch {
-            print("parse error")
-            
+        } catch {            
             return false
         }
     }
