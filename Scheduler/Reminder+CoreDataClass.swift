@@ -40,13 +40,12 @@ public class Reminder: NSManagedObject {
             }
         }
         
-        let validationResult = validate()
         
-        if validationResult == "success" {
+        if validateContentExists() {
             ad.saveContext()
             
             UserNotification().schedule(self)
-        } else if validationResult == "incomplete" {
+        } else {
             if objectID.isTemporaryID {
                 context.delete(self)
             }
@@ -62,13 +61,13 @@ public class Reminder: NSManagedObject {
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    func validate() -> String {
+    func validateContentExists() -> Bool {
         if
             let message = message, message.isEmpty == false,
             let recipient = recipient, recipient.isEmpty == false {
-            return "success"
+            return true
         } else {
-            return "incomplete"
+            return false
         }
     }
     
