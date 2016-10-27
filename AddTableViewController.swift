@@ -47,7 +47,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: override
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        print(isEmail)
         self.navigationItem.hidesBackButton = true
         
         
