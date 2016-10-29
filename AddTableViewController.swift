@@ -36,7 +36,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     var reminder: Reminder?
     var isEmail = false
     
-    var date = Date()
+    var date = NSCalendar.current.date(byAdding: .minute, value: 30, to: Date())!
     var repeatInterval = REPEAT_INTERVALS[0]
     var canSave = false
     
