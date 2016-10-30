@@ -28,6 +28,8 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
                 
         fetchReminders()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reload(notification:)), name: NSNotification.Name(rawValue: "reloadRemindersTable"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -235,6 +237,10 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
                 cell.pastDue.isHidden = true
             }
         }
+    }
+    
+    func reload(notification: Notification) {
+        tableView.reloadData()
     }
 
  }
