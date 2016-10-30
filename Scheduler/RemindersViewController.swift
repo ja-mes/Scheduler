@@ -32,9 +32,7 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
         NotificationCenter.default.addObserver(self, selector: #selector(reload(notification:)), name: NSNotification.Name(rawValue: "reloadRemindersTable"), object: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        //checkShowIntro()
-        
+    override func viewDidAppear(_ animated: Bool) {        
         checkPastDues()
     }
     

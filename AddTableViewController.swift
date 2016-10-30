@@ -84,6 +84,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         
         // Inital data
+        datePicker.setDate(date, animated: true)
+        
         if let reminder = reminder {
             saveButton.isEnabled = true
             
@@ -102,7 +104,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                 date = entryDate
                 
                 datePicker.setDate(date, animated: true)
-                displayDate(date: date)
             }
             
             if let interval = reminder.repeatInterval {
