@@ -311,6 +311,16 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     @IBAction func addContactPressed(_ sender: UIButton) {
         let contactsPicker = CNContactPickerViewController()
         
+        let predicateString: String!
+        
+        if isEmail {
+            predicateString = "emailAddresses.@count > 0"
+        } else {
+            predicateString = "phoneNumbers.@count > 0"
+        }
+        
+        contactsPicker.predicateForEnablingContact = NSPredicate(format: predicateString)
+        
         contactsPicker.delegate = self
         
         present(contactsPicker, animated: true, completion: nil)
