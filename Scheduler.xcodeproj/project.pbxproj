@@ -18,7 +18,6 @@
 		9B3D29BE1DAEE56D00CB7549 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D29BD1DAEE56D00CB7549 /* Constants.swift */; };
 		9B3D29C01DAEF18B00CB7549 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D29BF1DAEF18B00CB7549 /* ReminderCell.swift */; };
 		9B3D29C71DB0048B00CB7549 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D29C61DB0048B00CB7549 /* Validator.swift */; };
-		9B73CC811DC8051C0016607B /* UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B73CC801DC8051C0016607B /* UserMessage.swift */; };
 		9B832C371DB93C9400265F72 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C361DB93C9400265F72 /* Extension.swift */; };
 		9B832C3A1DBD1B3100265F72 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */; };
 		9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */; };
@@ -42,7 +41,6 @@
 		9B3D29BD1DAEE56D00CB7549 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B3D29BF1DAEF18B00CB7549 /* ReminderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		9B3D29C61DB0048B00CB7549 /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		9B73CC801DC8051C0016607B /* UserMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessage.swift; sourceTree = "<group>"; };
 		9B832C361DB93C9400265F72 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				9BE8BCB31DC16172009DFC9A /* UserNotification.swift */,
 				9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */,
 				9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */,
-				9B73CC801DC8051C0016607B /* UserMessage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -281,7 +278,6 @@
 				9B31DCFD1DAD644500BDB488 /* Scheduler.xcdatamodeld in Sources */,
 				9B3D29C01DAEF18B00CB7549 /* ReminderCell.swift in Sources */,
 				9B832C3A1DBD1B3100265F72 /* Reminder+CoreDataClass.swift in Sources */,
-				9B73CC811DC8051C0016607B /* UserMessage.swift in Sources */,
 				9B3D29C71DB0048B00CB7549 /* Validator.swift in Sources */,
 				9BE8BCB61DC26D90009DFC9A /* SelectTableViewController.swift in Sources */,
 				9B832C371DB93C9400265F72 /* Extension.swift in Sources */,

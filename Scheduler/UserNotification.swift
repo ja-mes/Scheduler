@@ -14,7 +14,6 @@ class UserNotification {
         let action = UNNotificationAction(identifier: "sendNow", title: "Send Now", options: [])
         let category = UNNotificationCategory(identifier: "sendCategory", actions: [action], intentIdentifiers: [], options: [])
         UNUserNotificationCenter.current().setNotificationCategories([category])
-        UNUserNotificationCenter.current().delegate = ad
         
         let content = UNMutableNotificationContent()
         
