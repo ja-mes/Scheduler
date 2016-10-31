@@ -102,7 +102,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             
             if let entryDate = reminder.entryDate {
                 date = entryDate
-                
+                displayDate(date: date)
                 datePicker.setDate(date, animated: true)
             }
             
