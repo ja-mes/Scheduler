@@ -11,10 +11,6 @@ import UserNotifications
 
 class UserNotification {
     func schedule(_ reminder: Reminder) {
-        let action = UNNotificationAction(identifier: "sendNow", title: "Send Now", options: [])
-        let category = UNNotificationCategory(identifier: "sendCategory", actions: [action], intentIdentifiers: [], options: [])
-        UNUserNotificationCenter.current().setNotificationCategories([category])
-        
         let content = UNMutableNotificationContent()
         
         if let entryDate = reminder.entryDate, let type = reminder.type, let id = reminder.id, let recipient = reminder.recipient {
@@ -22,7 +18,6 @@ class UserNotification {
             content.body = "Send your \(type) to \(recipient)"
             content.categoryIdentifier = "message"
             content.sound = UNNotificationSound.default()
-            content.categoryIdentifier = "sendCategory"
             
             let calendar = Calendar(identifier: .gregorian)
             let components = calendar.dateComponents(in: .current, from: entryDate)
