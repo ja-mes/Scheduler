@@ -349,6 +349,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             item.type = "text"
         }
         
+        item.subject = subjectField.text
         item.message = messageField.text
         
         item.save(self)
