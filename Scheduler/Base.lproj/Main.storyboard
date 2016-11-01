@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z1O-un-8cM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Z1O-un-8cM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -410,6 +410,7 @@ ECAgICAgA
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="qzE-Du-cwh"/>
                                                         <action selector="recipientChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="L8b-4p-yjF"/>
+                                                        <action selector="recipientEditingEnded:" destination="3UF-l1-ghK" eventType="editingDidEnd" id="Sgm-jT-DGn"/>
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-xv-o3u">
