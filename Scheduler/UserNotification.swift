@@ -26,8 +26,7 @@ class UserNotification {
             let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
             
             let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
-            
-            
+
             
             UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
                 if error != nil {

@@ -99,7 +99,6 @@ class RemindersViewController: UIViewController, UITableViewDataSource, UITableV
             context.delete(object)
             ad.saveContext()
             
-            //checkShowIntro()
         }
     }
 
