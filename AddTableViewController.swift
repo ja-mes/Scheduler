@@ -284,40 +284,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     // MARK: IBAction
     @IBAction func editingBegan(_ sender: UITextField) {
         resetFields()
-        
-        if isRecipientValid, let text = sender.text {
-            sender.text = "\(text),\u{00a0}"
-        }
     }
     
     @IBAction func recipientChanged(_ sender: UITextField) {
         shouldEnableSave()
     }
-    
-    @IBAction func recipientEditingEnded(_ sender: UITextField) {
-        if let text = sender.text {
-            if isEmail {
-                do {
-                    try Validator().validEmail(value: text)
-                    isRecipientValid = true
-                } catch ValidationError.InvalidEmail {
-                    isRecipientValid = false
-                } catch {
-                    isRecipientValid = false
-                }
-            } else {
-                do {
-                    try Validator().validPhone(value: text)
-                    isRecipientValid = true
-                } catch ValidationError.InvalidPhone {
-                    isRecipientValid = false
-                } catch {
-                    isRecipientValid = false
-                }
-            }
-        }
-    }
-    
+
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)

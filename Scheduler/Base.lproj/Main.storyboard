@@ -401,7 +401,6 @@ ECAgICAgA
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="c0i-E4-Feq"/>
                                                         <action selector="recipientChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="H6W-Hd-lRT"/>
-                                                        <action selector="recipientEditingEnded:" destination="3UF-l1-ghK" eventType="editingDidEnd" id="IXk-Q5-gwR"/>
                                                     </connections>
                                                 </textField>
                                                 <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UGx-mG-Bd3">
@@ -411,7 +410,6 @@ ECAgICAgA
                                                     <connections>
                                                         <action selector="editingBegan:" destination="3UF-l1-ghK" eventType="editingDidBegin" id="qzE-Du-cwh"/>
                                                         <action selector="recipientChanged:" destination="3UF-l1-ghK" eventType="editingChanged" id="L8b-4p-yjF"/>
-                                                        <action selector="recipientEditingEnded:" destination="3UF-l1-ghK" eventType="editingDidEnd" id="Sgm-jT-DGn"/>
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-xv-o3u">
