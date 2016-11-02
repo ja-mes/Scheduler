@@ -254,32 +254,24 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     // MARK: contact picker
-    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
-        
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         if isEmail {
-            for contact in contacts {
-                let emails = contact.emailAddresses
+            let emails = contact.emailAddresses
+            
+            if emails.count > 0 {
+                let email = emails[0]
                 
-                if emails.count > 0 {
-                    let email = emails[0]
-                    
-                    emailField.text = email.value as String
-                }
+                emailField.text = email.value as String
             }
         } else {
-            for contact in contacts {
-                let phoneNumbers = contact.phoneNumbers
-                
-                if phoneNumbers.count > 0 {
-                    let phoneNumber = phoneNumbers[0].value.stringValue
-                    
-                    // TODO: need to append phone numbers from all selected contacts
-                    textMsgField.text = phoneNumber
-                }
+            let phoneNumbers = contact.phoneNumbers
+            
+            if phoneNumbers.count > 0 {
+                textMsgField.text = phoneNumbers[0].value.stringValue
             }
         }
     }
-
+    
     
     // MARK: IBAction
     @IBAction func editingBegan(_ sender: UITextField) {
