@@ -36,4 +36,17 @@ class Validator {
         }
     }
     
+    func format(_ value: String) -> String {
+        let phoneNumberKit = PhoneNumberKit()
+        
+        do {
+            let phoneNumber = try phoneNumberKit.parse(value)
+            return phoneNumberKit.format(phoneNumber, toType: .international)
+        } catch ValidationError.InvalidPhone {
+            return ""
+        } catch {
+            fatalError("Unable to format phone number: \(error)")
+        }
+    }
+    
 }

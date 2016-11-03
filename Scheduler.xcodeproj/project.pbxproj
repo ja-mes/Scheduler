@@ -415,7 +415,7 @@
 				DEVELOPMENT_TEAM = 5ZLSFF34EF;
 				INFOPLIST_FILE = Scheduler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Scheduler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamezbrown.scheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -430,7 +430,7 @@
 				DEVELOPMENT_TEAM = 5ZLSFF34EF;
 				INFOPLIST_FILE = Scheduler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Scheduler;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamezbrown.scheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
