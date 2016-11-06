@@ -41,7 +41,7 @@ class Validator {
         
         do {
             let phoneNumber = try phoneNumberKit.parse(value)
-            return phoneNumberKit.format(phoneNumber, toType: .international)
+            return phoneNumberKit.format(phoneNumber, toType: .national)
         } catch ValidationError.InvalidPhone {
             return ""
         } catch {
