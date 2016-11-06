@@ -269,7 +269,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             let phoneNumbers = contact.phoneNumbers
             
             if phoneNumbers.count > 0 {
-                textMsgField.text = phoneNumbers[0].value.stringValue
+                let validator = Validator()
+                textMsgField.text = validator.format(phoneNumbers[0].value.stringValue)
             }
         }
     }
