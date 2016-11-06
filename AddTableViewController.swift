@@ -121,6 +121,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             displayDate(date: date)
         }
         
+        if reminder != nil {
+            sendMessage()
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
