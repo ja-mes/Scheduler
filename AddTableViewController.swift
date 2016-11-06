@@ -18,6 +18,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     // outlets
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var sendNowButton: UIButton!
     
     @IBOutlet weak var messageField: UITextView!
     @IBOutlet weak var subjectField: UITextField!
@@ -291,7 +292,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func sendNowPressed(_ sender: UIButton) {
-       sendMessage()
+        sendMessage()
     }
     
     @IBAction func reschedulePressed(_ sender: UIButton) {
@@ -354,6 +355,10 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     
     func sendMessage() {
         if let reminder = reminder {
+            sendNowButton.isEnabled = false
+            sendNowButton.setTitle("Loading...", for: .disabled)
+            sendNowButton.setTitleColor(UIColor.gray, for: .disabled)
+            
             save(reminder: reminder)
             
             if let message = reminder.message, let recipient = reminder.recipient {
@@ -363,7 +368,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                     messageController.recipients = [recipient]
                     messageController.messageComposeDelegate = self
                     
-                    present(messageController, animated: true, completion: nil)
+                    present(messageController, animated: true, completion: { 
+                        self.sendNowButton.isEnabled = true
+                    })
                 } else if reminder.type == "email", MFMailComposeViewController.canSendMail() {
                     let mailController = MFMailComposeViewController()
                     mailController.mailComposeDelegate = self
@@ -375,7 +382,9 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                         mailController.setSubject(subject)
                     }
                     
-                    present(mailController, animated: true, completion: nil)
+                    present(mailController, animated: true, completion: { 
+                        self.sendNowButton.isEnabled = true
+                    })
                 }
             }
         }
