@@ -121,7 +121,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             displayDate(date: date)
         }
         
-        if let entryDate = reminder?.entryDate, Date().compare(entryDate) == ComparisonResult.orderedDescending {
+        if let entryDate = reminder?.entryDate, Date().compare(entryDate) == ComparisonResult.orderedDescending, reminder?.sent == false {
             sendMessage()
         }
         
