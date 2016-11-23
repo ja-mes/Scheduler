@@ -471,7 +471,7 @@
 				9BA536A61DE60BB70099011B /* Scheduler 2.xcdatamodel */,
 				9B31DCFC1DAD644500BDB488 /* Scheduler.xcdatamodel */,
 			);
-			currentVersion = 9B31DCFC1DAD644500BDB488 /* Scheduler.xcdatamodel */;
+			currentVersion = 9BA536A61DE60BB70099011B /* Scheduler 2.xcdatamodel */;
 			path = Scheduler.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

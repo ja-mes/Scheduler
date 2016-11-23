@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Brown. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
@@ -24,5 +24,6 @@ extension Reminder {
     @NSManaged public var subject: String?
     @NSManaged public var id: String?
     @NSManaged public var sent: Bool
+    @NSManaged public var images: [UIImage]?
 
 }
