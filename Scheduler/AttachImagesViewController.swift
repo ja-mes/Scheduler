@@ -40,6 +40,7 @@ class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         selectedImages.append(selectedImage)
+        collectionView.reloadData()
         dismiss(animated: true, completion: nil)
     }
     
