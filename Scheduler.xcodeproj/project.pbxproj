@@ -22,6 +22,7 @@
 		9B832C3A1DBD1B3100265F72 /* Reminder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */; };
 		9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */; };
 		9BA536A81DE617660099011B /* AttachImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA536A71DE617660099011B /* AttachImagesViewController.swift */; };
+		9BA536AA1DE621080099011B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA536A91DE621080099011B /* ImageCell.swift */; };
 		9BE8BCB41DC16172009DFC9A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB31DC16172009DFC9A /* UserNotification.swift */; };
 		9BE8BCB61DC26D90009DFC9A /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */; };
 		9BE8E4F41DE5180A0055812C /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8E4F31DE5180A0055812C /* CustomBarButtonItem.swift */; };
@@ -48,6 +49,7 @@
 		9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BA536A61DE60BB70099011B /* Scheduler 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scheduler 2.xcdatamodel"; sourceTree = "<group>"; };
 		9BA536A71DE617660099011B /* AttachImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachImagesViewController.swift; sourceTree = "<group>"; };
+		9BA536A91DE621080099011B /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		9BE8BCB31DC16172009DFC9A /* UserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
 		9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
 		9BE8E4F31DE5180A0055812C /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		9B31DD0A1DAD68B700BDB488 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BA536A91DE621080099011B /* ImageCell.swift */,
 				9BE8E4F31DE5180A0055812C /* CustomBarButtonItem.swift */,
 			);
 			name = View;
@@ -295,6 +298,7 @@
 				9B31DD111DAD8CBD00BDB488 /* AddTableViewController.swift in Sources */,
 				9BE8E4F41DE5180A0055812C /* CustomBarButtonItem.swift in Sources */,
 				9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */,
+				9BA536AA1DE621080099011B /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
