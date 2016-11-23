@@ -12,7 +12,7 @@ import MessageUI
 import ContactsUI
 import PhoneNumberKit
 
-class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, CNContactPickerDelegate {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, CNContactPickerDelegate, UIImagePickerControllerDelegate {
 
     // MARK: properties
     
@@ -41,6 +41,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     var repeatInterval = REPEAT_INTERVALS[0]
     var canSave = false
     var isRecipientValid = false
+    var selectedImages = [UIImage]()
     
     // pickers
     var picker: UIPickerView!
@@ -281,6 +282,19 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     
+    // MARK: Image picker controller
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        selectedImages.append(selectedImage)
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: IBAction
     @IBAction func editingBegan(_ sender: UITextField) {
         resetFields()
@@ -333,6 +347,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             }
         }
     }
+    
+    @IBAction func attachImagePressed(_ sender: UIButton) {
+        
+    }
+    
     
     
     // MARK: func
