@@ -149,6 +149,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AttachImagesViewController {
+            destination.selectedImages = selectedImages
+        }
+    }
+    
     // MARK: table view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
