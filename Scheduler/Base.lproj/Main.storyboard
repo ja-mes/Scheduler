@@ -541,6 +541,7 @@ ECAgICAgA
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Reminder" id="0Kh-Xi-F27">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="2gV-5a-DS6"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cU8-Wp-0Pk" customClass="CustomBarButtonItem" customModule="Scheduler" customModuleProvider="target">
                             <color key="tintColor" red="0.0" green="0.47802573442459106" blue="0.99843257665634155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <userDefinedRuntimeAttributes>
@@ -636,6 +637,9 @@ ECAgICAgA
                             </userDefinedRuntimeAttributes>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="7Ai-Pf-gIX" id="cyY-zt-mA7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkS-OS-g1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
