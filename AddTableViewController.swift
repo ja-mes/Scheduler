@@ -12,7 +12,7 @@ import MessageUI
 import ContactsUI
 import PhoneNumberKit
 
-class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, CNContactPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, CNContactPickerDelegate {
 
     // MARK: properties
     
@@ -295,19 +295,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     
-    // MARK: Image picker controller
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        selectedImages.append(selectedImage)
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: IBAction
     @IBAction func editingBegan(_ sender: UITextField) {
         resetFields()
@@ -360,16 +347,6 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
             }
         }
     }
-    
-    @IBAction func attachImagePressed(_ sender: UIButton) {
-        let imagePickerController = UIImagePickerController()
-        
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        
-        present(imagePickerController, animated: true, completion: nil)
-    }
-    
     
     
     // MARK: func
