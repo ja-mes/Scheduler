@@ -55,6 +55,8 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         self.navigationItem.hidesBackButton = true
         saveButton.isEnabled = false
         
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveImages(notification:)), name: NSNotification.Name("selectedImages"), object: nil)
+        
         if isEmail {
             emailField.isHidden = false
             textMsgField.isHidden = true
@@ -494,4 +496,23 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
     }
     
+    func didReceiveImages(notification: Notification) {
+        if let images = notification.object as? [UIImage] {
+            selectedImages = images
+        }
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
