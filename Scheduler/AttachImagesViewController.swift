@@ -37,6 +37,12 @@ class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UI
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedImages.remove(at: indexPath.row)
+        collectionView.reloadData()
+    }
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
