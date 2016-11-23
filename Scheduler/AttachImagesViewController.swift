@@ -8,10 +8,10 @@
 
 import UIKit
 
-class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var images = [UIImage]()
+    var selectedImages = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +25,32 @@ class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return selectedImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
         return cell
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        selectedImages.append(selectedImage)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func addPressed(_ sender: UIBarButtonItem) {
+        let imagePickerController = UIImagePickerController()
+        
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
     }
 
 }

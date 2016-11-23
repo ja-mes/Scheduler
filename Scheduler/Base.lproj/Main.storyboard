@@ -635,6 +635,9 @@ ECAgICAgA
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isBold" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="addPressed:" destination="w9r-Ka-ITL" id="FbG-0e-Bfz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
