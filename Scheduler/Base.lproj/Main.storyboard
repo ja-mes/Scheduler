@@ -628,7 +628,7 @@ ECAgICAgA
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TAP ON A IMAGE TO REMOVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5r-hh-aN0">
-                                <rect key="frame" x="89.5" y="84" width="196.5" height="19.5"/>
+                                <rect key="frame" x="8" y="84" width="359" height="20"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -636,10 +636,11 @@ ECAgICAgA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="y5r-hh-aN0" firstAttribute="centerX" secondItem="NJw-tk-gYP" secondAttribute="centerX" id="AN8-78-kap"/>
                             <constraint firstAttribute="trailing" secondItem="7Ai-Pf-gIX" secondAttribute="trailing" constant="8" id="B3b-8K-pex"/>
                             <constraint firstItem="7Ai-Pf-gIX" firstAttribute="leading" secondItem="NJw-tk-gYP" secondAttribute="leading" constant="8" id="Gpl-UV-jCh"/>
                             <constraint firstItem="xLT-6q-TcQ" firstAttribute="top" secondItem="7Ai-Pf-gIX" secondAttribute="bottom" id="PBO-x6-aLO"/>
+                            <constraint firstItem="y5r-hh-aN0" firstAttribute="leading" secondItem="NJw-tk-gYP" secondAttribute="leading" constant="8" id="WcC-hv-MA8"/>
+                            <constraint firstAttribute="trailing" secondItem="y5r-hh-aN0" secondAttribute="trailing" constant="8" id="aip-93-IbD"/>
                             <constraint firstItem="7Ai-Pf-gIX" firstAttribute="top" secondItem="y5r-hh-aN0" secondAttribute="bottom" constant="30" id="g9C-m1-wQv"/>
                             <constraint firstItem="y5r-hh-aN0" firstAttribute="top" secondItem="d33-Iw-0RU" secondAttribute="bottom" constant="20" id="q6b-wb-Kxw"/>
                         </constraints>
@@ -656,6 +657,7 @@ ECAgICAgA
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="7Ai-Pf-gIX" id="cyY-zt-mA7"/>
+                        <outlet property="infoLabel" destination="y5r-hh-aN0" id="M2b-q0-bqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkS-OS-g1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -691,6 +693,6 @@ ECAgICAgA
         <image name="plus_circle" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q75-cp-Ub4"/>
+        <segue reference="Z8z-KQ-Mpu"/>
     </inferredMetricsTieBreakers>
 </document>

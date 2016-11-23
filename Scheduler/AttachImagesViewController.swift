@@ -10,6 +10,7 @@ import UIKit
 
 class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var selectedImages = [UIImage]()
 
@@ -25,6 +26,12 @@ class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if selectedImages.count > 0 {
+            infoLabel.text = "TAP ON A IMAGE TO REMOVE"
+        } else {
+            infoLabel.text = "TAP PLUS TO ADD A IMAGE"
+        }
+        
         return selectedImages.count
     }
     
