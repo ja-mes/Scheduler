@@ -92,6 +92,11 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         if let reminder = reminder {
             saveButton.isEnabled = true
             
+            if let images = reminder.images {
+                selectedImages = images
+            }
+            
+            
             if isEmail {
                 emailField.text = reminder.recipient
                 subjectField.text = reminder.subject
@@ -371,6 +376,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         item.entryDate = date
         item.repeatInterval = repeatInterval
+        
         item.images = selectedImages
         
         if isEmail {
@@ -403,11 +409,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                     messageController.recipients = [recipient]
                     messageController.messageComposeDelegate = self
                     
-                    if MFMessageComposeViewController.canSendAttachments() {
-                        let pic = UIImage(named: "past_due")
-                        let exportData: Data = UIImageJPEGRepresentation(pic!, 1.0)!
-                        
-                        messageController.addAttachmentData(exportData, typeIdentifier: "image/jpeg", filename: "Picture.png")
+                    if let images = reminder.images, MFMessageComposeViewController.canSendAttachments() {
+                        for (index, image) in images.enumerated() {
+                            if let exportData = UIImageJPEGRepresentation(image, 1.0) {
+                                messageController.addAttachmentData(exportData, typeIdentifier: "image/jpeg", filename: "\(index).jpg")
+                            }
+                        }
                     }
                     
                     
