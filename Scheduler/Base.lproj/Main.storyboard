@@ -619,7 +619,7 @@ ECAgICAgA
                                             <constraint firstItem="U2O-bN-uxm" firstAttribute="top" secondItem="18M-qG-4ZP" secondAttribute="top" id="g7l-1e-OTB"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="image" destination="U2O-bN-uxm" id="1oy-hv-UOg"/>
+                                            <outlet property="imageView" destination="U2O-bN-uxm" id="zeD-Iw-Ezo"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

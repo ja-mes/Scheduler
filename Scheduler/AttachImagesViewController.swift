@@ -29,8 +29,12 @@ class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCell {
+            cell.imageView.image = selectedImages[indexPath.row]
+            return cell
+        }
+        
+        return UICollectionViewCell()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
