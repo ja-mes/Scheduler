@@ -378,7 +378,15 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
                     messageController.recipients = [recipient]
                     messageController.messageComposeDelegate = self
                     
-                    present(messageController, animated: true, completion: { 
+                    if MFMessageComposeViewController.canSendAttachments() {
+                        let pic = UIImage(named: "past_due")
+                        let exportData: Data = UIImageJPEGRepresentation(pic!, 1.0)!
+                        
+                        messageController.addAttachmentData(exportData, typeIdentifier: "image/jpeg", filename: "Picture.png")
+                    }
+                    
+                    
+                    present(messageController, animated: true, completion: {
                         self.sendNowButton.isEnabled = true
                     })
                 } else if reminder.type == "email", MFMailComposeViewController.canSendMail() {
