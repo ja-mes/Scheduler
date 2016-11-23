@@ -45,6 +45,7 @@
 		9B832C361DB93C9400265F72 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9B832C381DBD1B3100265F72 /* Reminder+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9BA536A61DE60BB70099011B /* Scheduler 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Scheduler 2.xcdatamodel"; sourceTree = "<group>"; };
 		9BE8BCB31DC16172009DFC9A /* UserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
 		9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
 		9BE8E4F31DE5180A0055812C /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
@@ -467,6 +468,7 @@
 		9B31DCFB1DAD644500BDB488 /* Scheduler.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9BA536A61DE60BB70099011B /* Scheduler 2.xcdatamodel */,
 				9B31DCFC1DAD644500BDB488 /* Scheduler.xcdatamodel */,
 			);
 			currentVersion = 9B31DCFC1DAD644500BDB488 /* Scheduler.xcdatamodel */;
