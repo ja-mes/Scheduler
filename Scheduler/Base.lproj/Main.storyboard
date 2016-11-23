@@ -478,27 +478,29 @@ ECAgICAgA
                             </tableViewSection>
                             <tableViewSection id="WQb-fu-55h">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fUO-MX-ehn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="fUO-MX-ehn">
                                         <rect key="frame" x="0.0" y="371" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUO-MX-ehn" id="TEr-n4-hdk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYM-6M-L6O">
-                                                    <rect key="frame" x="15" y="0.0" width="360" height="44"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gih-yA-4Cu">
+                                                    <rect key="frame" x="15" y="0.0" width="327" height="43"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <state key="normal" title="Attach Image"/>
+                                                    <state key="normal" title="Attach Images">
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
-                                                        <action selector="attachImagePressed:" destination="3UF-l1-ghK" eventType="touchUpInside" id="tFQ-1P-Nzv"/>
+                                                        <segue destination="w9r-Ka-ITL" kind="show" id="MC7-hm-ujy"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="WYM-6M-L6O" secondAttribute="bottom" id="ESS-an-FW5"/>
-                                                <constraint firstItem="WYM-6M-L6O" firstAttribute="top" secondItem="TEr-n4-hdk" secondAttribute="top" id="IST-Jo-Rin"/>
-                                                <constraint firstItem="WYM-6M-L6O" firstAttribute="leading" secondItem="TEr-n4-hdk" secondAttribute="leading" constant="15" id="Xx6-vo-tnl"/>
-                                                <constraint firstAttribute="trailing" secondItem="WYM-6M-L6O" secondAttribute="trailing" id="bNK-28-Ydu"/>
+                                                <constraint firstAttribute="bottom" secondItem="gih-yA-4Cu" secondAttribute="bottom" id="71F-yS-u6R"/>
+                                                <constraint firstItem="gih-yA-4Cu" firstAttribute="top" secondItem="TEr-n4-hdk" secondAttribute="top" id="NJH-f7-eKx"/>
+                                                <constraint firstItem="gih-yA-4Cu" firstAttribute="leading" secondItem="TEr-n4-hdk" secondAttribute="leading" constant="15" id="NO9-4l-Yn4"/>
+                                                <constraint firstAttribute="trailing" secondItem="gih-yA-4Cu" secondAttribute="trailing" id="RuK-rB-oej"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -507,7 +509,7 @@ ECAgICAgA
                             <tableViewSection headerTitle="Message" id="Byz-vi-bHo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="aww-4D-dTs">
-                                        <rect key="frame" x="0.0" y="471" width="375" height="280"/>
+                                        <rect key="frame" x="0.0" y="472" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aww-4D-dTs" id="zUU-XU-7GG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="279"/>
@@ -573,7 +575,25 @@ ECAgICAgA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76G-wa-6Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="134"/>
+            <point key="canvasLocation" x="3492" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oRh-Iw-R3H">
+            <objects>
+                <viewController id="w9r-Ka-ITL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d33-Iw-0RU"/>
+                        <viewControllerLayoutGuide type="bottom" id="xLT-6q-TcQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NJw-tk-gYP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MkS-OS-g1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4343" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n1F-Oz-Hds">
