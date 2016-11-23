@@ -371,6 +371,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
         
         item.entryDate = date
         item.repeatInterval = repeatInterval
+        item.images = selectedImages
         
         if isEmail {
             item.recipient = emailField.text
