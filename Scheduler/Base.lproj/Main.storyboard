@@ -577,7 +577,7 @@ ECAgICAgA
             </objects>
             <point key="canvasLocation" x="3492" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Attach Images-->
         <scene sceneID="oRh-Iw-R3H">
             <objects>
                 <viewController id="w9r-Ka-ITL" sceneMemberID="viewController">
@@ -590,6 +590,18 @@ ECAgICAgA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Attach Images" id="cP4-Qw-n7m">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qLS-7j-aLM" customClass="CustomBarButtonItem" customModule="Scheduler" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isBold" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Qgm-80-DL6" customClass="CustomBarButtonItem" customModule="Scheduler" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isBold" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MkS-OS-g1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
