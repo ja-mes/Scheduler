@@ -169,7 +169,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath == IndexPath(row: 2, section: 1) && !isEmail {
             return 0.0
-        } else if indexPath == IndexPath(row: 0, section: 2) {
+        } else if indexPath == IndexPath(row: 0, section: 3) {
             return 280.0
         }
         
@@ -196,7 +196,7 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 && reminder == nil {
             return 0.1
-        } else if section == 2 {
+        } else if section == 3 {
             return 44
         }
     
