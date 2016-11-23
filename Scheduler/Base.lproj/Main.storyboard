@@ -511,12 +511,19 @@ ECAgICAgA
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Reminder" id="0Kh-Xi-F27">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cU8-Wp-0Pk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cU8-Wp-0Pk" customClass="CustomBarButtonItem" customModule="Scheduler" customModuleProvider="target">
+                            <color key="tintColor" red="0.0" green="0.47802573442459106" blue="0.99843257665634155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isBold" value="NO"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="3UF-l1-ghK" id="53p-cG-v25"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Uxk-Bh-iau">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Uxk-Bh-iau" customClass="CustomBarButtonItem" customModule="Scheduler" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isBold" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="save:" destination="3UF-l1-ghK" id="wpx-lY-KzA"/>
                             </connections>
@@ -545,7 +552,7 @@ ECAgICAgA
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z1O-un-8cM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a58-Z5-NLW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a58-Z5-NLW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">

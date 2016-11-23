@@ -23,6 +23,7 @@
 		9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */; };
 		9BE8BCB41DC16172009DFC9A /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB31DC16172009DFC9A /* UserNotification.swift */; };
 		9BE8BCB61DC26D90009DFC9A /* SelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */; };
+		9BE8E4F41DE5180A0055812C /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8E4F31DE5180A0055812C /* CustomBarButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9B832C391DBD1B3100265F72 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9BE8BCB31DC16172009DFC9A /* UserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
 		9BE8BCB51DC26D90009DFC9A /* SelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTableViewController.swift; sourceTree = "<group>"; };
+		9BE8E4F31DE5180A0055812C /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		9B31DD0A1DAD68B700BDB488 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9BE8E4F31DE5180A0055812C /* CustomBarButtonItem.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				9B31DCF51DAD644500BDB488 /* AppDelegate.swift in Sources */,
 				9BE8BCB41DC16172009DFC9A /* UserNotification.swift in Sources */,
 				9B31DD111DAD8CBD00BDB488 /* AddTableViewController.swift in Sources */,
+				9BE8E4F41DE5180A0055812C /* CustomBarButtonItem.swift in Sources */,
 				9B832C3B1DBD1B3100265F72 /* Reminder+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
