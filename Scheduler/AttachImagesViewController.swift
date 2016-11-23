@@ -57,5 +57,9 @@ class AttachImagesViewController: UIViewController, UICollectionViewDelegate, UI
         
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: NSNotification.Name("selectedImages"), object: selectedImages)
+    }
 
 }
