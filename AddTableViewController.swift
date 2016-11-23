@@ -12,7 +12,7 @@ import MessageUI
 import ContactsUI
 import PhoneNumberKit
 
-class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, CNContactPickerDelegate, UIImagePickerControllerDelegate {
+class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, CNContactPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: properties
     
@@ -349,7 +349,12 @@ class AddTableViewController: UITableViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func attachImagePressed(_ sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
         
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     
